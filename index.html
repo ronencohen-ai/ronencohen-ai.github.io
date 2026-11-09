@@ -196,12 +196,12 @@ section{padding-block:64px}
 .principles h3{font-size:20px}
 .principles p{color:var(--ink-soft);font-size:16px}
 
-/* מה מקבלים */
-.gets{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
-.gets li{background:var(--paper);border-radius:var(--r);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start;min-width:0}
-.gets i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);margin-top:9px;grid-row:span 2}
-.gets h3{font-size:21px}
-.gets p{color:var(--ink-soft);font-size:16px}
+/* בכל סרטון: בתוך התהליך */
+.incl{margin-top:22px;background:var(--paper);border-radius:var(--r);padding:clamp(20px,3vw,30px)}
+.incl h3{font-size:22px;margin-bottom:14px}
+.incl ul{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px 24px}
+.incl li{display:flex;align-items:flex-start;gap:10px;font:600 17px/1.35 var(--f-display);min-width:0}
+.incl svg{flex:none;width:22px;height:22px;color:var(--sun);margin-top:1px}
 
 /* קריאה לפעולה */
 .cta{position:relative;background:var(--paper);color:var(--ink);border-radius:30px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:inset 0 0 0 2px var(--line);overflow:hidden}
@@ -253,7 +253,7 @@ footer a{color:var(--ink-soft)}
   .step .n{grid-row:span 2;font-size:36px;margin:0}
   .step h3{font-size:19px;margin:0}
   .about{grid-template-columns:1fr}
-  .gets{grid-template-columns:1fr;gap:10px}
+  .incl ul{grid-template-columns:1fr;gap:10px}
   .about img{width:min(280px,100%)}
   .cta{grid-template-columns:1fr}
 }
@@ -265,7 +265,7 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
-    <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">עבודות</a><a href="#how">איך זה עובד</a><a href="#get">מה מקבלים</a></nav>
+    <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">עבודות</a><a href="#how">התהליך</a></nav>
     <div class="top-l">
       <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI ריאליסטיים, לראש העמוד"><b>רונן כהן</b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
       <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
@@ -354,7 +354,7 @@ footer a{color:var(--ink-soft)}
 
   <section id="how" aria-labelledby="h-how">
     <div class="wrap">
-      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
+      <div class="sec-head"><h2 id="h-how">התהליך</h2><p>מהשיחה הראשונה ועד סרטון מוכן לעלות.</p></div>
       <ol class="steps">
         <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
         <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
@@ -362,20 +362,17 @@ footer a{color:var(--ink-soft)}
         <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
         <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
       </ol>
-    </div>
-  </section>
-
-  <section id="get" aria-labelledby="h-get" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-get">מה מקבלים</h2></div>
-      <ul class="gets">
-        <li><i style="background:var(--sun)"></i><h3>רעיון ותסריט מקוריים</h3><p>נבנים בשבילכם, לא מתבנית.</p></li>
-        <li><i style="background:var(--tomato)"></i><h3>הפקה מלאה ב-<span dir="ltr">AI</span></h3><p>בלי צוות צילום, בלי לוקיישן ובלי שחקנים.</p></li>
-        <li><i style="background:var(--sky)"></i><h3>סאונד, עריכה וכיתוב</h3><p>סרטון גמור שמוכן לעלות, לא חומר גלם.</p></li>
-        <li><i style="background:var(--mint)"></i><h3>קובץ לכל הרשתות</h3><p>אנכי <span dir="ltr">9:16</span> לאינסטגרם, טיקטוק ופייסבוק.</p></li>
-        <li><i style="background:var(--pink)"></i><h3>שני סבבי תיקונים</h3><p>כיתוב, קצב, צבע, סאונד או שוט בודד.</p></li>
-        <li><i style="background:var(--berry)"></i><h3>הסרטון שלכם</h3><p>לשימוש בכל הערוצים, בלי הגבלת זמן.</p></li>
-      </ul>
+      <div class="incl">
+        <h3>בכל סרטון</h3>
+        <ul>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>רעיון ותסריט מקוריים</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>הפקה מלאה ב-<span dir="ltr">AI</span></span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>סאונד, עריכה וכיתוב</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>קובץ אנכי לאינסטגרם, טיקטוק ופייסבוק</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>שני סבבי תיקונים</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>שימוש בכל הערוצים, בלי הגבלת זמן</span></li>
+        </ul>
+      </div>
     </div>
   </section>
 
