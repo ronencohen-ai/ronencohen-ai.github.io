@@ -186,7 +186,7 @@ section{padding-block:64px}
 
 /* מי אני */
 .about{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,6vw,64px);align-items:center}
-.about img{width:100%;height:auto;border-radius:var(--r);aspect-ratio:720/910;object-fit:cover}
+.about img{width:100%;height:auto;border-radius:var(--r);aspect-ratio:720/910;object-fit:cover;box-shadow:0 0 0 2px var(--line),0 24px 60px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
 .about .lead{font:600 clamp(24px,3.2vw,34px)/1.25 var(--f-display);margin:12px 0 24px;max-width:24ch}
 .principles{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .principles li{background:var(--paper);border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
@@ -308,7 +308,7 @@ footer a{color:var(--ink-soft)}
 
   <section id="about" aria-labelledby="h-about">
     <div class="wrap about">
-      <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן, מחייך, בחולצה לבנה">
+      <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן מחייך באולפן, ומאחוריו מסכים עם סרטונים">
       <div>
         <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">קצת עליי</h2>
         <p class="lead">אני רונן כהן, די-ג'יי שיוצר <span style="white-space:nowrap">סרטוני <span dir="ltr">AI</span>.</span> על הרחבה למדתי מה עוצר אנשים, ואצלי הכל: מהרעיון ועד סרטון מוכן לעלות.</p>
