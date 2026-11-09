@@ -4,7 +4,7 @@ import os
 from PIL import Image, ImageDraw, ImageFont
 ROOT=os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 F=os.path.join(ROOT,"..","קרוסלה","fonts")
-BG=(8,8,11); INK=(245,246,250); SUN=(255,200,61); SOFT=(164,169,186); WA=(31,175,90)
+BG=(8,8,11); INK=(245,246,250); SUN=(61,185,255); SOFT=(164,169,186); WA=(31,175,90)
 heb=lambda w: w if all(ord(c)<128 for c in w) else w[::-1]
 def line(d,font,words,right,y,gap):
     x=right

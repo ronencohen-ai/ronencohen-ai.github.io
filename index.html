@@ -34,12 +34,8 @@
   --ink:#F5F6FA;           /* לבן */
   --ink-soft:#A4A9BA;
   --line:#272A35;
-  --sun:#FFC83D;           /* צהוב שמש: ויראלי */
-  --sky:#2F7BFF;           /* כחול מגרש: ראשי */
-  --tomato:#FF5B3A;        /* עגבנייה: פרסומות */
-  --mint:#18B98C;          /* מנטה: חגים ומשפחה */
-  --berry:#B04BFF;         /* פטל */
-  --pink:#FF7AB6;          /* ורוד: מצחיק */
+  --accent:#3DB9FF;        /* תכלת: הצבע היחיד של האתר */
+  --sun:var(--accent);--sky:var(--accent);--tomato:var(--accent);--mint:var(--accent);--berry:var(--accent);--pink:var(--accent);
   --wa:#1FAF5A;            /* וואטסאפ */
   --on-accent:#FFFFFF;
   --on-light:#151826;
@@ -86,13 +82,14 @@ p{margin:0}
 .hero{padding-block:22px 34px;overflow:hidden}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
 .hero h1{font-size:clamp(34px,6vw,68px);line-height:1.05;letter-spacing:-.01em}
+.hero .sub{color:var(--ink-soft);font:500 clamp(17px,1.9vw,21px)/1.4 var(--f-body);max-width:46ch;margin-top:-2px;text-wrap:balance}
 .hero h1 .hl{color:var(--sun)}
 .hero h1 .w{display:inline-block}
 .js .hero h1 .w{opacity:0;transform:translateY(.35em)}
 .js.ready .hero h1 .w{opacity:1;transform:none;transition:opacity .6s ease,transform .8s var(--ease);transition-delay:calc(var(--i) * 90ms + 80ms)}
 .actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
 .live-note{font-size:13px;justify-content:center;text-align:center;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
-.pulse{width:9px;height:9px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 color-mix(in srgb,var(--wa) 60%,transparent);animation:pulse 2s infinite}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 0 color-mix(in srgb,var(--accent) 60%,transparent);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
 
 /* ספירלה: כרטיס מרכזי מתנגן, 3 מכל צד נסוגים לעומק, כל 2.5 שניות הכל זז צעד */
@@ -124,7 +121,7 @@ section{padding-block:64px}
 .tv-badge{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:14px;background:var(--bg);border-radius:999px;padding-block:10px;padding-inline:10px 26px;box-shadow:inset 0 0 0 2px var(--line);transition:transform .2s var(--ease),box-shadow .2s;max-width:100%;box-sizing:border-box}
 .tv-badge:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--sky)}
 .tv-badge:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
-.tv-play{flex:none;width:48px;height:48px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center}
+.tv-play{flex:none;width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--on-light);display:grid;place-items:center}
 .tv-play svg{width:22px;height:22px}
 .tv-txt{display:flex;flex-direction:column;gap:4px;text-align:start;min-width:0}
 .tv-txt b{font:700 clamp(17px,2.2vw,22px)/1.2 var(--f-display);color:var(--ink)}
@@ -239,7 +236,7 @@ footer a{color:var(--ink-soft)}
 .player-close svg{width:22px;height:22px}
 
 /* צבעי קטגוריות */
-.c-funny{background:var(--pink);color:var(--on-light)}.c-tv{background:var(--sky)}.c-ads{background:var(--tomato)}.c-viral{background:var(--sun);color:var(--on-light)}.c-sport{background:var(--sky)}.c-holiday{background:var(--mint)}.c-new{background:var(--wa)}.c-clips{background:var(--berry);color:var(--on-light)}
+.tag{background:rgba(8,8,11,.72);color:#fff;box-shadow:inset 0 0 0 1px rgba(255,255,255,.18);backdrop-filter:blur(6px)}
 
 @media (max-width:900px){
   .wheel{height:330px}
@@ -277,6 +274,7 @@ footer a{color:var(--ink-soft)}
   <section class="hero" aria-labelledby="h-hero">
     <div class="wrap">
       <h1 id="h-hero"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><br><span class="w" style="--i:2">שאנשים</span> <span class="w" style="--i:3">שולחים</span> <span class="w hl" style="--i:4">הלאה.</span></h1>
+      <p class="sub">פרסומות, ריילס וקליפים לעסקים, שנראים כמו צילום אמיתי.</p>
       <div style="width:100%">
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
@@ -312,11 +310,11 @@ footer a{color:var(--ink-soft)}
       <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן, מחייך, בחולצה לבנה">
       <div>
         <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">קצת עליי</h2>
-        <p class="lead">אני רונן כהן, די-ג'יי שיוצר <span style="white-space:nowrap">סרטוני <span dir="ltr">AI</span>.</span> הכל אצלי: מהרעיון ועד סרטון מוכן לעלות.</p>
+        <p class="lead">אני רונן כהן, די-ג'יי שיוצר <span style="white-space:nowrap">סרטוני <span dir="ltr">AI</span>.</span> על הרחבה למדתי מה עוצר אנשים, ואצלי הכל: מהרעיון ועד סרטון מוכן לעלות.</p>
         <ul class="principles">
           <li><i style="background:var(--sun)"></i><h3>מההתחלה ועד הסוף</h3><p>רעיון, תסריט, הפקה, סאונד ועריכה. אתם מקבלים סרטון מוכן.</p></li>
           <li><i style="background:var(--tomato)"></i><h3>יחס אישי וחם</h3><p>אני מלווה אתכם בכל שלב. מדברים איתי, לא עם צוות.</p></li>
-          <li><i style="background:var(--sky)"></i><h3>מקצועיות עד הפריים האחרון</h3><p>בלי מראה פלסטיק. כל פריים עובר אצלי לפני שהוא יוצא.</p></li>
+          <li><i style="background:var(--sky)"></i><h3>מקצועיות עד הפריים האחרון</h3><p>בלי מראה פלסטיק, כל קאט יושב על הביט, וכל פריים עובר אצלי.</p></li>
           <li><i style="background:var(--mint)"></i><h3>סבלנות ותשומת לב</h3><p>לא ממהרים. אני מקשיב לכל הערה, ובונים יחד את מה שדמיינתם.</p></li>
         </ul>
       </div>
