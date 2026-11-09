@@ -63,7 +63,8 @@ p{margin:0}
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
 .brand{display:flex;flex-direction:column;gap:3px;text-decoration:none;text-align:start}
-.brand b{font:700 18px/1 var(--f-display)}
+.brand b{font:700 22px/1 var(--f-display);letter-spacing:.01em}
+.brand b i{font-style:normal;color:var(--accent)}
 .brand small{font:600 12px/1 var(--f-body);color:var(--ink-soft)}
 .top-l{display:flex;align-items:center;gap:16px;flex:1;justify-content:space-between}
 .top nav{display:none;gap:14px;align-items:center}
@@ -113,7 +114,7 @@ section{padding-block:64px}
 /* מספרים */
 .proof{background:var(--paper);padding-block:40px}
 .proof dl{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
-.proof dl>div{display:flex;flex-direction:column-reverse;align-items:center;text-align:center;gap:6px;min-width:0}
+.proof dl>div{display:flex;flex-direction:column-reverse;justify-content:flex-end;align-items:center;text-align:center;gap:6px;min-width:0}
 .proof dd{margin:0;font:700 clamp(40px,8vw,96px)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .proof dt{color:var(--ink-soft);font:600 clamp(14px,1.6vw,18px)/1.3 var(--f-display)}
 .proof div:nth-child(1) dd{color:var(--sun)}.proof div:nth-child(2) dd{color:var(--tomato)}.proof div:nth-child(3) dd{color:var(--sky)}
@@ -252,7 +253,7 @@ footer a{color:var(--ink-soft)}
   .step h3{font-size:19px;margin:0}
   .about{grid-template-columns:1fr}
   .incl ul{grid-template-columns:1fr;gap:10px}
-  .about img{width:min(280px,100%)}
+  .about img{width:min(280px,100%);justify-self:center;margin-inline:auto}
   .cta{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w{opacity:1;transform:none}}
@@ -265,7 +266,7 @@ footer a{color:var(--ink-soft)}
   <div class="wrap">
     <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
     <div class="top-l">
-      <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI ריאליסטיים, לראש העמוד"><b>רונן כהן</b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
+      <a class="brand" href="#" aria-label="RonenCohen.Ai, סרטוני AI ריאליסטיים, לראש העמוד"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
       <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
     </div>
   </div>
