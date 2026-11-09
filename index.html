@@ -66,7 +66,8 @@ p{margin:0}
 .brand b{font:700 18px/1 var(--f-display)}
 .brand small{font:600 12px/1 var(--f-body);color:var(--ink-soft)}
 .top-l{display:flex;align-items:center;gap:16px;flex:1;justify-content:space-between}
-.top nav{display:none;gap:22px}
+.top nav{display:none;gap:14px;align-items:center}
+.top nav a+a::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);vertical-align:middle;margin-inline-end:14px;transform:translateY(-2px)}
 @media (min-width:800px){.top-l{flex:none;margin-inline-start:auto}}
 .top nav a{text-decoration:none;color:var(--ink-soft);font:600 16px/1 var(--f-display)}
 .top nav a:hover{color:var(--ink)}
@@ -262,7 +263,7 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
-    <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">עבודות</a><a href="#how">התהליך</a></nav>
+    <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
     <div class="top-l">
       <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI ריאליסטיים, לראש העמוד"><b>רונן כהן</b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
       <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
@@ -343,7 +344,7 @@ footer a{color:var(--ink-soft)}
 
   <section id="work" aria-labelledby="h-work" style="background:var(--paper)">
     <div class="wrap">
-      <div class="sec-head"><h2 id="h-work">כל העבודות</h2><p>לחצו על סרטון כדי לצפות עם סאונד.</p></div>
+      <div class="sec-head"><h2 id="h-work">תיק עבודות</h2><p>לחצו על סרטון כדי לצפות עם סאונד.</p></div>
       <div class="filters" id="filters" role="group" aria-label="סינון לפי סוג"></div>
       <div class="grid" id="grid"></div>
       <p style="margin-top:22px"><a class="btn btn-ghost" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">עוד באינסטגרם ←</a></p>
