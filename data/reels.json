@@ -1,13 +1,78 @@
 {
- "updated": "2026-10-25",
+ "updated": "2026-11-09",
  "whatsapp": "972523479482",
  "stats": {
-  "views": 1470000,
-  "reels": 15,
-  "followers": 1613,
-  "month_views": 1412715
+  "views": 1624591,
+  "reels": 29,
+  "followers": 2122,
+  "month_views": 557866
  },
  "reels": [
+  {
+   "id": "miel",
+   "cat": "ads",
+   "cats": [
+    "ads"
+   ],
+   "date": "2026-11-08",
+   "title": "Miel by Daniel",
+   "short": "Miel by Daniel",
+   "pitch": "סרט אופנה לקולקציה של Miel by Daniel.",
+   "views": 1120,
+   "ig": "https://www.instagram.com/reel/Dfeidi5OlwL/",
+   "video": "media/miel.mp4",
+   "full": "media/miel.full.mp4",
+   "poster": "media/miel.webp"
+  },
+  {
+   "id": "dance",
+   "cat": "viral",
+   "cats": [
+    "viral",
+    "funny"
+   ],
+   "date": "2026-11-02",
+   "title": "היא אמרה כן. עכשיו מתאמנים.",
+   "short": "עכשיו מתאמנים",
+   "pitch": "ההמשך של \"היא אמרה לו כן\": אותם תינוקות, הריקוד הראשון.",
+   "views": 68100,
+   "ig": "https://www.instagram.com/reel/DfPGh9iORMG/",
+   "video": "media/dance.mp4",
+   "full": "media/dance.full.mp4",
+   "poster": "media/dance.webp"
+  },
+  {
+   "id": "mizmor",
+   "cat": "clips",
+   "cats": [
+    "clips"
+   ],
+   "date": "2026-10-29",
+   "title": "אמרתם תודה לאבא?",
+   "short": "מזמור לתודה",
+   "pitch": "מזמור לתודה, על הרגעים שבהם אומרים תודה.",
+   "views": 6939,
+   "ig": "https://www.instagram.com/reel/DfEbZI4OoEP/",
+   "video": "media/mizmor.mp4",
+   "full": "media/mizmor.full.mp4",
+   "poster": "media/mizmor.webp"
+  },
+  {
+   "id": "inspire",
+   "cat": "ads",
+   "cats": [
+    "ads"
+   ],
+   "date": "2026-10-26",
+   "title": "סרטון גיוס ל-InspireMD",
+   "short": "גיוס ל-InspireMD",
+   "pitch": "סרטון גיוס עובדים למקום שאסור להיכנס אליו: חדר נקי של מכשור רפואי.",
+   "views": 1382,
+   "ig": "https://www.instagram.com/reel/De8viqGOtCI/",
+   "video": "media/inspire.mp4",
+   "full": "media/inspire.full.mp4",
+   "poster": "media/inspire.webp"
+  },
   {
    "id": "velvet",
    "cat": "ads",
@@ -17,10 +82,10 @@
    "date": "2026-10-21",
    "title": "VELVET FREEDOM",
    "why": "פרסומת בושם לאביבית בר זוהר. 62 אלף צפיות.",
-   "views": 62611,
+   "views": 64500,
    "video": "media/velvet.mp4",
    "poster": "media/velvet.webp",
-   "ig": "https://www.instagram.com/ronencohen.ai/",
+   "ig": "https://www.instagram.com/reel/DeykfUeO7IN/",
    "short": "VELVET FREEDOM",
    "pinned": 6,
    "full": "media/velvet.full.mp4",
@@ -36,7 +101,7 @@
    "date": "2026-10-19",
    "title": "היא אמרה לו כן",
    "why": "הצעת נישואין של שני תינוקות. 300 אלף צפיות ו-7,000 שיתופים בשבוע הראשון.",
-   "views": 305054,
+   "views": 352000,
    "video": "media/yes.mp4",
    "poster": "media/yes.webp",
    "ig": "https://www.instagram.com/reel/DerAY11OaNE/",
@@ -52,7 +117,7 @@
    "date": "2026-10-13",
    "title": "הקליפ שלי שודר ברשת 13",
    "why": "גיא לרר שידר את הסרטון ב'הצינור' וקרא לי 'הגאון שהיה אחראי על הסרטון הזה'.",
-   "views": 5914,
+   "views": 7363,
    "video": "media/tv.mp4",
    "poster": "media/tv.webp",
    "ig": "https://www.instagram.com/reel/DebJRnnOrHf/",
@@ -70,7 +135,7 @@
    "date": "2026-10-13",
    "title": "קווין כץ. שרוף על הפועל פתח תקווה.",
    "why": "דמות שנולדה ביציע. 27 אלף צפיות ו-800 שיתופים ביום הראשון, רובם מאוהדים שהעבירו הלאה.",
-   "views": 37827,
+   "views": 49100,
    "video": "media/kevin.mp4",
    "poster": "media/kevin.webp",
    "ig": "https://www.instagram.com/reel/DecGxIoIsS3/",
@@ -90,7 +155,7 @@
    "date": "2026-10-15",
    "title": "לכל חלון ראווה יש את הפרזנטור שלו",
    "why": "פרסומת למארז פרימיום של פלסטו-ווק. המותג (59 אלף עוקבים) העלה אותה עם קרדיט.",
-   "views": 1131,
+   "views": 3422,
    "video": "media/plasto.mp4",
    "poster": "media/plasto.webp",
    "ig": "https://www.instagram.com/reel/DegRM5xOsqB/",
@@ -103,7 +168,7 @@
    "date": "2026-10-08",
    "title": "הוורוד לא בבקבוק. הוא בך.",
    "why": "פרסומת מחווה לגלוס של EB Cosmetics. עינב בובליל שיתפה, והמותג אישר שיתוף פעולה.",
-   "views": 114511,
+   "views": 115000,
    "video": "media/einav.mp4",
    "poster": "media/einav.webp",
    "ig": "https://www.instagram.com/reel/DeOQzmFuLsr/",
@@ -121,7 +186,7 @@
    "date": "2026-10-04",
    "title": "הבוקר של גיא לרר",
    "why": "וואן-שוט בצינורות עד האולפן. גיא לרר ביקש לשדר אותו, והוא עלה ברשת 13.",
-   "views": 185255,
+   "views": 185000,
    "video": "media/tzinor.mp4",
    "poster": "media/tzinor.webp",
    "ig": "https://www.instagram.com/reel/DeERLe7uurI/",
@@ -139,10 +204,10 @@
    "date": "2026-09-25",
    "title": "כרטיס אדום על נענוע",
    "why": "יותר מחצי מיליון צפיות בסוף שבוע אחד, באינסטגרם ובטיקטוק.",
-   "views": 387452,
+   "views": 388000,
    "video": "media/abufrahi.mp4",
    "poster": "media/abufrahi.webp",
-   "ig": "https://www.instagram.com/ronencohen.ai/",
+   "ig": "https://www.instagram.com/reel/DdtwdmlIb8K/",
    "cats": [
     "viral",
     "funny"
@@ -157,7 +222,7 @@
    "cat": "viral",
    "date": "2026-09-30",
    "title": "תודה לקדוש ברוך הוא על הנס",
-   "views": 334299,
+   "views": 334000,
    "video": "media/fz1073.mp4",
    "poster": "media/fz1073.webp",
    "ig": "https://www.instagram.com/reel/Dd6pXBQuxao/",
@@ -174,10 +239,10 @@
    "cat": "funny",
    "date": "2026-09-08",
    "title": "מצעד החיקויים, בגרסה אמיתית",
-   "views": 13928,
+   "views": 14000,
    "video": "media/menny.mp4",
    "poster": "media/menny.webp",
-   "ig": "https://www.instagram.com/ronencohen.ai/",
+   "ig": "https://www.instagram.com/reel/DdBdRcSuNWb/",
    "cats": [
     "funny",
     "viral"
@@ -196,7 +261,7 @@
    "cats": [
     "ads"
    ],
-   "views": 6173,
+   "views": 6289,
    "full": "media/rotem.full.mp4",
    "pitch": "מיקרובליידינג, פרסומת קולנועית."
   },
@@ -211,7 +276,7 @@
    "cats": [
     "holiday"
    ],
-   "views": 3235,
+   "views": 3311,
    "full": "media/kippur.full.mp4",
    "pitch": "בין אדם לחברו."
   },
@@ -222,12 +287,13 @@
    "title": "שנה טובה, בדבש ובזריחה",
    "video": "media/rosh.mp4",
    "poster": "media/rosh.webp",
-   "ig": "https://www.instagram.com/ronencohen.ai/",
+   "ig": "https://www.instagram.com/reel/DdHe-MbuoAz/",
    "cats": [
     "holiday"
    ],
    "full": "media/rosh.full.mp4",
-   "pitch": "שנה טובה, בדבש ובזריחה."
+   "pitch": "שנה טובה, בדבש ובזריחה.",
+   "views": 1536
   },
   {
    "id": "sukkot",
@@ -236,14 +302,15 @@
    "title": "את מי הייתם מזמינים לסוכה?",
    "video": "media/sukkot.mp4",
    "poster": "media/sukkot.webp",
-   "ig": "https://www.instagram.com/ronencohen.ai/",
+   "ig": "https://www.instagram.com/reel/DdrqakZOT_4/",
    "cats": [
     "holiday",
     "funny"
    ],
    "full": "media/sukkot.full.mp4",
-   "pitch": "את מי הייתם מזמינים לסוכה?"
+   "pitch": "את מי הייתם מזמינים לסוכה?",
+   "views": 2679
   }
  ],
- "sync_since": "2026-10-25"
+ "sync_since": "2026-11-09"
 }

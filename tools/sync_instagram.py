@@ -1,6 +1,7 @@
 # מעדכן את האתר מהאינסטגרם: צפיות ועוקבים לכל הסרטונים, וסרטון חדש נכנס לבד עם וידאו ופוסטר.
 # רץ כל בוקר ב-GitHub Actions (‎.github/workflows/sync-instagram.yml). דורש IG_TOKEN ו-ffmpeg.
 # שדות שרונן כתב ידנית (כותרת, הסבר, קטגוריה, הצמדה) לא נדרסים לעולם.
+# ריל חדש מקבל קטגוריה לבד לפי הכיתוב (category_of), וצפיות החודש נמשכות מהחשבון.
 import json, os, re, subprocess, sys, tempfile, urllib.parse, urllib.request
 from datetime import date, datetime, timezone
 
@@ -48,6 +49,32 @@ def title_of(caption):
     line = (caption or "").strip().split("\n")[0]
     line = re.sub(r"[#@]\S+", "", line).strip(" -·|")
     return (line[:58] + "…") if len(line) > 60 else (line or "סרטון חדש")
+
+
+ME = "ronencohen.ai"
+ADS = re.compile(r"פרסומת|קמפיין|קולקציה|בשיתוף|שיתוף פעולה|#ad|#מודעה|#ממומן|לקוח", re.I)
+CLIPS = re.compile(r"קליפ|מזמור|שיר|🎵|🎶", re.I)
+
+
+def category_of(caption):
+    """ריל חדש נכנס לבד לקטגוריה: מותג מתויג (@) או מילת פרסומת = פרסומות; שיר/קליפ = קליפים; כל השאר = ויראלי."""
+    c = caption or ""
+    tags = [t.lower() for t in re.findall(r"@([\w.]+)", c) if t.lower() != ME]
+    if tags or ADS.search(c):
+        return "ads"
+    if CLIPS.search(c):
+        return "clips"
+    return "viral"
+
+
+def month_views():
+    """צפיות בחשבון ב-30 הימים האחרונים."""
+    try:
+        now = int(datetime.now(timezone.utc).timestamp())
+        d = fetch("me/insights", metric="views", period="day", metric_type="total_value", since=now - 30 * 86400, until=now)
+        return int(d["data"][0]["total_value"]["value"])
+    except Exception:
+        return None
 
 
 def encode(src_url, key):
@@ -100,7 +127,8 @@ def main():
         except Exception as e:
             print("דילוג, הקידוד נכשל:", code, e)
             continue
-        r = {"id": key, "cat": "new", "cats": ["new"], "date": day, "title": title_of(m.get("caption")),
+        cat = category_of(m.get("caption"))
+        r = {"id": key, "cat": cat, "cats": [cat], "date": day, "title": title_of(m.get("caption")),
              "views": v, "video": video, "full": full, "poster": poster, "ig": m.get("permalink"), "auto": True}
         reels.insert(0, r); known[code] = r; added.append(code); changed = True
 
@@ -109,6 +137,9 @@ def main():
         stats["followers"] = me["followers_count"]
     if total > stats.get("views", 0):
         stats["views"] = total
+    mv = month_views()
+    if mv:
+        stats["month_views"] = mv
     stats["reels"] = max(videos, len(reels))
     data["updated"] = date.today().isoformat()
     json.dump(data, open(DATA, "w", encoding="utf-8"), ensure_ascii=False, indent=1)

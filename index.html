@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>רונן כהן · סרטוני AI שאנשים שולחים הלאה</title>
-<meta name="description" content="סרטוני AI לעסקים ולמותגים שנראים כמו צילום אמיתי. 1.47 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים. שלחו לי וואטסאפ.">
+<meta name="description" content="סרטוני AI לעסקים ולמותגים שנראים כמו צילום אמיתי. 1.6 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים. שלחו לי וואטסאפ.">
 <link rel="canonical" href="https://ronencohen-ai.github.io/">
 <meta name="theme-color" content="#08080B">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="he_IL">
 <meta property="og:site_name" content="רונן כהן · סרטוני AI">
 <meta property="og:title" content="רונן כהן · סרטוני AI שאנשים שולחים הלאה">
-<meta property="og:description" content="1.47 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים.">
+<meta property="og:description" content="1.6 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים.">
 <meta property="og:url" content="https://ronencohen-ai.github.io/">
 <meta property="og:image" content="https://ronencohen-ai.github.io/img/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -186,6 +186,13 @@ section{padding-block:64px}
 .principles h3{font-size:20px}
 .principles p{color:var(--ink-soft);font-size:16px}
 
+/* מה מקבלים */
+.gets{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.gets li{background:var(--paper);border-radius:var(--r);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start;min-width:0}
+.gets i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);margin-top:9px;grid-row:span 2}
+.gets h3{font-size:21px}
+.gets p{color:var(--ink-soft);font-size:16px}
+
 /* קריאה לפעולה */
 .cta{background:var(--sky);color:var(--on-accent);border-radius:30px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
 .cta h2{font-size:clamp(32px,4.6vw,52px)}
@@ -220,7 +227,7 @@ footer a{color:var(--ink-soft)}
 .player-close svg{width:22px;height:22px}
 
 /* צבעי קטגוריות */
-.c-funny{background:var(--pink);color:var(--on-light)}.c-tv{background:var(--sky)}.c-ads{background:var(--tomato)}.c-viral{background:var(--sun);color:var(--on-light)}.c-sport{background:var(--sky)}.c-holiday{background:var(--mint)}.c-new{background:var(--wa)}
+.c-funny{background:var(--pink);color:var(--on-light)}.c-tv{background:var(--sky)}.c-ads{background:var(--tomato)}.c-viral{background:var(--sun);color:var(--on-light)}.c-sport{background:var(--sky)}.c-holiday{background:var(--mint)}.c-new{background:var(--wa)}.c-clips{background:var(--berry);color:var(--on-light)}
 
 @media (max-width:900px){
   .wheel{height:330px}
@@ -235,6 +242,7 @@ footer a{color:var(--ink-soft)}
   .step .n{grid-row:span 2;font-size:36px;margin:0}
   .step h3{font-size:19px;margin:0}
   .about{grid-template-columns:1fr}
+  .gets{grid-template-columns:1fr;gap:10px}
   .about img{width:min(280px,100%)}
   .cta{grid-template-columns:1fr}
 }
@@ -247,7 +255,7 @@ footer a{color:var(--ink-soft)}
 <header class="top">
   <div class="wrap">
     <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI, לראש העמוד">רונן כהן <small>AI</small></a>
-    <nav aria-label="ניווט ראשי"><a href="#work">עבודות</a><a href="#how">איך זה עובד</a><a href="#about">מי אני</a></nav>
+    <nav aria-label="ניווט ראשי"><a href="#about">מי אני</a><a href="#get">מה מקבלים</a><a href="#how">איך זה עובד</a><a href="#work">עבודות</a></nav>
     <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
   </div>
 </header>
@@ -261,9 +269,9 @@ footer a{color:var(--ink-soft)}
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
       </div>
       <div class="live">
-        <span class="chip"><b id="st-views" dir="ltr">1.4M</b> צפיות</span>
-        <span class="chip"><b id="st-reels" dir="ltr">15</b> סרטונים</span>
-        <span class="chip"><b id="st-followers" dir="ltr">1.6K</b> עוקבים</span>
+        <span class="chip"><b id="st-views" dir="ltr">1.62M</b> צפיות</span>
+        <span class="chip"><b id="st-reels" dir="ltr">29</b> סרטונים</span>
+        <span class="chip"><b id="st-followers" dir="ltr">2.1K</b> עוקבים</span>
       </div>
       <div class="actions">
         <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
@@ -276,11 +284,60 @@ footer a{color:var(--ink-soft)}
     <div class="wrap">
       <h2 id="h-proof" hidden>במספרים</h2>
       <dl>
-        <div><dt>צפיות בסך הכול</dt><dd><span dir="ltr" data-count="1470000">1.47M</span></dd></div>
-        <div><dt>צפיות בריל אחד</dt><dd><span dir="ltr" data-count="387452">387K</span></dd></div>
-        <div><dt>שיתופים בשבוע אחד</dt><dd><span dir="ltr" data-count="7000">7,000</span></dd></div>
+        <div><dt>צפיות בסך הכול</dt><dd><span dir="ltr" data-count="1624591" id="pr-total">1.62M</span></dd></div>
+        <div><dt>ריילס שעברו <span dir="ltr">100K</span></dt><dd><span dir="ltr" data-count="5" id="pr-100k">5</span></dd></div>
+        <div><dt>צפיות בחודש האחרון</dt><dd><span dir="ltr" data-count="557866" id="pr-month">558K</span></dd></div>
       </dl>
       <p class="proof-note">📺 ושידור ב"הצינור", רשת <span dir="ltr">13</span>.</p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+    </div>
+  </div>
+
+  <section id="about" aria-labelledby="h-about">
+    <div class="wrap about">
+      <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן, מחייך, בחולצה לבנה">
+      <div>
+        <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">מי אני</h2>
+        <p class="lead">אני רונן כהן, די-ג'יי שיוצר סרטוני <span dir="ltr">AI</span>. על הרחבה למדתי מה עוצר אנשים, ואת זה אני מכניס לסרטון שלכם.</p>
+        <ul class="principles">
+          <li><i style="background:var(--sun)"></i><h3>בלי מראה פלסטיק</h3><p>אם רואים שזה AI, זה לא יוצא ממני.</p></li>
+          <li><i style="background:var(--tomato)"></i><h3>קצב של די-ג'יי</h3><p>כל קאט יושב על הביט.</p></li>
+          <li><i style="background:var(--sky)"></i><h3>פריים אחרי פריים</h3><p>אין פריים שעובר בלי שראיתי אותו.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="get" aria-labelledby="h-get" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-get">מה מקבלים</h2></div>
+      <ul class="gets">
+        <li><i style="background:var(--sun)"></i><h3>רעיון ותסריט מקוריים</h3><p>נבנים בשבילכם, לא מתבנית.</p></li>
+        <li><i style="background:var(--tomato)"></i><h3>הפקה מלאה ב-<span dir="ltr">AI</span></h3><p>בלי צוות צילום, בלי לוקיישן ובלי שחקנים.</p></li>
+        <li><i style="background:var(--sky)"></i><h3>סאונד, עריכה וכיתוב</h3><p>סרטון גמור שמוכן לעלות, לא חומר גלם.</p></li>
+        <li><i style="background:var(--mint)"></i><h3>קובץ לכל הרשתות</h3><p>אנכי <span dir="ltr">9:16</span> לאינסטגרם, טיקטוק ופייסבוק.</p></li>
+        <li><i style="background:var(--pink)"></i><h3>שני סבבי תיקונים</h3><p>כיתוב, קצב, צבע, סאונד או שוט בודד.</p></li>
+        <li><i style="background:var(--berry)"></i><h3>הסרטון שלכם</h3><p>לשימוש בכל הערוצים, בלי הגבלת זמן.</p></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="how" aria-labelledby="h-how" style="background:var(--paper)">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
+      <ol class="steps">
+        <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
+        <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
+        <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
+        <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
+        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
+      </ol>
     </div>
   </section>
 
@@ -289,9 +346,9 @@ footer a{color:var(--ink-soft)}
       <button type="button" class="spot-media" id="spot-media" aria-label="היא אמרה לו כן. צפו עם סאונד"></button>
       <div>
         <p class="kicker">העבודה שהכי רצה</p>
-        <p class="spot-num"><span class="spot-big" dir="ltr" id="spot-views">305K</span><span class="spot-unit">צפיות</span></p>
+        <p class="spot-num"><span class="spot-big" dir="ltr" id="spot-views">352K</span><span class="spot-unit">צפיות</span></p>
         <h2 id="h-spot">היא אמרה לו כן</h2>
-        <p class="line" id="spot-line">שני תינוקות, הצעת נישואין אחת. <span dir="ltr">7,000</span> שיתופים בשבוע הראשון.</p>
+        <p class="line" id="spot-line">שני תינוקות, הצעת נישואין אחת.</p>
         <button type="button" class="btn btn-ghost" id="spot-play"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#play"/></svg>צפו עם סאונד</button>
       </div>
     </div>
@@ -310,41 +367,6 @@ footer a{color:var(--ink-soft)}
       <div class="filters" id="filters" role="group" aria-label="סינון לפי סוג"></div>
       <div class="grid" id="grid"></div>
       <p style="margin-top:22px"><a class="btn btn-ghost" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">עוד באינסטגרם ←</a></p>
-    </div>
-  </section>
-
-  <div class="marquee" aria-hidden="true">
-    <div class="marquee-track">
-      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
-      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
-    </div>
-  </div>
-
-  <section id="how" aria-labelledby="h-how">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
-      <ol class="steps">
-        <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
-        <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
-        <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
-        <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
-        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
-      </ol>
-    </div>
-  </section>
-
-  <section id="about" aria-labelledby="h-about" style="padding-top:0">
-    <div class="wrap about">
-      <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן, מחייך, בחולצה לבנה">
-      <div>
-        <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">מי אני</h2>
-        <p class="lead">אני רונן כהן, די-ג'יי שיוצר סרטוני <span dir="ltr">AI</span>. על הרחבה למדתי מה עוצר אנשים, ואת זה אני מכניס לסרטון שלכם.</p>
-        <ul class="principles">
-          <li><i style="background:var(--sun)"></i><h3>בלי מראה פלסטיק</h3><p>אם רואים שזה AI, זה לא יוצא ממני.</p></li>
-          <li><i style="background:var(--tomato)"></i><h3>קצב של די-ג'יי</h3><p>כל קאט יושב על הביט.</p></li>
-          <li><i style="background:var(--sky)"></i><h3>פריים אחרי פריים</h3><p>אין פריים שעובר בלי שראיתי אותו.</p></li>
-        </ul>
-      </div>
     </div>
   </section>
 
@@ -394,8 +416,8 @@ footer a{color:var(--ink-soft)}
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
-  const CAT = {ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",new:"חדש"};
-  const ORDER = ["new","ads","viral","funny","tv","holiday"];
+  const CAT = {ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",clips:"קליפים",new:"חדש"};
+  const ORDER = ["new","ads","viral","clips","funny","tv","holiday"];
   const fmt = n => n>=1e6 ? (Math.floor(n/1e4)/100).toString()+"M" : n>=1e4 ? Math.round(n/1e3)+"K" : n>=1e3 ? (Math.round(n/100)/10)+"K" : String(n);
   const el = (t,a={},...k) => {const e=document.createElement(t);for(const[x,v] of Object.entries(a)){if(x==="class")e.className=v;else e.setAttribute(x,v)}k.flat().forEach(c=>e.append(c));return e};
   const eye='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
@@ -411,6 +433,9 @@ footer a{color:var(--ink-soft)}
     document.getElementById("st-views").textContent=fmt(data.stats?.views??0);
     document.getElementById("st-reels").textContent=data.stats?.reels??reels.length;
     document.getElementById("st-followers").textContent=fmt(data.stats?.followers??0);
+    const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
+    setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
+    setN("pr-100k",reels.filter(r=>(r.views||0)>=1e5).length);
     if(data.updated){const d=new Date(data.updated);document.getElementById("st-updated").textContent="מתעדכן אוטומטית מהאינסטגרם · עודכן "+d.toLocaleDateString("he-IL",{day:"numeric",month:"short"})}
     wheel(document.getElementById("fan"),[...pinned,...reels.filter(r=>!r.pinned).sort((a,b)=>(b.views||0)-(a.views||0))].slice(0,12));
 
@@ -460,7 +485,7 @@ footer a{color:var(--ink-soft)}
       live.forEach((v,p)=>{if(!want.has(p)){v.pause();v.remove();live.delete(p)}});
       want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:"",src:p._r.video});v.muted=true;
         v.style.cssText="position:absolute;inset:0";p.insertBefore(v,p.querySelector(".pl"));v.play().catch(()=>{});live.set(p,v)})};
-    const go=d=>{k+=d;spin()}; const auto=()=>{clearInterval(timer);if(!reduce)timer=setInterval(()=>go(1),2500)};
+    let first=true; const go=d=>{first=false;k+=d;spin()}; const auto=()=>{clearInterval(timer);if(reduce)return; timer=first?setTimeout(()=>{go(1);auto()},6000):setInterval(()=>go(1),2500)};
     document.getElementById("wh-next").onclick=()=>{go(1);auto()}; document.getElementById("wh-prev").onclick=()=>{go(-1);auto()};
     // לחיצה על הכרטיס שבמרכז פותחת את הנגן; על כרטיס בצד מסובבת אליו
     cards.forEach(p=>p.addEventListener("click",()=>{if(p._d===0)openPlayer(p._r.id,p);else{go(-p._d);auto()}}));
