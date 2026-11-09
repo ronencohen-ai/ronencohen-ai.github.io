@@ -90,11 +90,8 @@ p{margin:0}
 .hero h1 .w{display:inline-block}
 .js .hero h1 .w{opacity:0;transform:translateY(.35em)}
 .js.ready .hero h1 .w{opacity:1;transform:none;transition:opacity .6s ease,transform .8s var(--ease);transition-delay:calc(var(--i) * 90ms + 80ms)}
-.live{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
-.chip{display:inline-flex;align-items:baseline;gap:8px;background:var(--paper);border-radius:999px;padding:9px 16px;font:600 16px/1 var(--f-body);color:var(--ink-soft)}
-.chip b{font:700 20px/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
 .actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
-.live-note{font-size:13px;justify-content:center;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+.live-note{font-size:13px;justify-content:center;text-align:center;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
 .pulse{width:9px;height:9px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 color-mix(in srgb,var(--wa) 60%,transparent);animation:pulse 2s infinite}
 @keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
 
@@ -122,7 +119,16 @@ section{padding-block:64px}
 .proof dd{margin:0;font:700 clamp(40px,8vw,96px)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
 .proof dt{color:var(--ink-soft);font:600 clamp(14px,1.6vw,18px)/1.3 var(--f-display)}
 .proof div:nth-child(1) dd{color:var(--sun)}.proof div:nth-child(2) dd{color:var(--tomato)}.proof div:nth-child(3) dd{color:var(--sky)}
-.proof-note{text-align:center;margin-top:22px;color:var(--ink-soft);font-size:15px}
+.tv-row{display:flex;justify-content:center;margin-top:30px}
+.tv-badge{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:14px;background:var(--bg);border-radius:999px;padding-block:10px;padding-inline:10px 26px;box-shadow:inset 0 0 0 2px var(--line);transition:transform .2s var(--ease),box-shadow .2s;max-width:100%;box-sizing:border-box}
+.tv-badge:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--sky)}
+.tv-badge:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.tv-play{flex:none;width:48px;height:48px;border-radius:50%;background:var(--sky);color:#fff;display:grid;place-items:center}
+.tv-play svg{width:22px;height:22px}
+.tv-txt{display:flex;flex-direction:column;gap:4px;text-align:start;min-width:0}
+.tv-txt b{font:700 clamp(17px,2.2vw,22px)/1.2 var(--f-display);color:var(--ink)}
+.tv-txt small{font:600 14px/1 var(--f-body);color:var(--ink-soft)}
+.proof .live-note{margin-top:18px}
 
 /* העבודה שהכי רצה */
 .spot{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(24px,6vw,72px);align-items:center}
@@ -236,7 +242,6 @@ footer a{color:var(--ink-soft)}
 
 @media (max-width:900px){
   .wheel{height:330px}
-  .chip{padding:8px 11px;font-size:14px;gap:5px}.chip b{font-size:17px}
   .featured{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-20px;padding-inline:20px;scrollbar-width:none}
   .feat{flex:0 0 72%;scroll-snap-align:center}
   .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
@@ -275,15 +280,9 @@ footer a{color:var(--ink-soft)}
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
       </div>
-      <div class="live">
-        <span class="chip"><b id="st-views" dir="ltr">1.62M</b> צפיות</span>
-        <span class="chip"><b id="st-reels" dir="ltr">29</b> סרטונים</span>
-        <span class="chip"><b id="st-followers" dir="ltr">2.1K</b> עוקבים</span>
-      </div>
       <div class="actions">
         <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
       </div>
-      <span class="live-note"><span class="pulse" aria-hidden="true"></span><span id="st-updated">מתעדכן אוטומטית מהאינסטגרם</span></span>
     </div>
   </section>
 
@@ -295,7 +294,8 @@ footer a{color:var(--ink-soft)}
         <div><dt>צפיות בממוצע לכל ריל</dt><dd><span dir="ltr" data-count="56020" id="pr-avg">56K</span></dd></div>
         <div><dt>צפיות בחודש האחרון</dt><dd><span dir="ltr" data-count="557866" id="pr-month">558K</span></dd></div>
       </dl>
-      <p class="proof-note">📺 ושידור ב"הצינור", רשת <span dir="ltr">13</span>.</p>
+      <p class="tv-row"><button type="button" class="tv-badge" data-open="tv"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>צפו בקטע מהשידור</small></span></button></p>
+      <span class="live-note"><span class="pulse" aria-hidden="true"></span><span id="st-updated">מתעדכן אוטומטית מהאינסטגרם</span></span>
     </div>
   </section>
 
@@ -437,9 +437,6 @@ footer a{color:var(--ink-soft)}
   function render(data){
     const reels=(data.reels||[]).filter(r=>r.cat!=="dj"); reels.forEach(r=>BY[r.id]=r);
     const pinned=reels.filter(r=>r.pinned).sort((a,b)=>a.pinned-b.pinned);
-    document.getElementById("st-views").textContent=fmt(data.stats?.views??0);
-    document.getElementById("st-reels").textContent=data.stats?.reels??reels.length;
-    document.getElementById("st-followers").textContent=fmt(data.stats?.followers??0);
     const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
     setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
     setN("pr-avg",data.stats?.views&&data.stats?.reels?Math.round(data.stats.views/data.stats.reels):0);
