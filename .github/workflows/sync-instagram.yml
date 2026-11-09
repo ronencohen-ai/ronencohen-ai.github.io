@@ -1,0 +1,42 @@
+# כל בוקר ב-07:00 (שעון ישראל, חורף): מושך מהאינסטגרם צפיות, עוקבים וסרטונים חדשים, ומעלה לאתר.
+name: עדכון מהאינסטגרם
+on:
+  schedule:
+    - cron: "0 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sync-instagram
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    env:
+      IG_TOKEN: ${{ secrets.IG_TOKEN }}
+      GH_PAT: ${{ secrets.GH_PAT }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: התקנת ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: משיכה מהאינסטגרם
+        run: python3 tools/sync_instagram.py
+
+      - name: העלאה לאתר
+        run: |
+          git config user.name "site-bot"
+          git config user.email "site-bot@users.noreply.github.com"
+          git add data media
+          git diff --cached --quiet || (git commit -m "עדכון אוטומטי מהאינסטגרם" && git push)
+
+      # הטוקן של אינסטגרם פג אחרי 60 יום. אם יש GH_PAT, מחדשים אותו כל בוקר ושומרים בחזרה.
+      - name: חידוש הטוקן
+        if: env.GH_PAT != ''
+        run: |
+          NEW=$(curl -s "https://graph.instagram.com/refresh_access_token?grant_type=ig_refresh_token&access_token=$IG_TOKEN" | python3 -c "import sys,json;print(json.load(sys.stdin).get('access_token',''))")
+          if [ -n "$NEW" ]; then echo "$NEW" | GH_TOKEN="$GH_PAT" gh secret set IG_TOKEN -R "${{ github.repository }}"; fi

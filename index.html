@@ -1,0 +1,524 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>רונן כהן · סרטוני AI שאנשים שולחים הלאה</title>
+<meta name="description" content="סרטוני AI לעסקים ולמותגים שנראים כמו צילום אמיתי. 1.47 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים. שלחו לי וואטסאפ.">
+<link rel="canonical" href="https://ronencohen-ai.github.io/">
+<meta name="theme-color" content="#08080B">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="he_IL">
+<meta property="og:site_name" content="רונן כהן · סרטוני AI">
+<meta property="og:title" content="רונן כהן · סרטוני AI שאנשים שולחים הלאה">
+<meta property="og:description" content="1.47 מיליון צפיות, שידור ברשת 13, ופרסומות למותגים. סרטון ראשון תוך 5 ימי עבודה.">
+<meta property="og:url" content="https://ronencohen-ai.github.io/">
+<meta property="og:image" content="https://ronencohen-ai.github.io/img/og.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://ronencohen-ai.github.io/img/og.jpg">
+<link rel="icon" href="img/favicon-32.png" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<link rel="preload" href="fonts/fredoka-he.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/assistant-he.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-he.woff2) format('woff2');unicode-range:U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fredoka-he.woff2) format('woff2');unicode-range:U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F}
+@font-face{font-family:'Fredoka';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/fredoka-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+/* פריסה: במה שחורה כמו אולם קולנוע, הסרטונים הם האור; צבע אחד לכל סוג עבודה */
+:root{
+  --bg:#08080B;            /* שחור */
+  --paper:#13141A;         /* שחור-פחם לפסים */
+  --ink:#F5F6FA;           /* לבן */
+  --ink-soft:#A4A9BA;
+  --line:#272A35;
+  --sun:#FFC83D;           /* צהוב שמש: ויראלי */
+  --sky:#2F7BFF;           /* כחול מגרש: ראשי */
+  --tomato:#FF5B3A;        /* עגבנייה: פרסומות */
+  --mint:#18B98C;          /* מנטה: חגים ומשפחה */
+  --berry:#B04BFF;         /* פטל */
+  --pink:#FF7AB6;          /* ורוד: מצחיק */
+  --wa:#1FAF5A;            /* וואטסאפ */
+  --on-accent:#FFFFFF;
+  --on-light:#151826;
+  --f-display:"Fredoka","Assistant","Arial Hebrew",system-ui,sans-serif;
+  --f-body:"Assistant","Arial Hebrew",system-ui,sans-serif;
+  --r:22px;
+  --ease:cubic-bezier(.22,1,.36,1);
+  color-scheme:dark;
+}
+
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+html,body{overflow-x:hidden}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.6 var(--f-body);-webkit-font-smoothing:antialiased}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
+.skip{position:absolute;inset-inline-start:16px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:50;text-decoration:none}
+.skip:focus{top:12px}
+.wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
+h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
+p{margin:0}
+
+/* כותרת עליונה */
+.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 21px/1 var(--f-display)}
+.brand small{font:600 13px/1 var(--f-body);color:var(--ink-soft);margin-inline-start:2px}
+.top nav{display:none;gap:22px;margin-inline-start:auto}
+.top nav a{text-decoration:none;color:var(--ink-soft);font:600 16px/1 var(--f-display)}
+.top nav a:hover{color:var(--ink)}
+@media (min-width:800px){.top nav{display:flex}}
+.btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:12px 20px;font:600 17px/1 var(--f-display);text-decoration:none;cursor:pointer;transition:transform .15s ease}
+.btn:hover{transform:translateY(-2px)}
+.btn-wa{background:var(--wa);color:var(--on-accent)}
+.btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
+.btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--ink-soft)}
+.wa-ico{width:20px;height:20px;flex:none}
+
+/* פתיחה */
+.hero{padding-block:22px 34px;overflow:hidden}
+.hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
+.hero h1{font-size:clamp(34px,6vw,68px);line-height:1.05;letter-spacing:-.01em}
+.hero h1 .hl{color:var(--sun)}
+.hero h1 .w{display:inline-block}
+.js .hero h1 .w{opacity:0;transform:translateY(.35em)}
+.js.ready .hero h1 .w{opacity:1;transform:none;transition:opacity .6s ease,transform .8s var(--ease);transition-delay:calc(var(--i) * 90ms + 80ms)}
+.live{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.chip{display:inline-flex;align-items:baseline;gap:8px;background:var(--paper);border-radius:999px;padding:9px 16px;font:600 16px/1 var(--f-body);color:var(--ink-soft)}
+.chip b{font:700 20px/1 var(--f-display);color:var(--ink);font-variant-numeric:tabular-nums}
+.actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
+.promise{font:600 15px/1.3 var(--f-display);color:var(--ink)}
+.live-note{font-size:13px;justify-content:center;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
+.pulse{width:9px;height:9px;border-radius:50%;background:var(--wa);box-shadow:0 0 0 0 color-mix(in srgb,var(--wa) 60%,transparent);animation:pulse 2s infinite}
+@keyframes pulse{70%{box-shadow:0 0 0 10px transparent}100%{box-shadow:0 0 0 0 transparent}}
+
+/* ספירלה: כרטיס מרכזי מתנגן, 3 מכל צד נסוגים לעומק, כל 2.5 שניות הכל זז צעד */
+.wheel{position:relative;width:100%;height:clamp(380px,38vw,450px);perspective:1100px;overflow:hidden;touch-action:pan-y}
+.ring{position:absolute;inset:0;transform-style:preserve-3d}
+.phone{position:absolute;left:50%;top:50%;width:var(--cw);aspect-ratio:9/16;margin-left:calc(var(--cw) / -2);margin-top:calc(var(--cw) * -8 / 9);border-radius:22px;overflow:hidden;background:var(--paper);border:2px solid var(--line);box-shadow:0 18px 40px rgba(0,0,0,.55);transition:transform .9s cubic-bezier(.6,.05,.25,1),filter .9s ease,opacity .9s ease,border-color .6s ease;filter:brightness(.7);cursor:pointer}
+.phone.front{filter:none;border-color:var(--ink-soft)}
+.phone video,.phone img{width:100%;height:100%;object-fit:cover}
+.phone .pl{position:absolute;inset-inline:0;bottom:0;padding:30px 10px 10px;background:linear-gradient(transparent,rgba(0,0,0,.85));font:600 14px/1.25 var(--f-display);color:#fff;text-align:start}
+.phone .pv{display:flex;align-items:center;gap:4px;margin-top:4px;font:700 11px/1 var(--f-display);color:rgba(255,255,255,.82);font-variant-numeric:tabular-nums}
+.phone .pv svg{width:12px;height:12px;flex:none}
+.wheel-nav{display:flex;gap:10px;justify-content:center;margin-top:-6px}
+.wheel-nav button{width:44px;height:44px;border-radius:50%;border:0;background:var(--paper);color:var(--ink);box-shadow:inset 0 0 0 2px var(--line);font:700 20px/1 var(--f-display);cursor:pointer}
+
+section{padding-block:64px}
+.sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:28px}
+.sec-head h2{font-size:clamp(32px,4.4vw,48px)}
+.sec-head p{color:var(--ink-soft);max-width:46ch}
+
+/* מספרים */
+.proof{background:var(--paper);padding-block:40px}
+.proof dl{margin:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.proof dl>div{display:flex;flex-direction:column-reverse;align-items:center;text-align:center;gap:6px;min-width:0}
+.proof dd{margin:0;font:700 clamp(40px,8vw,96px)/1 var(--f-display);font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.proof dt{color:var(--ink-soft);font:600 clamp(14px,1.6vw,18px)/1.3 var(--f-display)}
+.proof div:nth-child(1) dd{color:var(--sun)}.proof div:nth-child(2) dd{color:var(--tomato)}.proof div:nth-child(3) dd{color:var(--sky)}
+.proof-note{text-align:center;margin-top:22px;color:var(--ink-soft);font-size:15px}
+
+/* העבודה שהכי רצה */
+.spot{display:grid;grid-template-columns:minmax(0,380px) minmax(0,1fr);gap:clamp(24px,6vw,72px);align-items:center}
+.spot-media{all:unset;cursor:pointer;position:relative;display:block;aspect-ratio:9/16;border-radius:var(--r);overflow:hidden;background:var(--paper);border:2px solid var(--line);max-width:100%}
+.spot-media:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.spot-media img,.spot-media video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.play{position:absolute;bottom:16px;inset-inline-start:16px;z-index:2;width:62px;height:62px;border-radius:50%;background:var(--sun);color:var(--on-light);display:grid;place-items:center;transition:transform .25s var(--ease)}
+.play svg{width:26px;height:26px}
+.spot-media:hover .play{transform:scale(1.1)}
+.kicker{font:600 16px/1 var(--f-display);color:var(--ink-soft);margin-bottom:8px}
+.spot-num{display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
+.spot-big{font:700 clamp(84px,15vw,190px)/.9 var(--f-display);color:var(--sun);letter-spacing:-.03em}
+.spot-unit{font:700 clamp(26px,4vw,44px)/1 var(--f-display)}
+.spot h2{font-size:clamp(34px,5vw,56px);margin:10px 0 8px}
+.spot .line{color:var(--ink-soft);max-width:36ch;margin-bottom:22px}
+
+/* נבחרות */
+.featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.feat{all:unset;cursor:pointer;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:9/16;background:var(--paper);min-width:0;color:#fff;display:block}
+.feat:focus-visible,.card:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.feat .media{position:absolute;inset:0}
+.feat .media img,.feat .media video,.card img,.card video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.feat .meta{position:absolute;inset-inline:0;bottom:0;padding:60px 16px 16px;background:linear-gradient(transparent,rgba(0,0,0,.85));display:flex;flex-direction:column;gap:6px;pointer-events:none}
+.feat h3{font-size:26px;color:#fff}
+.feat .tag{position:absolute;top:12px;inset-inline-start:12px;z-index:2}
+.tag{align-self:flex-start;font:600 14px/1 var(--f-display);color:var(--on-accent);border-radius:999px;padding:7px 12px}
+
+/* כל העבודות */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:-8px 0 22px}
+.filters button{border:0;border-radius:999px;padding:10px 16px;font:600 16px/1 var(--f-display);background:var(--bg);color:var(--ink-soft);box-shadow:inset 0 0 0 2px var(--line);cursor:pointer}
+.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);box-shadow:none}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+.card{all:unset;cursor:pointer;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;background:var(--paper);min-width:0;display:block;transition:transform .3s var(--ease)}
+.card:hover{transform:translateY(-4px)}
+.card .meta,.feat .meta{z-index:1}
+.card .meta{position:absolute;inset-inline:0;bottom:0;padding:44px 12px 12px;background:linear-gradient(transparent,rgba(10,12,22,.82));display:flex;flex-direction:column;gap:6px}
+.card .meta strong{font:600 16px/1.25 var(--f-display);color:#fff}
+.views{font:700 14px/1 var(--f-display);color:#fff;opacity:.92;font-variant-numeric:tabular-nums}
+.card .tag{position:absolute;top:10px;inset-inline-start:10px;z-index:2}
+.sound{position:absolute;top:10px;inset-inline-end:10px;z-index:2;width:38px;height:38px;border-radius:50%;background:rgba(10,12,22,.6);color:#fff;display:grid;place-items:center}
+.sound svg{width:18px;height:18px}
+
+/* פס שירותים */
+.marquee{overflow:hidden;padding-block:20px;border-block:1px solid var(--line)}
+.marquee-track{display:flex;align-items:center;gap:26px;width:max-content;animation:marq 38s linear infinite;font:600 clamp(24px,3.6vw,38px)/1 var(--f-display);white-space:nowrap}
+.marquee-track i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);flex:none}
+.marquee-track i:nth-of-type(5n+1){background:var(--sun)}.marquee-track i:nth-of-type(5n+2){background:var(--tomato)}.marquee-track i:nth-of-type(5n+3){background:var(--sky)}.marquee-track i:nth-of-type(5n+4){background:var(--mint)}.marquee-track i:nth-of-type(5n){background:var(--pink)}
+@keyframes marq{to{transform:translateX(50%)}}
+
+/* איך זה עובד */
+.steps{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px;list-style:none;padding:0;margin:0}
+.step{border-radius:var(--r);padding:22px 18px;background:var(--bg);box-shadow:inset 0 0 0 2px var(--line);min-width:0}
+.step .n{font:700 46px/1 var(--f-display);display:block;margin-bottom:12px}
+.step h3{font-size:21px;margin-bottom:6px}
+.step p{color:var(--ink-soft);font-size:16px}
+
+/* מי אני */
+.about{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,6vw,64px);align-items:center}
+.about img{width:100%;height:auto;border-radius:var(--r);aspect-ratio:720/910;object-fit:cover}
+.about .lead{font:600 clamp(24px,3.2vw,34px)/1.25 var(--f-display);margin:12px 0 24px;max-width:24ch}
+.principles{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.principles li{background:var(--paper);border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
+.principles i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);margin-top:9px;grid-row:span 2}
+.principles h3{font-size:20px}
+.principles p{color:var(--ink-soft);font-size:16px}
+
+/* קריאה לפעולה */
+.cta{background:var(--sky);color:var(--on-accent);border-radius:30px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+.cta h2{font-size:clamp(32px,4.6vw,52px)}
+.cta p{margin-top:10px;opacity:.92;font-size:19px}
+.cta .btn-wa{font-size:20px;padding:16px 26px;box-shadow:0 0 0 4px rgba(255,255,255,.35)}
+.cta .ig{display:block;margin-top:14px;font-size:16px;opacity:.9}
+
+footer{border-top:1px solid var(--line);padding-block:28px 96px;color:var(--ink-soft);font-size:15px}
+footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
+footer nav{display:flex;flex-wrap:wrap;gap:8px 18px}
+footer a{color:var(--ink-soft)}
+
+/* וואטסאפ צף */
+.wa-float{position:fixed;z-index:30;bottom:calc(18px + env(safe-area-inset-bottom,0px));inset-inline-end:calc(18px + env(safe-area-inset-left,0px));width:58px;height:58px;border-radius:50%;background:var(--wa);color:#fff;display:grid;place-items:center;box-shadow:0 10px 30px -8px rgba(0,0,0,.7);transition:transform .25s var(--ease),opacity .3s}
+.wa-float svg{width:30px;height:30px}
+.wa-float:hover{transform:scale(1.08)}
+.wa-float.hide{opacity:0;pointer-events:none;transform:scale(.8)}
+
+/* נגן */
+.player{padding:0;border:0;max-width:100vw;max-height:100dvh;width:100vw;height:100dvh;background:rgba(8,8,11,.96);color:var(--ink)}
+.player::backdrop{background:rgba(0,0,0,.9)}
+.player[open]{display:grid;place-items:center}
+.player[open] .player-in{animation:pop .35s var(--ease)}
+@keyframes pop{from{opacity:0;transform:scale(.96)}}
+.player-in{display:grid;justify-items:center;gap:12px;padding:60px 16px 20px;height:100%;grid-template-rows:1fr auto}
+.player video{height:100%;max-height:calc(100dvh - 160px);aspect-ratio:9/16;width:auto;max-width:100%;background:#000;border-radius:var(--r)}
+.player-meta{text-align:center;max-width:46ch}
+.player-meta h2{font-size:28px}
+.player-meta p{color:var(--ink-soft);font-size:15px;margin-block:4px 6px}
+.player-meta a{font-size:15px;color:var(--ink-soft)}
+.player-close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:12px;width:48px;height:48px;border-radius:50%;border:0;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line);color:var(--ink);display:grid;place-items:center;cursor:pointer}
+.player-close svg{width:22px;height:22px}
+
+/* צבעי קטגוריות */
+.c-funny{background:var(--pink);color:var(--on-light)}.c-tv{background:var(--sky)}.c-ads{background:var(--tomato)}.c-viral{background:var(--sun);color:var(--on-light)}.c-sport{background:var(--sky)}.c-holiday{background:var(--mint)}.c-new{background:var(--wa)}
+
+@media (max-width:900px){
+  .wheel{height:330px}
+  .chip{padding:8px 11px;font-size:14px;gap:5px}.chip b{font-size:17px}
+  .featured{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin-inline:-20px;padding-inline:20px;scrollbar-width:none}
+  .feat{flex:0 0 72%;scroll-snap-align:center}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .spot{grid-template-columns:1fr}
+  .spot-media{width:min(320px,100%)}
+  .steps{grid-template-columns:1fr;gap:8px}
+  .step{display:grid;grid-template-columns:56px 1fr;column-gap:12px;padding:14px 16px}
+  .step .n{grid-row:span 2;font-size:36px;margin:0}
+  .step h3{font-size:19px;margin:0}
+  .about{grid-template-columns:1fr}
+  .about img{width:min(280px,100%)}
+  .cta{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">דלגו לתוכן</a>
+
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI, לראש העמוד">רונן כהן <small>AI</small></a>
+    <nav aria-label="ניווט ראשי"><a href="#work">עבודות</a><a href="#how">איך זה עובד</a><a href="#about">מי אני</a></nav>
+    <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
+  </div>
+</header>
+
+<main id="main">
+  <section class="hero" aria-labelledby="h-hero">
+    <div class="wrap">
+      <h1 id="h-hero"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><br><span class="w" style="--i:2">שאנשים</span> <span class="w" style="--i:3">שולחים</span> <span class="w hl" style="--i:4">הלאה.</span></h1>
+      <div style="width:100%">
+        <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
+        <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
+      </div>
+      <div class="live">
+        <span class="chip"><b id="st-views" dir="ltr">1.4M</b> צפיות</span>
+        <span class="chip"><b id="st-reels" dir="ltr">15</b> סרטונים</span>
+        <span class="chip"><b id="st-followers" dir="ltr">1.6K</b> עוקבים</span>
+      </div>
+      <div class="actions">
+        <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
+        <span class="promise">סרטון ראשון תוך <span dir="ltr">5</span> ימי עבודה</span>
+      </div>
+      <span class="live-note"><span class="pulse" aria-hidden="true"></span><span id="st-updated">מתעדכן אוטומטית מהאינסטגרם</span></span>
+    </div>
+  </section>
+
+  <section class="proof" aria-labelledby="h-proof">
+    <div class="wrap">
+      <h2 id="h-proof" hidden>במספרים</h2>
+      <dl>
+        <div><dt>צפיות בסך הכול</dt><dd><span dir="ltr" data-count="1470000">1.47M</span></dd></div>
+        <div><dt>צפיות בריל אחד</dt><dd><span dir="ltr" data-count="387452">387K</span></dd></div>
+        <div><dt>שיתופים בשבוע אחד</dt><dd><span dir="ltr" data-count="7000">7,000</span></dd></div>
+      </dl>
+      <p class="proof-note">📺 ושידור ב"הצינור", רשת <span dir="ltr">13</span>.</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-spot">
+    <div class="wrap spot" id="spot">
+      <button type="button" class="spot-media" id="spot-media" aria-label="היא אמרה לו כן. צפו עם סאונד"></button>
+      <div>
+        <p class="kicker">העבודה שהכי רצה</p>
+        <p class="spot-num"><span class="spot-big" dir="ltr" id="spot-views">305K</span><span class="spot-unit">צפיות</span></p>
+        <h2 id="h-spot">היא אמרה לו כן</h2>
+        <p class="line" id="spot-line">שני תינוקות, הצעת נישואין אחת. <span dir="ltr">7,000</span> שיתופים בשבוע הראשון.</p>
+        <button type="button" class="btn btn-ghost" id="spot-play"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#play"/></svg>צפו עם סאונד</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="featured" aria-labelledby="h-feat" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-feat">הכי חזקות</h2></div>
+      <div class="featured" id="featured-list"></div>
+    </div>
+  </section>
+
+  <section id="work" aria-labelledby="h-work" style="background:var(--paper)">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-work">כל העבודות</h2><p>לחצו על סרטון כדי לצפות עם סאונד.</p></div>
+      <div class="filters" id="filters" role="group" aria-label="סינון לפי סוג"></div>
+      <div class="grid" id="grid"></div>
+      <p style="margin-top:22px"><a class="btn btn-ghost" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">עוד באינסטגרם ←</a></p>
+    </div>
+  </section>
+
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>חגים ואירועים</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+    </div>
+  </div>
+
+  <section id="how" aria-labelledby="h-how">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
+      <ol class="steps">
+        <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
+        <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
+        <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
+        <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
+        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="about" aria-labelledby="h-about" style="padding-top:0">
+    <div class="wrap about">
+      <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן, מחייך, בחולצה לבנה">
+      <div>
+        <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">מי אני</h2>
+        <p class="lead">אני רונן כהן, די-ג'יי שיוצר סרטוני <span dir="ltr">AI</span>. על הרחבה למדתי מה עוצר אנשים, ואת זה אני מכניס לסרטון שלכם.</p>
+        <ul class="principles">
+          <li><i style="background:var(--sun)"></i><h3>בלי מראה פלסטיק</h3><p>אם רואים שזה AI, זה לא יוצא ממני.</p></li>
+          <li><i style="background:var(--tomato)"></i><h3>קצב של די-ג'יי</h3><p>כל קאט יושב על הביט.</p></li>
+          <li><i style="background:var(--sky)"></i><h3>פריים אחרי פריים</h3><p>אין פריים שעובר בלי שראיתי אותו.</p></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" aria-labelledby="h-cta" style="padding-top:0">
+    <div class="wrap">
+      <div class="cta">
+        <div><h2 id="h-cta">יש לכם מוצר, אירוע או רעיון? בואו נהפוך אותו לסרטון.</h2><p>סרטון ראשון תוך <span dir="ltr">5</span> ימי עבודה.</p></div>
+        <div>
+          <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
+          <a class="ig" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">או בהודעה באינסטגרם <span dir="ltr">@ronencohen.ai</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>© <span id="yr">2026</span> רונן כהן. כל הזכויות שמורות. הסרטונים באתר נוצרו בבינה מלאכותית.</div>
+    <nav aria-label="מידע משפטי">
+      <a href="accessibility.html">הצהרת נגישות</a>
+      <a href="privacy.html">מדיניות פרטיות</a>
+      <a href="terms.html">תנאי שימוש</a>
+    </nav>
+  </div>
+</footer>
+
+<a class="wa-float js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener" aria-label="שלחו לי וואטסאפ"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
+
+<dialog class="player" aria-labelledby="pl-title">
+  <div class="player-in">
+    <button type="button" class="player-close" aria-label="סגירת הנגן"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <video controls playsinline preload="none"></video>
+    <div class="player-meta"><h2 id="pl-title"></h2><p id="pl-line"></p><a id="pl-link" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">לריל באינסטגרם</a></div>
+  </div>
+</dialog>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.3 14.1c-.2.6-1.3 1.2-1.8 1.2s-1 .3-3.4-.7a11.6 11.6 0 0 1-4.6-4c-.4-.6-1-1.7-1-2.8a3 3 0 0 1 1-2.3 1 1 0 0 1 .7-.3h.5c.2 0 .4 0 .6.5l.9 2.1c.1.2.1.4 0 .6l-.4.6-.4.4c-.1.2-.3.3-.1.6a8 8 0 0 0 1.5 1.9 7.4 7.4 0 0 0 2.2 1.4c.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l2 1c.3.1.5.2.5.3a2.5 2.5 0 0 1-.2 1.4Z"/></symbol>
+  <symbol id="play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.5v13l11-6.5z"/></symbol>
+</svg>
+
+<script>
+(() => {
+  const root = document.documentElement; root.classList.add("js");
+  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const saveData = !!(navigator.connection && navigator.connection.saveData);
+  const autoOK = !reduce && !saveData;
+  const CAT = {ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",new:"חדש"};
+  const ORDER = ["new","ads","viral","funny","tv","holiday"];
+  const fmt = n => n>=1e6 ? (Math.floor(n/1e4)/100).toString()+"M" : n>=1e4 ? Math.round(n/1e3)+"K" : n>=1e3 ? (Math.round(n/100)/10)+"K" : String(n);
+  const el = (t,a={},...k) => {const e=document.createElement(t);for(const[x,v] of Object.entries(a)){if(x==="class")e.className=v;else e.setAttribute(x,v)}k.flat().forEach(c=>e.append(c));return e};
+  const eye='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
+  const SPK='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Z"/></svg>';
+  // פוסטר מיד + וידאו שקט שנטען רק כשחצי ממנו על המסך
+  const media = (r, eager) => [el("img",{src:r.poster,alt:"",width:"405",height:"720",loading:eager?"eager":"lazy",decoding:"async"}),
+    Object.assign(el("video",{muted:"",loop:"",playsinline:"",preload:"none","aria-hidden":"true"}),{muted:true,_src:r.video})];
+  const BY = {};
+
+  function render(data){
+    const reels=(data.reels||[]).filter(r=>r.cat!=="dj"); reels.forEach(r=>BY[r.id]=r);
+    const pinned=reels.filter(r=>r.pinned).sort((a,b)=>a.pinned-b.pinned);
+    document.getElementById("st-views").textContent=fmt(data.stats?.views??0);
+    document.getElementById("st-reels").textContent=data.stats?.reels??reels.length;
+    document.getElementById("st-followers").textContent=fmt(data.stats?.followers??0);
+    if(data.updated){const d=new Date(data.updated);document.getElementById("st-updated").textContent="מתעדכן אוטומטית מהאינסטגרם · עודכן "+d.toLocaleDateString("he-IL",{day:"numeric",month:"short"})}
+    wheel(document.getElementById("fan"),[...pinned,...reels.filter(r=>!r.pinned).sort((a,b)=>(b.views||0)-(a.views||0))].slice(0,12));
+
+    const s=reels.find(r=>r.spotlight)||pinned[0];
+    const sm=document.getElementById("spot-media"); sm.dataset.open=s.id; sm.dataset.auto="";
+    sm.append(...media(s), el("span",{class:"play","aria-hidden":"true"})); sm.querySelector(".play").innerHTML='<svg viewBox="0 0 24 24"><use href="#play"/></svg>';
+    document.getElementById("spot-play").dataset.open=s.id;
+    if(s.views)document.getElementById("spot-views").textContent=fmt(s.views);
+
+    const fl=document.getElementById("featured-list");
+    pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,3).forEach(r=>{
+      const b=el("button",{type:"button",class:"feat","data-open":r.id,"data-auto":"","aria-label":r.title+". צפו עם סאונד"},
+        el("div",{class:"media"},...media(r)),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
+        el("div",{class:"meta"},el("h3",{},r.short||r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):""));
+      b.querySelector(".sound").innerHTML=SPK; fl.append(b)});
+
+    const g=document.getElementById("grid"), fbox=document.getElementById("filters");
+    const cats=["all",...ORDER.filter(c=>reels.some(r=>(r.cats||[r.cat]).includes(c)))];
+    cats.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c==="all")},c==="all"?"הכל":CAT[c]);b.addEventListener("click",()=>{fbox.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));g.querySelectorAll("[data-cats]").forEach(n=>{n.hidden=!(c==="all"||n.dataset.cats.split(" ").includes(c))})});fbox.append(b)});
+    reels.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||"")).forEach(r=>{
+      const b=el("button",{type:"button",class:"card","data-open":r.id,"data-auto":"","data-cats":(r.cats||[r.cat]).join(" "),"aria-label":r.title+". צפו עם סאונד"},
+        ...media(r),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
+        el("div",{class:"meta"},el("strong",{},r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):""));
+      b.querySelector(".sound").innerHTML=SPK; g.append(b)});
+
+    const wa=data.whatsapp?"https://wa.me/"+data.whatsapp+"?text="+encodeURIComponent("היי רונן, ראיתי את האתר ואני רוצה סרטון AI ל"):null;
+    if(wa)document.querySelectorAll(".js-wa").forEach(a=>{a.href=wa});
+    observe(); counts();
+  }
+
+  function wheel(ring,items){
+    const N=items.length, SIDE=3, wrap=document.getElementById("wheel");
+    const cw=()=>Math.round(Math.min(220,Math.max(wrap.clientWidth<600?165:140,wrap.clientWidth*0.2)));
+    const cards=items.map(r=>{const p=el("div",{class:"phone","aria-hidden":"true"});
+      const im=el("img",{src:r.poster||"",alt:"",loading:"lazy"}); const pl=el("span",{class:"pl"},r.short||r.title);
+      if(r.views){const pv=el("span",{class:"pv"});pv.innerHTML=eye;pv.append(fmt(r.views));pl.append(pv)}
+      p.append(im,pl); p._r=r; ring.append(p); return p});
+    let k=0, timer=null, live=new Map(), gap=0;
+    const layout=()=>{const w=cw(); gap=Math.round(w*(wrap.clientWidth<600?0.58:0.74)); wrap.style.setProperty("--cw",w+"px"); spin(false)};
+    const spin=(play=true)=>{const f=((k%N)+N)%N;
+      cards.forEach((p,i)=>{let d=((i-f)%N+N)%N; if(d>=N/2)d-=N; const a=Math.abs(d);
+        p.style.transform=`translateX(${-d*gap}px) translateZ(${-a*150}px) rotateY(${d*24}deg)`;
+        p.style.zIndex=String(20-a); p.style.opacity=a>SIDE?"0":"1"; p.style.filter=a?`brightness(${Math.max(.5,.95-a*.15)})`:"none";
+        p.classList.toggle("front",d===0); p.setAttribute("aria-hidden",String(d!==0)); p._d=d});
+      // הכרטיס שבמרכז ושני השכנים שלו מתנגנים: הצבע בא מהסרטונים עצמם
+      const want=new Set(play&&autoOK?[-1,0,1].map(d=>cards[((f+d)%N+N)%N]):[]);
+      live.forEach((v,p)=>{if(!want.has(p)){v.pause();v.remove();live.delete(p)}});
+      want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:"",src:p._r.video});v.muted=true;
+        v.style.cssText="position:absolute;inset:0";p.insertBefore(v,p.querySelector(".pl"));v.play().catch(()=>{});live.set(p,v)})};
+    const go=d=>{k+=d;spin()}; const auto=()=>{clearInterval(timer);if(!reduce)timer=setInterval(()=>go(1),2500)};
+    document.getElementById("wh-next").onclick=()=>{go(1);auto()}; document.getElementById("wh-prev").onclick=()=>{go(-1);auto()};
+    // לחיצה על הכרטיס שבמרכז פותחת את הנגן; על כרטיס בצד מסובבת אליו
+    cards.forEach(p=>p.addEventListener("click",()=>{if(p._d===0)openPlayer(p._r.id,p);else{go(-p._d);auto()}}));
+    wrap.addEventListener("mouseenter",()=>clearInterval(timer)); wrap.addEventListener("mouseleave",auto);
+    let x0=null; wrap.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
+    wrap.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>30){go(dx<0?-1:1);auto()}x0=null});
+    addEventListener("resize",layout); layout(); spin(); auto();
+    // כשהגלגל יוצא מהמסך: עוצרים את הסרטונים שלו ואת הסיבוב
+    if("IntersectionObserver" in window)new IntersectionObserver(es=>{const vis=es[0].isIntersecting;
+      live.forEach(v=>vis?v.play().catch(()=>{}):v.pause()); vis?auto():clearInterval(timer)}).observe(wrap);
+  }
+
+  const playing=new Set();
+  function observe(){
+    if(!autoOK||!("IntersectionObserver" in window))return;
+    const cap=()=>innerWidth<768?2:4;
+    const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
+      if(e.isIntersecting){if(!v.src)v.src=v._src;if(playing.size<cap()||playing.has(v)){playing.add(v);v.play().then(()=>v.style.opacity=1).catch(()=>playing.delete(v))}}
+      else{playing.delete(v);v.pause()}}),{threshold:.5});
+    document.querySelectorAll("[data-auto] video").forEach(v=>{v.style.opacity=0;v.style.transition="opacity .4s";io.observe(v)});
+  }
+
+  function counts(){
+    if(reduce||!("IntersectionObserver" in window))return;
+    const f=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e5?Math.round(n/1e3)+"K":Math.round(n).toLocaleString("en-US");
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
+      const t=e.target,to=+t.dataset.count,t0=performance.now();
+      const tick=now=>{const k=Math.min(1,(now-t0)/1400);t.textContent=f(to*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}),{threshold:.6});
+    document.querySelectorAll("[data-count]").forEach(n=>{n.textContent="0";io.observe(n)});
+  }
+
+  // וואטסאפ צף: נעלם כשכפתור גדול על המסך
+  const float=document.querySelector(".wa-float");
+  if("IntersectionObserver" in window){const seen=new Set();
+    const io=new IntersectionObserver(es=>{es.forEach(e=>e.isIntersecting?seen.add(e.target):seen.delete(e.target));float.classList.toggle("hide",seen.size>0)});
+    document.querySelectorAll(".btn-wa.big").forEach(b=>io.observe(b))}
+
+  // נגן מסך מלא עם סאונד: Esc, כפתור X וכפתור "חזרה" סוגרים
+  const dlg=document.querySelector(".player"), pv=dlg.querySelector("video"); let opener=null, pushed=false;
+  function openPlayer(id,from){const r=BY[id]; if(!r)return; opener=from;
+    playing.forEach(v=>v.pause());
+    pv.src=r.full||r.video; pv.poster=r.poster; pv.muted=false;
+    document.getElementById("pl-title").textContent=r.title;
+    document.getElementById("pl-line").textContent=r.pitch||r.why||"";
+    document.getElementById("pl-link").href=r.ig||"https://www.instagram.com/ronencohen.ai/";
+    dlg.showModal(); try{history.pushState({player:id},"");pushed=true}catch(e){pushed=false}
+    pv.play().catch(()=>{})}
+  document.addEventListener("click",e=>{const t=e.target.closest("[data-open]");if(t)openPlayer(t.dataset.open,t)});
+  dlg.querySelector(".player-close").addEventListener("click",()=>dlg.close());
+  dlg.addEventListener("click",e=>{if(e.target===dlg)dlg.close()});
+  dlg.addEventListener("close",()=>{pv.pause();pv.removeAttribute("src");pv.load();if(pushed){pushed=false;history.back()}playing.forEach(v=>v.play().catch(()=>{}));if(opener&&opener.focus)opener.focus()});
+  addEventListener("popstate",()=>{if(dlg.open){pushed=false;dlg.close()}});
+
+  document.getElementById("yr").textContent=new Date().getFullYear();
+  fetch("data/reels.json",{cache:"no-store"}).then(r=>r.json()).then(render).catch(e=>console.warn("reels.json",e));
+})();
+</script>
+</body>
+</html>
