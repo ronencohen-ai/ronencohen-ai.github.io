@@ -66,9 +66,12 @@ p{margin:0}
 /* כותרת עליונה */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
 .top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font:700 21px/1 var(--f-display)}
-.brand small{font:600 13px/1 var(--f-body);color:var(--ink-soft);margin-inline-start:2px}
-.top nav{display:none;gap:22px;margin-inline-start:auto}
+.brand{display:flex;flex-direction:column;gap:3px;text-decoration:none;text-align:start}
+.brand b{font:700 18px/1 var(--f-display)}
+.brand small{font:600 12px/1 var(--f-body);color:var(--ink-soft)}
+.top-l{display:flex;align-items:center;gap:16px;flex:1;justify-content:space-between}
+.top nav{display:none;gap:22px}
+@media (min-width:800px){.top-l{flex:none;margin-inline-start:auto}}
 .top nav a{text-decoration:none;color:var(--ink-soft);font:600 16px/1 var(--f-display)}
 .top nav a:hover{color:var(--ink)}
 @media (min-width:800px){.top nav{display:flex}}
@@ -194,11 +197,13 @@ section{padding-block:64px}
 .gets p{color:var(--ink-soft);font-size:16px}
 
 /* קריאה לפעולה */
-.cta{background:var(--sky);color:var(--on-accent);border-radius:30px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center}
+.cta{position:relative;background:var(--paper);color:var(--ink);border-radius:30px;padding:clamp(28px,5vw,56px);display:grid;grid-template-columns:1fr auto;gap:22px;align-items:center;box-shadow:inset 0 0 0 2px var(--line);overflow:hidden}
+.cta::before{content:"";position:absolute;inset-inline:0;top:0;height:5px;background:linear-gradient(90deg,var(--sun) 0 20%,var(--tomato) 20% 40%,var(--sky) 40% 60%,var(--mint) 60% 80%,var(--pink) 80%)}
+.cta h2 .hl{color:var(--sun)}
 .cta h2{font-size:clamp(32px,4.6vw,52px)}
 .cta p{margin-top:10px;opacity:.92;font-size:19px}
-.cta .btn-wa{font-size:20px;padding:16px 26px;box-shadow:0 0 0 4px rgba(255,255,255,.35)}
-.cta .ig{display:block;margin-top:14px;font-size:16px;opacity:.9}
+.cta .btn-wa{font-size:20px;padding:16px 26px}
+.cta .ig{display:block;margin-top:14px;font-size:16px;color:var(--ink-soft)}
 
 footer{border-top:1px solid var(--line);padding-block:28px 96px;color:var(--ink-soft);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
@@ -254,9 +259,11 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI, לראש העמוד">רונן כהן <small>AI</small></a>
-    <nav aria-label="ניווט ראשי"><a href="#about">מי אני</a><a href="#get">מה מקבלים</a><a href="#how">איך זה עובד</a><a href="#work">עבודות</a></nav>
-    <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
+    <nav aria-label="ניווט ראשי"><a href="#about">מי אני</a><a href="#work">עבודות</a><a href="#how">איך זה עובד</a><a href="#get">מה מקבלים</a></nav>
+    <div class="top-l">
+      <a class="brand" href="#" aria-label="רונן כהן, סרטוני AI ריאליסטיים, לראש העמוד"><b>רונן כהן</b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
+      <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
+    </div>
   </div>
 </header>
 
@@ -285,7 +292,7 @@ footer a{color:var(--ink-soft)}
       <h2 id="h-proof" hidden>במספרים</h2>
       <dl>
         <div><dt>צפיות בסך הכול</dt><dd><span dir="ltr" data-count="1624591" id="pr-total">1.62M</span></dd></div>
-        <div><dt>ריילס שעברו <span dir="ltr">100K</span></dt><dd><span dir="ltr" data-count="5" id="pr-100k">5</span></dd></div>
+        <div><dt>צפיות בממוצע לכל ריל</dt><dd><span dir="ltr" data-count="56020" id="pr-avg">56K</span></dd></div>
         <div><dt>צפיות בחודש האחרון</dt><dd><span dir="ltr" data-count="557866" id="pr-month">558K</span></dd></div>
       </dl>
       <p class="proof-note">📺 ושידור ב"הצינור", רשת <span dir="ltr">13</span>.</p>
@@ -311,33 +318,6 @@ footer a{color:var(--ink-soft)}
           <li><i style="background:var(--sky)"></i><h3>פריים אחרי פריים</h3><p>אין פריים שעובר בלי שראיתי אותו.</p></li>
         </ul>
       </div>
-    </div>
-  </section>
-
-  <section id="get" aria-labelledby="h-get" style="padding-top:0">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-get">מה מקבלים</h2></div>
-      <ul class="gets">
-        <li><i style="background:var(--sun)"></i><h3>רעיון ותסריט מקוריים</h3><p>נבנים בשבילכם, לא מתבנית.</p></li>
-        <li><i style="background:var(--tomato)"></i><h3>הפקה מלאה ב-<span dir="ltr">AI</span></h3><p>בלי צוות צילום, בלי לוקיישן ובלי שחקנים.</p></li>
-        <li><i style="background:var(--sky)"></i><h3>סאונד, עריכה וכיתוב</h3><p>סרטון גמור שמוכן לעלות, לא חומר גלם.</p></li>
-        <li><i style="background:var(--mint)"></i><h3>קובץ לכל הרשתות</h3><p>אנכי <span dir="ltr">9:16</span> לאינסטגרם, טיקטוק ופייסבוק.</p></li>
-        <li><i style="background:var(--pink)"></i><h3>שני סבבי תיקונים</h3><p>כיתוב, קצב, צבע, סאונד או שוט בודד.</p></li>
-        <li><i style="background:var(--berry)"></i><h3>הסרטון שלכם</h3><p>לשימוש בכל הערוצים, בלי הגבלת זמן.</p></li>
-      </ul>
-    </div>
-  </section>
-
-  <section id="how" aria-labelledby="h-how" style="background:var(--paper)">
-    <div class="wrap">
-      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
-      <ol class="steps">
-        <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
-        <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
-        <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
-        <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
-        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
-      </ol>
     </div>
   </section>
 
@@ -370,10 +350,37 @@ footer a{color:var(--ink-soft)}
     </div>
   </section>
 
+  <section id="how" aria-labelledby="h-how">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-how">איך זה עובד</h2></div>
+      <ol class="steps">
+        <li class="step"><span class="n" style="color:var(--tomato)">1</span><h3>שיחה בוואטסאפ</h3><p>מה המטרה, למי, ואיפה זה עולה.</p></li>
+        <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
+        <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
+        <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
+        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
+      </ol>
+    </div>
+  </section>
+
+  <section id="get" aria-labelledby="h-get" style="padding-top:0">
+    <div class="wrap">
+      <div class="sec-head"><h2 id="h-get">מה מקבלים</h2></div>
+      <ul class="gets">
+        <li><i style="background:var(--sun)"></i><h3>רעיון ותסריט מקוריים</h3><p>נבנים בשבילכם, לא מתבנית.</p></li>
+        <li><i style="background:var(--tomato)"></i><h3>הפקה מלאה ב-<span dir="ltr">AI</span></h3><p>בלי צוות צילום, בלי לוקיישן ובלי שחקנים.</p></li>
+        <li><i style="background:var(--sky)"></i><h3>סאונד, עריכה וכיתוב</h3><p>סרטון גמור שמוכן לעלות, לא חומר גלם.</p></li>
+        <li><i style="background:var(--mint)"></i><h3>קובץ לכל הרשתות</h3><p>אנכי <span dir="ltr">9:16</span> לאינסטגרם, טיקטוק ופייסבוק.</p></li>
+        <li><i style="background:var(--pink)"></i><h3>שני סבבי תיקונים</h3><p>כיתוב, קצב, צבע, סאונד או שוט בודד.</p></li>
+        <li><i style="background:var(--berry)"></i><h3>הסרטון שלכם</h3><p>לשימוש בכל הערוצים, בלי הגבלת זמן.</p></li>
+      </ul>
+    </div>
+  </section>
+
   <section id="contact" aria-labelledby="h-cta" style="padding-top:0">
     <div class="wrap">
       <div class="cta">
-        <div><h2 id="h-cta">יש לכם מוצר, אירוע או רעיון? בואו נהפוך אותו לסרטון.</h2></div>
+        <div><h2 id="h-cta">יש לכם מוצר, אירוע או רעיון? בואו נהפוך אותו <span class="hl">לסרטון.</span></h2></div>
         <div>
           <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
           <a class="ig" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">או בהודעה באינסטגרם <span dir="ltr">@ronencohen.ai</span></a>
@@ -435,7 +442,7 @@ footer a{color:var(--ink-soft)}
     document.getElementById("st-followers").textContent=fmt(data.stats?.followers??0);
     const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
     setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
-    setN("pr-100k",reels.filter(r=>(r.views||0)>=1e5).length);
+    setN("pr-avg",data.stats?.views&&data.stats?.reels?Math.round(data.stats.views/data.stats.reels):0);
     if(data.updated){const d=new Date(data.updated);document.getElementById("st-updated").textContent="מתעדכן אוטומטית מהאינסטגרם · עודכן "+d.toLocaleDateString("he-IL",{day:"numeric",month:"short"})}
     wheel(document.getElementById("fan"),[...pinned,...reels.filter(r=>!r.pinned).sort((a,b)=>(b.views||0)-(a.views||0))].slice(0,12));
 
@@ -510,7 +517,7 @@ footer a{color:var(--ink-soft)}
 
   function counts(){
     if(reduce||!("IntersectionObserver" in window))return;
-    const f=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e5?Math.round(n/1e3)+"K":Math.round(n).toLocaleString("en-US");
+    const f=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e4?Math.round(n/1e3)+"K":Math.round(n).toLocaleString("en-US");
     const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
       const t=e.target,to=+t.dataset.count,t0=performance.now();
       const tick=now=>{const k=Math.min(1,(now-t0)/1400);t.textContent=f(to*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}),{threshold:.6});
