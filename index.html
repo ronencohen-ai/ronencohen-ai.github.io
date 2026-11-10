@@ -300,7 +300,10 @@ footer a{color:var(--ink-soft)}
 .hero h1 .win{display:block;height:1.12em;overflow:hidden;position:relative}
 .hero h1 .reel{display:flex;flex-direction:column;transform:translateY(-2.4em)}
 .js .hero h1 .reel.wait{transform:translateY(.16em)}
-.hero h1 .win.rolling{-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
+/* דהייה בקצוות רק בזמן הגלגול, ונעלמת בהדרגה כשהשורה הכחולה נוחתת (בלי קפיצה) */
+@property --fade{syntax:"<percentage>";inherits:false;initial-value:0%}
+.hero h1 .win{--fade:0%;-webkit-mask-image:linear-gradient(transparent,#000 var(--fade),#000 calc(100% - var(--fade)),transparent);mask-image:linear-gradient(transparent,#000 var(--fade),#000 calc(100% - var(--fade)),transparent);transition:--fade .5s ease}
+.hero h1 .win.rolling{--fade:14%}
 .hero h1 .reel span{display:block;height:1.12em;line-height:1.12em;white-space:nowrap;color:var(--ink-soft)}
 .hero h1 .reel .fin{color:var(--sun)}
 /* שלושת המשפטים בגודל אחיד (60%), חדים וצפופים: שורה של 0.8em של הכותרת. הסיום בגודל מלא, 1.12em */
@@ -512,7 +515,9 @@ footer a{color:var(--ink-soft)}
     const slot=.8,start=(1.12-slot)/2,end=-(r.children.length-1)*slot;
     if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");heroDoneRes();return}
     const Y=v=>({transform:`translateY(${v}em)`});
-    setTimeout(()=>{r.parentElement.classList.add("rolling");const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+.35*slot),offset:.74},{...Y(end-.14*slot),offset:.86},{...Y(end+.04*slot),offset:.94},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
+    setTimeout(()=>{r.parentElement.classList.add("rolling");// גלגול אחיד דרך המשפטים, ואז האטה רכה עד שהשורה הכחולה נוחתת. בלי קפיצה מעבר לסוף, כדי שהשורה לא תיחתך
+      const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+slot),offset:.7,easing:"cubic-bezier(.3,.33,.2,1)"},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
+      setTimeout(()=>r.parentElement.classList.remove("rolling"),2900*.82);
       r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go");heroDoneRes()};
       // רשת ביטחון: אם הדפדפן השהה את האנימציה (תצוגה מקדימה, טאב ברקע), קופצים לסוף
       setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450)})();
