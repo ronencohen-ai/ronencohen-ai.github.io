@@ -302,10 +302,8 @@ footer a{color:var(--ink-soft)}
 .js .hero h1 .reel.wait{transform:none}
 .hero h1 .reel span{display:block;height:1.12em;line-height:1.12em;white-space:nowrap;color:var(--ink-soft)}
 .hero h1 .reel .fin{color:var(--sun)}
-/* המשפטים גדלים בהדרגה: קטן מאוד, בינוני, גדול, והסיום בגודל מלא. הגובה נשאר 1.12em של הכותרת */
-.hero h1 .reel span:nth-child(1){font-size:.4em;height:calc(1.12em / .4);line-height:calc(1.12em / .4)}
-.hero h1 .reel span:nth-child(2){font-size:.6em;height:calc(1.12em / .6);line-height:calc(1.12em / .6)}
-.hero h1 .reel span:nth-child(3){font-size:.8em;height:calc(1.12em / .8);line-height:calc(1.12em / .8)}
+/* שלושת המשפטים בגודל אחיד (60%), חדים, והסיום בגודל מלא. הגובה נשאר 1.12em של הכותרת */
+.hero h1 .reel span:not(.fin){font-size:.6em;height:calc(1.12em / .6);line-height:calc(1.12em / .6)}
 .hero h1 .reel .fin.go{background:linear-gradient(100deg,var(--sun) 0 40%,#fff 50%,var(--sun) 60% 100%);background-size:280% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5.5s ease-in-out infinite}
 @keyframes shine{0%{background-position:0 0}26%{background-position:100% 0}100%{background-position:100% 0}}
 .btn-wa.big{position:relative;overflow:hidden;isolation:isolate}
@@ -508,9 +506,9 @@ footer a{color:var(--ink-soft)}
   (()=>{const r=document.getElementById("reel");if(!r)return;const fin=r.querySelector(".fin");
     if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");fin.classList.add("go");return}
     const n=r.children.length,end=-(n-1)*100/n;
-    setTimeout(()=>{const a=r.animate([{transform:"translateY(0)",filter:"blur(0)"},{transform:"translateY(0)",filter:"blur(0)",offset:.1},
-      {transform:`translateY(${end+0.35*100/n}%)`,filter:"blur(1px)",offset:.74},{transform:`translateY(${end-0.14*100/n}%)`,filter:"blur(0)",offset:.86},
-      {transform:`translateY(${end+0.04*100/n}%)`,offset:.94},{transform:`translateY(${end}%)`,filter:"blur(0)"}],{duration:3200,easing:"linear"});
+    setTimeout(()=>{const a=r.animate([{transform:"translateY(0)"},{transform:"translateY(0)",offset:.1},
+      {transform:`translateY(${end+0.35*100/n}%)`,offset:.74},{transform:`translateY(${end-0.14*100/n}%)`,offset:.86},
+      {transform:`translateY(${end+0.04*100/n}%)`,offset:.94},{transform:`translateY(${end}%)`}],{duration:2900,easing:"linear"});
       r.classList.remove("wait");a.onfinish=()=>fin.classList.add("go")},450)})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
