@@ -268,7 +268,6 @@ footer a{color:var(--ink-soft)}
 .player-meta{text-align:center;max-width:46ch}
 .player-meta h2{font-size:28px}
 .player-meta p{color:var(--ink-soft);font-size:15px;margin-block:4px 6px}
-.player-meta a{font-size:15px;color:var(--ink-soft)}
 .player-close{position:absolute;top:calc(12px + env(safe-area-inset-top,0px));inset-inline-end:12px;width:48px;height:48px;border-radius:50%;border:0;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line);color:var(--ink);display:grid;place-items:center;cursor:pointer}
 .player-close svg{width:22px;height:22px}
 
@@ -480,7 +479,7 @@ footer a{color:var(--ink-soft)}
   <div class="player-in">
     <button type="button" class="player-close" aria-label="סגירת הנגן" data-ia="close"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></svg></button>
     <video controls playsinline preload="none"></video>
-    <div class="player-meta"><h2 id="pl-title"></h2><p id="pl-line"></p><a id="pl-link" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener" data-i="pllink">לריל באינסטגרם</a></div>
+    <div class="player-meta"><h2 id="pl-title"></h2><p id="pl-line"></p></div>
   </div>
 </dialog>
 
@@ -681,8 +680,7 @@ footer a{color:var(--ink-soft)}
     playing.forEach(v=>v.pause());
     pv.src=r.full||r.video; pv.poster=r.poster; pv.muted=false;
     document.getElementById("pl-title").textContent=L(r,"title");
-    document.getElementById("pl-line").textContent=L(r,"pitch")||L(r,"why")||"";
-    document.getElementById("pl-link").href=r.ig||"https://www.instagram.com/ronencohen.ai/";
+    {const ln=L(r,"pitch")||L(r,"why")||"";document.getElementById("pl-line").textContent=ln.trim()===(L(r,"title")||"").trim()?"":ln}
     dlg.showModal(); try{history.pushState({player:id},"");pushed=true}catch(e){pushed=false}
     pv.play().catch(()=>{})}
   document.addEventListener("click",e=>{const t=e.target.closest("[data-open]");if(t)openPlayer(t.dataset.open,t)});
