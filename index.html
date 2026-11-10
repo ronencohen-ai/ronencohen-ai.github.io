@@ -298,12 +298,13 @@ footer a{color:var(--ink-soft)}
 .wheel::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(58% 62% at 50% 50%,color-mix(in srgb,var(--amb) 62%,transparent),color-mix(in srgb,var(--amb) 18%,transparent) 55%,transparent 78%)}
 .wheel .ring{z-index:1}
 .hero h1 .win{display:block;height:1.12em;overflow:hidden;position:relative}
-.hero h1 .reel{display:flex;flex-direction:column;transform:translateY(-75%)}
-.js .hero h1 .reel.wait{transform:none}
+.hero h1 .reel{display:flex;flex-direction:column;transform:translateY(-2.4em)}
+.js .hero h1 .reel.wait{transform:translateY(.16em)}
+.hero h1 .win.rolling{-webkit-mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent);mask-image:linear-gradient(transparent,#000 14%,#000 86%,transparent)}
 .hero h1 .reel span{display:block;height:1.12em;line-height:1.12em;white-space:nowrap;color:var(--ink-soft)}
 .hero h1 .reel .fin{color:var(--sun)}
-/* שלושת המשפטים בגודל אחיד (60%), חדים, והסיום בגודל מלא. הגובה נשאר 1.12em של הכותרת */
-.hero h1 .reel span:not(.fin){font-size:.6em;height:calc(1.12em / .6);line-height:calc(1.12em / .6)}
+/* שלושת המשפטים בגודל אחיד (60%), חדים וצפופים: שורה של 0.8em של הכותרת. הסיום בגודל מלא, 1.12em */
+.hero h1 .reel span:not(.fin){font-size:.6em;height:calc(.8em / .6);line-height:calc(.8em / .6)}
 .hero h1 .reel .fin.go{background:linear-gradient(100deg,var(--sun) 0 40%,#fff 50%,var(--sun) 60% 100%);background-size:280% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5.5s ease-in-out infinite}
 @keyframes shine{0%{background-position:0 0}26%{background-position:100% 0}100%{background-position:100% 0}}
 .btn-wa.big{position:relative;overflow:hidden;isolation:isolate}
@@ -504,12 +505,12 @@ footer a{color:var(--ink-soft)}
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
   // הכותרת "נגללת" כמו פיד ונבלמת על "שעוצרים את הגלילה."
   (()=>{const r=document.getElementById("reel");if(!r)return;const fin=r.querySelector(".fin");
-    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");fin.classList.add("go");return}
-    const n=r.children.length,end=-(n-1)*100/n;
-    setTimeout(()=>{const a=r.animate([{transform:"translateY(0)"},{transform:"translateY(0)",offset:.1},
-      {transform:`translateY(${end+0.35*100/n}%)`,offset:.74},{transform:`translateY(${end-0.14*100/n}%)`,offset:.86},
-      {transform:`translateY(${end+0.04*100/n}%)`,offset:.94},{transform:`translateY(${end}%)`}],{duration:2900,easing:"linear"});
-      r.classList.remove("wait");a.onfinish=()=>fin.classList.add("go")},450)})();
+    // המיקומים בפיקסלים: השורות של המשפטים נמוכות משורת הסיום, אז לא מחשבים באחוזים
+    const first=r.firstElementChild,end=-(fin.offsetTop-first.offsetTop),slot=first.offsetHeight,start=(r.parentElement.clientHeight-slot)/2;
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}px)`;fin.classList.add("go");return}
+    const Y=v=>({transform:`translateY(${v}px)`});
+    setTimeout(()=>{r.parentElement.classList.add("rolling");const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+.35*slot),offset:.74},{...Y(end-.14*slot),offset:.86},{...Y(end+.04*slot),offset:.94},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
+      r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end/parseFloat(getComputedStyle(r).fontSize)}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go")}},450)})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
