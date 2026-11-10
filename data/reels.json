@@ -22,7 +22,10 @@
    "ig": "https://www.instagram.com/reel/Dfeidi5OlwL/",
    "video": "media/miel.mp4",
    "full": "media/miel.full.mp4",
-   "poster": "media/miel.webp"
+   "poster": "media/miel.webp",
+   "title_en": "Miel by Daniel",
+   "short_en": "Miel by Daniel",
+   "pitch_en": "A fashion film for the Miel by Daniel collection."
   },
   {
    "id": "dance",
@@ -39,7 +42,10 @@
    "ig": "https://www.instagram.com/reel/DfPGh9iORMG/",
    "video": "media/dance.mp4",
    "full": "media/dance.full.mp4",
-   "poster": "media/dance.webp"
+   "poster": "media/dance.webp",
+   "title_en": "She said yes. Now they rehearse.",
+   "short_en": "Now they rehearse",
+   "pitch_en": "The sequel to “She said yes”: the same babies, the first dance."
   },
   {
    "id": "mizmor",
@@ -55,7 +61,10 @@
    "ig": "https://www.instagram.com/reel/DfEbZI4OoEP/",
    "video": "media/mizmor.mp4",
    "full": "media/mizmor.full.mp4",
-   "poster": "media/mizmor.webp"
+   "poster": "media/mizmor.webp",
+   "title_en": "Did you thank Dad?",
+   "short_en": "A song of thanks",
+   "pitch_en": "A song of thanks, for the moments we say thank you."
   },
   {
    "id": "inspire",
@@ -71,7 +80,10 @@
    "ig": "https://www.instagram.com/reel/De8viqGOtCI/",
    "video": "media/inspire.mp4",
    "full": "media/inspire.full.mp4",
-   "poster": "media/inspire.webp"
+   "poster": "media/inspire.webp",
+   "title_en": "Recruitment video for InspireMD",
+   "short_en": "InspireMD recruiting",
+   "pitch_en": "A recruitment video for a place you're not allowed into: a medical-device cleanroom."
   },
   {
    "id": "velvet",
@@ -89,7 +101,10 @@
    "short": "VELVET FREEDOM",
    "pinned": 6,
    "full": "media/velvet.full.mp4",
-   "pitch": "VELVET FREEDOM. פרסומת בושם לאביבית בר זוהר."
+   "pitch": "VELVET FREEDOM. פרסומת בושם לאביבית בר זוהר.",
+   "title_en": "VELVET FREEDOM",
+   "short_en": "VELVET FREEDOM",
+   "pitch_en": "VELVET FREEDOM. A perfume ad for Avivit Bar Zohar."
   },
   {
    "id": "yes",
@@ -109,7 +124,10 @@
    "pinned": 2,
    "full": "media/yes.full.mp4",
    "pitch": "שני תינוקות, הצעת נישואין אחת. 7,000 שיתופים בשבוע הראשון.",
-   "spotlight": true
+   "spotlight": true,
+   "title_en": "She said yes",
+   "short_en": "She said yes",
+   "pitch_en": "Two babies, one proposal. 7,000 shares in the first week."
   },
   {
    "id": "tv",
@@ -127,7 +145,10 @@
    "short": "שודר ברשת 13",
    "pinned": 1,
    "full": "media/tv.full.mp4",
-   "pitch": "גיא לרר שידר את הסרטון ב'הצינור' וקרא לי \"הגאון שהיה אחראי על הסרטון הזה\"."
+   "pitch": "גיא לרר שידר את הסרטון ב'הצינור' וקרא לי \"הגאון שהיה אחראי על הסרטון הזה\".",
+   "title_en": "My clip aired on Channel 13",
+   "short_en": "Aired on Channel 13",
+   "pitch_en": "Guy Lerer aired the video on “HaTzinor” and called me “the genius behind this video”."
   },
   {
    "id": "kevin",
@@ -144,7 +165,9 @@
     "viral"
    ],
    "full": "media/kevin.full.mp4",
-   "pitch": "קווין כץ, שרוף על הפועל פתח תקווה. 800 שיתופים ביום הראשון."
+   "pitch": "קווין כץ, שרוף על הפועל פתח תקווה. 800 שיתופים ביום הראשון.",
+   "title_en": "Kevin Katz. Hapoel Petah Tikva till the end.",
+   "pitch_en": "Kevin Katz, die-hard Hapoel Petah Tikva fan. 800 shares on day one."
   },
   {
    "id": "plasto",
@@ -160,7 +183,9 @@
    "poster": "media/plasto.webp",
    "ig": "https://www.instagram.com/reel/DegRM5xOsqB/",
    "full": "media/plasto.full.mp4",
-   "pitch": "לכל חלון ראווה יש את הפרזנטור שלו. המותג העלה עם קרדיט."
+   "pitch": "לכל חלון ראווה יש את הפרזנטור שלו. המותג העלה עם קרדיט.",
+   "title_en": "Every shop window has its own spokesperson",
+   "pitch_en": "Every shop window has its own spokesperson. The brand posted it with credit."
   },
   {
    "id": "einav",
@@ -178,7 +203,10 @@
    "short": "הוורוד לא בבקבוק",
    "pinned": 5,
    "full": "media/einav.full.mp4",
-   "pitch": "הוורוד לא בבקבוק. הוא בך. עינב בובליל שיתפה."
+   "pitch": "הוורוד לא בבקבוק. הוא בך. עינב בובליל שיתפה.",
+   "title_en": "The pink isn't in the bottle. It's in you.",
+   "short_en": "The pink isn't in the bottle",
+   "pitch_en": "The pink isn't in the bottle. It's in you. Einav Bublil shared it."
   },
   {
    "id": "tzinor",
@@ -196,7 +224,10 @@
    ],
    "short": "הבוקר של גיא לרר",
    "full": "media/tzinor.full.mp4",
-   "pitch": "וואן-שוט בצינורות עד האולפן. גיא לרר ביקש לשדר אותו."
+   "pitch": "וואן-שוט בצינורות עד האולפן. גיא לרר ביקש לשדר אותו.",
+   "title_en": "Guy Lerer's morning",
+   "short_en": "Guy Lerer's morning",
+   "pitch_en": "A one-shot through the pipes, all the way to the studio. Guy Lerer asked to air it."
   },
   {
    "id": "abufrahi",
@@ -215,7 +246,10 @@
    "short": "כרטיס אדום",
    "pinned": 4,
    "full": "media/abufrahi.full.mp4",
-   "pitch": "כרטיס אדום על נענוע. יותר מחצי מיליון צפיות בסוף שבוע אחד."
+   "pitch": "כרטיס אדום על נענוע. יותר מחצי מיליון צפיות בסוף שבוע אחד.",
+   "title_en": "A red card for the lulav shake",
+   "short_en": "Red card",
+   "pitch_en": "A red card for the lulav shake. Over half a million views in one weekend."
   },
   {
    "id": "fz1073",
@@ -232,7 +266,10 @@
    "short": "הנס בטיסה",
    "pinned": 3,
    "full": "media/fz1073.full.mp4",
-   "pitch": "תודה לקדוש ברוך הוא על הנס."
+   "pitch": "תודה לקדוש ברוך הוא על הנס.",
+   "title_en": "Thank God for the miracle",
+   "short_en": "The in-flight miracle",
+   "pitch_en": "Thank God for the miracle."
   },
   {
    "id": "menny",
@@ -248,7 +285,9 @@
     "viral"
    ],
    "full": "media/menny.full.mp4",
-   "pitch": "מצעד החיקויים, בגרסה אמיתית."
+   "pitch": "מצעד החיקויים, בגרסה אמיתית.",
+   "title_en": "The impressions parade, for real",
+   "pitch_en": "The impressions parade, for real."
   },
   {
    "id": "rotem",
@@ -263,7 +302,9 @@
    ],
    "views": 6289,
    "full": "media/rotem.full.mp4",
-   "pitch": "מיקרובליידינג, פרסומת קולנועית."
+   "pitch": "מיקרובליידינג, פרסומת קולנועית.",
+   "title_en": "Microblading, a cinematic ad",
+   "pitch_en": "Microblading, a cinematic ad."
   },
   {
    "id": "kippur",
@@ -278,7 +319,9 @@
    ],
    "views": 3311,
    "full": "media/kippur.full.mp4",
-   "pitch": "בין אדם לחברו."
+   "pitch": "בין אדם לחברו.",
+   "title_en": "Between one person and another",
+   "pitch_en": "Between one person and another."
   },
   {
    "id": "rosh",
@@ -293,7 +336,9 @@
    ],
    "full": "media/rosh.full.mp4",
    "pitch": "שנה טובה, בדבש ובזריחה.",
-   "views": 1536
+   "views": 1536,
+   "title_en": "Happy New Year, in honey and sunrise",
+   "pitch_en": "Happy New Year, in honey and sunrise."
   },
   {
    "id": "sukkot",
@@ -309,7 +354,9 @@
    ],
    "full": "media/sukkot.full.mp4",
    "pitch": "את מי הייתם מזמינים לסוכה?",
-   "views": 2679
+   "views": 2679,
+   "title_en": "Who would you invite to your sukkah?",
+   "pitch_en": "Who would you invite to your sukkah?"
   },
   {
    "id": "vaknin",
@@ -326,7 +373,10 @@
    "video": "media/vaknin.mp4",
    "full": "media/vaknin.full.mp4",
    "poster": "media/vaknin.webp",
-   "pt": 2.0
+   "pt": 2.0,
+   "title_en": "Mrs. Vaknin",
+   "short_en": "Mrs. Vaknin",
+   "pitch_en": "The bride who still doesn't get she's getting married, until the DJs take the stage."
   },
   {
    "id": "drop",
@@ -343,7 +393,10 @@
    "video": "media/drop.mp4",
    "full": "media/drop.full.mp4",
    "poster": "media/drop.webp",
-   "pt": 1.0
+   "pt": 1.0,
+   "title_en": "Right before the drop",
+   "short_en": "Right before the drop",
+   "pitch_en": "Kalopa on stage, and the hall explodes. Made with Ran Nuriani."
   },
   {
    "id": "frisbee",
@@ -359,7 +412,10 @@
    ],
    "video": "media/frisbee.mp4",
    "full": "media/frisbee.full.mp4",
-   "poster": "media/frisbee.webp"
+   "poster": "media/frisbee.webp",
+   "title_en": "Good thing there are two",
+   "short_en": "Good thing there are two",
+   "pitch_en": "A Kalopa frisbee, from the chuppah to the cliff."
   },
   {
    "id": "babies",
@@ -375,7 +431,10 @@
    ],
    "video": "media/babies.mp4",
    "full": "media/babies.full.mp4",
-   "poster": "media/babies.webp"
+   "poster": "media/babies.webp",
+   "title_en": "You've never been to a wedding like this",
+   "short_en": "The babies' wedding",
+   "pitch_en": "A wedding where every guest is a baby, and the DJ is in shock."
   }
  ],
  "sync_since": "2026-11-09"
