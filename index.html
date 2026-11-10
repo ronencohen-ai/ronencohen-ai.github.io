@@ -301,6 +301,12 @@ footer a{color:var(--ink-soft)}
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .8s var(--ease);transition-delay:var(--rd,0ms)}
 .js .rv.in{opacity:1;transform:none}
 .step .n{transition:text-shadow .6s ease .3s}.step.rv.in .n{text-shadow:0 0 22px currentColor}
+.od{display:inline-block;height:1em;overflow:hidden;vertical-align:top;line-height:1}
+.od-r{display:flex;flex-direction:column;transition:transform 1.4s cubic-bezier(.16,.84,.24,1)}
+.od-r span{display:block;height:1em;line-height:1}
+.reply-note{margin-top:10px;text-align:center;font:600 14px/1.3 var(--f-body);color:var(--ink-soft);display:flex;align-items:center;justify-content:center;gap:7px}
+.reply-note::before{content:"";width:7px;height:7px;border-radius:50%;background:#2BD46E;box-shadow:0 0 0 4px color-mix(in srgb,#2BD46E 22%,transparent)}
+.feat .rank{position:absolute;inset-inline-end:14px;top:58px;z-index:2;font:700 clamp(72px,8vw,96px)/.8 var(--f-display);color:var(--accent);text-shadow:0 4px 0 rgba(0,0,0,.35),0 10px 30px rgba(0,0,0,.6);pointer-events:none}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w{opacity:1;transform:none}}
 </style>
 </head>
@@ -341,6 +347,7 @@ footer a{color:var(--ink-soft)}
       <div class="actions proof-actions">
         <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>בואו נתייעץ בוואטסאפ</a>
       </div>
+      <p class="reply-note">חוזר אליכם באותו יום</p>
     </div>
   </section>
 
@@ -427,6 +434,7 @@ footer a{color:var(--ink-soft)}
         <div>
           <div class="cta-row"><a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
           <a class="btn btn-ig big" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.2" fill="#fff" stroke="none"/></svg>שלחו לי באינסטגרם</a></div>
+          <p class="reply-note">חוזר אליכם באותו יום</p>
         </div>
       </div>
     </div>
@@ -502,9 +510,9 @@ footer a{color:var(--ink-soft)}
     if(s.views)document.getElementById("spot-views").textContent=fmt(s.views);
 
     const fl=document.getElementById("featured-list");
-    pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,3).forEach(r=>{
+    pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,3).sort((a,b)=>(b.views||0)-(a.views||0)).forEach((r,ri)=>{
       const b=el("button",{type:"button",class:"feat","data-open":r.id,"data-auto":""},
-        el("div",{class:"media"},...media(r)),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
+        el("div",{class:"media"},...media(r)),el("span",{class:"rank","aria-hidden":"true"},String(ri+1)),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
         el("div",{class:"meta"},el("h3",{},r.short||r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):"",el("span",{class:"sr"},". צפו עם סאונד")));
       b.querySelector(".sound").innerHTML=SPK; fl.append(b)});
 
@@ -587,9 +595,13 @@ footer a{color:var(--ink-soft)}
   function counts(){
     if(reduce||!("IntersectionObserver" in window))return;
     const f=n=>n>=1e6?(n/1e6).toFixed(2).replace(/\.?0+$/,"")+"M":n>=1e4?Math.round(n/1e3)+"K":Math.round(n).toLocaleString("en-US");
-    const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);
-      const t=e.target,to=+t.dataset.count,t0=performance.now();
-      const tick=now=>{const k=Math.min(1,(now-t0)/1400);t.textContent=f(to*(1-Math.pow(1-k,4)));if(k<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}),{threshold:.6});
+    // מספרים שמתגלגלים כמו מונה: כל ספרה מסתובבת בעמודה משלה ונעצרת במקום
+    const roll=t=>{const str=f(+t.dataset.count);t.textContent="";t.append(el("span",{class:"sr"},str));let di=0;
+      [...str].forEach(ch=>{if(!/\d/.test(ch)){t.append(el("span",{"aria-hidden":"true"},ch));return}
+        const r=el("span",{class:"od-r"});for(let n=0;n<20;n++)r.append(el("span",{},String(n%10)));
+        t.append(el("span",{class:"od","aria-hidden":"true"},r));const idx=10+(+ch),dl=di++;
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{r.style.transitionDuration=(1.3+dl*.22)+"s";r.style.transform=`translateY(-${idx*5}%)`}))})};
+    const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.unobserve(e.target);roll(e.target)}),{threshold:.6});
     document.querySelectorAll("[data-count]").forEach(n=>{n.textContent="0";io.observe(n)});
   }
 
