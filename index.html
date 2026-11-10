@@ -70,14 +70,14 @@ p{margin:0}
 .burger{display:inline-grid;place-items:center;width:44px;height:44px;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer;padding:0}
 .burger svg{width:26px;height:26px}.burger .x{display:none}.burger[aria-expanded="true"] .x{display:block}.burger[aria-expanded="true"] .l{display:none}
 @media (max-width:799px){.top nav.open{display:flex;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding-block:4px 12px;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));box-shadow:0 24px 40px -20px rgba(0,0,0,.8)}
-  .top nav.open a{padding:16px 2px;font-size:20px;color:var(--ink);display:flex;align-items:center;gap:12px}.top nav.open a+a{border-top:1px solid var(--line)}
+  .top nav.open a{padding:16px 2px;font-size:20px;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:12px}.top nav.open a+a{border-top:1px solid var(--line)}
   .top nav.open a::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin:0;transform:none}}
 @media (min-width:800px){.burger{display:none}}
 .top .btn-wa{white-space:nowrap}
 @media (max-width:420px){.top .btn-wa{padding:10px 14px;font-size:15px;gap:7px}.top .wrap{gap:6px}.brand b{font-size:20px}}
 .top nav{display:none;gap:14px;align-items:center}
 .top nav a+a::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);vertical-align:middle;margin-inline-end:14px;transform:translateY(-2px)}
-@media (min-width:800px){.top nav{margin-inline-start:28px;padding-inline-start:28px;border-inline-start:1px solid var(--line)}}
+@media (min-width:800px){.top .wrap{display:grid;grid-template-columns:1fr auto 1fr}.top .brand{justify-self:start}.top .btn-wa{justify-self:end;margin:0}}
 .top nav a{text-decoration:none;color:var(--ink-soft);font:600 16px/1 var(--f-display)}
 .top nav a:hover{color:var(--ink)}
 @media (min-width:800px){.top nav{display:flex}}
