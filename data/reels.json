@@ -26,7 +26,9 @@
    "title_en": "Miel by Daniel",
    "short_en": "Miel by Daniel",
    "pitch_en": "A fashion film for the Miel by Daniel collection.",
-   "pinned": 6
+   "pinned": 6,
+   "goal": "אופנה: הקולקציה מוצגת כמו תצוגה באולם יוקרתי.",
+   "goal_en": "Fashion: the collection shown like a luxury runway."
   },
   {
    "id": "dance",
@@ -85,7 +87,9 @@
    "title_en": "Recruitment video for InspireMD",
    "short_en": "InspireMD recruiting",
    "pitch_en": "A recruitment video for a place you're not allowed into: a medical-device cleanroom.",
-   "pinned": 7
+   "pinned": 7,
+   "goal": "חברה: סרטון גיוס שמציג את מקום העבודה.",
+   "goal_en": "Company: a recruitment film that sells the workplace."
   },
   {
    "id": "velvet",
@@ -106,7 +110,9 @@
    "title_en": "VELVET FREEDOM",
    "short_en": "VELVET FREEDOM",
    "pitch_en": "VELVET FREEDOM. A perfume ad for Avivit Bar Zohar.",
-   "pinned": 2
+   "pinned": 2,
+   "goal": "בושם: עולם יוקרתי שנבנה סביב הבקבוק.",
+   "goal_en": "Perfume: a luxury world built around the bottle."
   },
   {
    "id": "yes",
@@ -186,7 +192,9 @@
    "pitch": "לכל חלון ראווה יש את הפרזנטור שלו. המותג העלה עם קרדיט.",
    "title_en": "Every shop window has its own spokesperson",
    "pitch_en": "Every shop window has its own spokesperson. The brand posted it with credit.",
-   "pinned": 5
+   "pinned": 5,
+   "goal": "מוצר: פרזנטור שמציג את המארז כמו בחלון ראווה.",
+   "goal_en": "Product: a presenter showing the box like a shop window."
   },
   {
    "id": "einav",
@@ -210,7 +218,9 @@
    "pinned": 3,
    "spotlight": true,
    "spotline": "פרסומת שעשיתי למותג של עינב בובליל.",
-   "spotline_en": "An ad I made for Einav Bublil's brand."
+   "spotline_en": "An ad I made for Einav Bublil's brand.",
+   "goal": "קוסמטיקה: מוצר קטן שהופך לסיפור.",
+   "goal_en": "Cosmetics: a small product turned into a story."
   },
   {
    "id": "tzinor",
@@ -307,7 +317,9 @@
    "pitch": "מיקרובליידינג, פרסומת קולנועית.",
    "title_en": "Microblading, a cinematic ad",
    "pitch_en": "Microblading, a cinematic ad.",
-   "pinned": 4
+   "pinned": 4,
+   "goal": "קליניקה: הטיפול מוצג כמו סרט קולנוע.",
+   "goal_en": "Beauty clinic: the treatment shown like a film."
   },
   {
    "id": "kippur",
