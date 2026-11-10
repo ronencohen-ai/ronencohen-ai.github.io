@@ -329,7 +329,7 @@ footer a{color:var(--ink-soft)}
     <a class="brand" href="#"><b dir="ltr">RonenCohen<i>.Ai</i></b><small data-i="brand">סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
     <button class="burger" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav id="mainnav" aria-label="ניווט ראשי" data-ia="nav"><a href="#about" data-i="n1">קצת עליי</a><a href="#work" data-i="n2">תיק עבודות</a><a href="#how" data-i="n3">התהליך</a></nav>
-    <div class="top-end"><button class="lang" type="button" id="lang-btn" lang="en" aria-label="Switch to English">EN</button>
+    <div class="top-end"><button class="lang" type="button" id="lang-btn" lang="en" aria-label="EN, Switch to English">EN</button>
     <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg><span data-i="talk">דברו איתי</span></a></div>
   </div>
 </header>
@@ -490,7 +490,7 @@ footer a{color:var(--ink-soft)}
     document.querySelectorAll("[data-ialt]").forEach(n=>{const v=EN[n.dataset.ialt];if(v!=null)n.alt=v});
     const md=document.querySelector('meta[name="description"]');if(md)md.content=EN._desc;}
   (()=>{const b=document.getElementById("lang-btn");if(!b)return;
-    if(isEN){b.textContent="עב";b.lang="he";b.setAttribute("aria-label","לעברית")}
+    if(isEN){b.textContent="עב";b.lang="he";b.setAttribute("aria-label","עב, לעברית")}
     b.addEventListener("click",()=>{const to=isEN?"he":"en";try{localStorage.setItem("lang",to)}catch(e){}location.hash=to;location.reload()})})();
   const L=(r,k)=>isEN&&r[k+"_en"]?r[k+"_en"]:r[k];
 (() => {
