@@ -94,7 +94,7 @@ p{margin:0}
 .hero{padding-block:22px 34px;overflow:hidden}
 .hero .wrap{display:flex;flex-direction:column;align-items:center;text-align:center;gap:14px}
 .hero h1{font-size:clamp(34px,6vw,68px);line-height:1.05;letter-spacing:-.01em}
-.hero .sub{color:var(--ink-soft);font:500 clamp(17px,1.9vw,21px)/1.4 var(--f-body);max-width:46ch;margin-top:-2px;text-wrap:balance}
+.hero .sub{color:var(--ink);font:500 clamp(17px,1.9vw,21px)/1.4 var(--f-body);max-width:46ch;margin-top:-2px;text-wrap:balance}
 .hero h1 .hl{color:var(--sun)}
 .hero h1 .w{display:inline-block}
 .js .hero h1 .w{opacity:0;transform:translateY(.35em)}
@@ -133,6 +133,15 @@ section{padding-block:64px}
 .tv-badge{all:unset;cursor:pointer;display:inline-flex;align-items:center;gap:14px;background:var(--bg);border-radius:999px;padding-block:10px;padding-inline:10px 26px;box-shadow:inset 0 0 0 2px var(--line);transition:transform .2s var(--ease),box-shadow .2s;max-width:100%;box-sizing:border-box}
 .tv-badge:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--sky)}
 .tv-badge:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.tv-card{all:unset;cursor:pointer;display:flex;flex-direction:column;width:min(560px,100%);box-sizing:border-box;border-radius:var(--r);overflow:hidden;background:var(--paper);box-shadow:inset 0 0 0 2px var(--line),0 24px 60px -28px color-mix(in srgb,var(--accent) 55%,transparent);transition:transform .2s var(--ease),box-shadow .2s}
+.tv-card:hover{transform:translateY(-2px);box-shadow:inset 0 0 0 2px var(--accent),0 24px 60px -24px color-mix(in srgb,var(--accent) 70%,transparent)}
+.tv-card:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.tv-shot{position:relative;display:block;aspect-ratio:1200/480;background:#000}
+.tv-shot img{display:block;width:100%;height:100%;object-fit:cover}
+.tv-shot .tv-play{position:absolute;top:12px;inset-inline-end:12px;box-shadow:0 6px 20px rgba(0,0,0,.45)}
+.tv-card .tv-txt{padding:14px 18px 16px;gap:6px}
+.tv-card .tv-txt small{line-height:1.35}
+.tv-card .tv-txt .go{color:var(--accent);font:700 15px/1 var(--f-display)}
 .tv-play{flex:none;width:48px;height:48px;border-radius:50%;background:var(--accent);color:var(--on-light);display:grid;place-items:center}
 .tv-play svg{width:22px;height:22px}
 .tv-txt{display:flex;flex-direction:column;gap:4px;text-align:start;min-width:0}
@@ -198,7 +207,7 @@ section{padding-block:64px}
 /* מי אני */
 .about{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,6vw,64px);align-items:center}
 .about img{width:100%;height:auto;border-radius:var(--r);aspect-ratio:720/910;object-fit:cover;box-shadow:0 0 0 2px var(--line),0 24px 60px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
-.about .lead{font:600 clamp(24px,3.2vw,34px)/1.25 var(--f-display);margin:12px 0 24px;max-width:24ch}
+.about .lead{font:600 clamp(24px,3.2vw,34px)/1.25 var(--f-display);margin:12px 0 24px;max-width:28ch;text-wrap:pretty}
 .principles{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .principles li{background:var(--paper);border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
 .principles i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);margin-top:9px;grid-row:span 2}
@@ -292,7 +301,7 @@ footer a{color:var(--ink-soft)}
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
       </div>
-      <p class="tv-row tv-hero"><button type="button" class="tv-badge" data-open="tv"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>צפו בקטע מהשידור</small></span></button></p>
+      <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv" aria-label="שודר בהצינור עם גיא לרר, רשת 13. צפו בקטע מהשידור"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="480" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>תודה ענקית לגיא לרר ולכל צוות הצינור ❤️</small><span class="go">צפו בקטע מהשידור ←</span></span></button></p>
     </div>
   </section>
 
@@ -323,7 +332,7 @@ footer a{color:var(--ink-soft)}
       <img src="img/ronen.webp" width="720" height="910" loading="lazy" decoding="async" alt="רונן כהן מחייך באולפן, ומאחוריו מסכים עם סרטונים">
       <div>
         <h2 id="h-about" style="font-size:clamp(32px,4.4vw,48px)">קצת עליי</h2>
-        <p class="lead">אני רונן כהן, די-ג'יי שיוצר <span style="white-space:nowrap">סרטוני <span dir="ltr">AI</span>.</span> על הרחבה למדתי מה עוצר אנשים, ואצלי הכל: מהרעיון ועד סרטון מוכן לעלות.</p>
+        <p class="lead">אני רונן כהן, די-ג'יי שיוצר <span style="white-space:nowrap">סרטוני <span dir="ltr">AI</span>.</span> על הרחבה למדתי לתפוס קהל בשנייה. היום אני עושה את זה במסך: אתם מביאים רעיון, ואני מחזיר סרטון מוכן לעלות.</p>
         <ul class="principles">
           <li><i style="background:var(--sun)"></i><h3>מההתחלה ועד הסוף</h3><p>רעיון, תסריט, הפקה, סאונד ועריכה. אתם מקבלים סרטון מוכן.</p></li>
           <li><i style="background:var(--tomato)"></i><h3>יחס אישי וחם</h3><p>אני מלווה אתכם בכל שלב. מדברים איתי, לא עם צוות.</p></li>
@@ -371,7 +380,7 @@ footer a{color:var(--ink-soft)}
         <li class="step"><span class="n" style="color:var(--sun)">2</span><h3>תסריט לאישור</h3><p>ההפקה מתחילה רק אחרי שאישרתם אותו.</p></li>
         <li class="step"><span class="n" style="color:var(--sky)">3</span><h3>הפקה</h3><p>כל שוט נבדק אצלי פריים אחרי פריים.</p></li>
         <li class="step"><span class="n" style="color:var(--mint)">4</span><h3>סאונד ועריכה</h3><p>קצב, כיתוב ואפקטים.</p></li>
-        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>תוך <span dir="ltr">5</span> ימי עבודה, עם שני סבבי תיקונים.</p></li>
+        <li class="step"><span class="n" style="color:var(--pink)">5</span><h3>מסירה</h3><p>אחרי התיקונים, קובץ סופי שמוכן לעלות.</p></li>
       </ol>
       <div class="incl">
         <h3>בכל סרטון</h3>
@@ -379,8 +388,8 @@ footer a{color:var(--ink-soft)}
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>רעיון ותסריט מקוריים</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>הפקה מלאה ב-<span dir="ltr">AI</span></span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>סאונד, עריכה וכיתוב</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>קובץ אנכי לאינסטגרם, טיקטוק ופייסבוק</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>שני סבבי תיקונים</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>מותאם לכל פלטפורמה: אנכי, רוחבי או ריבועי</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>סבבי תיקונים כלולים</span></li>
           <li><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7.5"/></svg><span>שימוש בכל הערוצים, בלי הגבלת זמן</span></li>
         </ul>
       </div>
