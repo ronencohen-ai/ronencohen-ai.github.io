@@ -61,13 +61,12 @@ p{margin:0}
 
 /* כותרת עליונה */
 .top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
-.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:12px}
+.top .wrap{display:flex;align-items:center;gap:12px;padding-block:12px}
+.top .btn-wa{margin-inline-start:auto}
 .brand{display:flex;flex-direction:column;gap:3px;text-decoration:none;text-align:start}
 .brand b{font:700 22px/1 var(--f-display);letter-spacing:.01em}
 .brand b i{font-style:normal;color:var(--accent)}
 .brand small{font:600 12px/1 var(--f-body);color:var(--ink-soft)}
-.top-l{display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-start}
-.top-l .brand{margin-inline-end:auto}
 .burger{display:inline-grid;place-items:center;width:44px;height:44px;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer;padding:0}
 .burger svg{width:26px;height:26px}.burger .x{display:none}.burger[aria-expanded="true"] .x{display:block}.burger[aria-expanded="true"] .l{display:none}
 @media (max-width:799px){.top nav.open{display:flex;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding-block:4px 12px;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));box-shadow:0 24px 40px -20px rgba(0,0,0,.8)}
@@ -75,11 +74,10 @@ p{margin:0}
   .top nav.open a::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin:0;transform:none}}
 @media (min-width:800px){.burger{display:none}}
 .top .btn-wa{white-space:nowrap}
-@media (max-width:799px){.burger{order:-1;margin-inline-start:-8px}}
-@media (max-width:420px){.top .btn-wa{padding:10px 14px;font-size:15px;gap:7px}.top-l{gap:6px}.brand b{font-size:20px}}
+@media (max-width:420px){.top .btn-wa{padding:10px 14px;font-size:15px;gap:7px}.top .wrap{gap:6px}.brand b{font-size:20px}}
 .top nav{display:none;gap:14px;align-items:center}
 .top nav a+a::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);vertical-align:middle;margin-inline-end:14px;transform:translateY(-2px)}
-@media (min-width:800px){.top-l{flex:none;margin-inline-start:auto}}
+@media (min-width:800px){.top nav{margin-inline-start:28px;padding-inline-start:28px;border-inline-start:1px solid var(--line)}}
 .top nav a{text-decoration:none;color:var(--ink-soft);font:600 16px/1 var(--f-display)}
 .top nav a:hover{color:var(--ink)}
 @media (min-width:800px){.top nav{display:flex}}
@@ -283,12 +281,10 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
+    <a class="brand" href="#" aria-label="RonenCohen.Ai, סרטוני AI ריאליסטיים, לראש העמוד"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
+    <button class="burger" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav id="mainnav" aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
-    <div class="top-l">
-      <a class="brand" href="#" aria-label="RonenCohen.Ai, סרטוני AI ריאליסטיים, לראש העמוד"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
-      <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
-      <button class="burger" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
-    </div>
+    <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
   </div>
 </header>
 
