@@ -199,6 +199,9 @@ section{padding-block:64px}
 .card{all:unset;cursor:pointer;position:relative;border-radius:18px;overflow:hidden;aspect-ratio:9/16;background:var(--paper);min-width:0;display:block;transition:transform .3s var(--ease)}
 .card:hover{transform:translateY(-4px)}
 .card .meta,.feat .meta{z-index:1}
+.card[hidden]{display:none!important}
+@keyframes cardIn{from{opacity:0;transform:translateY(14px) scale(.96)}to{opacity:1;transform:none}}
+.card.fin{animation:cardIn .38s cubic-bezier(.22,1,.36,1) both}
 .card .meta{position:absolute;inset-inline:0;bottom:0;padding:44px 12px 12px;background:linear-gradient(transparent,rgba(10,12,22,.82));display:flex;flex-direction:column;gap:6px}
 .card .meta strong{font:600 16px/1.25 var(--f-display);color:#fff}
 .goal{font:500 13px/1.35 var(--f-body);color:rgba(255,255,255,.82);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
@@ -585,7 +588,7 @@ footer a{color:var(--ink-soft)}
 
     const g=document.getElementById("grid"), fbox=document.getElementById("filters");
     const cats=["all",...ORDER.filter(c=>all.some(r=>(r.cats||[r.cat]).includes(c)))];
-    cats.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c==="all")},c==="all"?(isEN?"All":"הכל"):CAT[c]);b.addEventListener("click",()=>{fbox.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));g.querySelectorAll("[data-cats]").forEach(n=>{n.hidden=!(c==="all"||n.dataset.cats.split(" ").includes(c))})});fbox.append(b)});
+    cats.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c==="all")},c==="all"?(isEN?"All":"הכל"):CAT[c]);b.addEventListener("click",()=>{fbox.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));let vi=0;g.querySelectorAll("[data-cats]").forEach(n=>{const show=c==="all"||n.dataset.cats.split(" ").includes(c);n.hidden=!show;n.classList.remove("fin");if(show&&!reduce){void n.offsetWidth;n.style.animationDelay=(Math.min(vi++,8)*40)+"ms";n.classList.add("fin")}})});fbox.append(b)});
     const isAd=r=>(r.cats||[r.cat]).includes("ads");
     [...reels.filter(isAd).sort(byDate),...reels.filter(r=>!isAd(r)).sort(byDate),...dj.slice().sort(byDate)].forEach(r=>{
       const b=el("button",{type:"button",class:"card","data-open":r.id,"data-auto":"","data-cats":(r.cats||[r.cat]).join(" ")},
