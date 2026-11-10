@@ -325,7 +325,8 @@
    ],
    "video": "media/vaknin.mp4",
    "full": "media/vaknin.full.mp4",
-   "poster": "media/vaknin.webp"
+   "poster": "media/vaknin.webp",
+   "pt": 2.0
   },
   {
    "id": "drop",
@@ -341,7 +342,8 @@
    ],
    "video": "media/drop.mp4",
    "full": "media/drop.full.mp4",
-   "poster": "media/drop.webp"
+   "poster": "media/drop.webp",
+   "pt": 1.0
   },
   {
    "id": "frisbee",

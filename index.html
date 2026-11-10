@@ -335,7 +335,7 @@ footer a{color:var(--ink-soft)}
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-prev" aria-label="הסרטון הקודם"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button type="button" id="wh-next" aria-label="הסרטון הבא"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>
       </div>
-      <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="513" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>הקליפ ששיגע את האולפן 🔥</small><span class="go">צפו בקטע מהשידור ←</span></span></button></p>
+      <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="513" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b>הקליפ שלי שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>הקליפ ששיגע את האולפן 🔥</small><span class="go">צפו בקטע מהשידור ←</span></span></button></p>
     </div>
   </section>
 
@@ -494,7 +494,7 @@ footer a{color:var(--ink-soft)}
   const SPK='<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 9v6h4l5 4V5L8 9H4Zm12.5 3a4.5 4.5 0 0 0-2.5-4v8a4.5 4.5 0 0 0 2.5-4Z"/></svg>';
   // פוסטר מיד + וידאו שקט שנטען רק כשחצי ממנו על המסך
   const media = (r, eager) => [el("img",{src:r.poster,alt:"",width:"405",height:"720",loading:eager?"eager":"lazy",decoding:"async"}),
-    Object.assign(el("video",{muted:"",loop:"",playsinline:"",preload:"none","aria-hidden":"true"}),{muted:true,_src:r.video})];
+    Object.assign(el("video",{muted:"",loop:"",playsinline:"",preload:"none","aria-hidden":"true"}),{muted:true,_src:r.video,_pt:r.pt})];
   const BY = {};
 
   // תפריט שלושה קווים בנייד
@@ -561,8 +561,8 @@ footer a{color:var(--ink-soft)}
       // הכרטיס שבמרכז ושני השכנים שלו מתנגנים: הצבע בא מהסרטונים עצמם
       const want=new Set(play&&autoOK?[-1,0,1].map(d=>cards[((f+d)%N+N)%N]):[]);
       live.forEach((v,p)=>{if(!want.has(p)){v.pause();v.remove();live.delete(p)}});
-      want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:"",src:p._r.video});v.muted=true;
-        v.style.cssText="position:absolute;inset:0";p.insertBefore(v,p.querySelector(".pl"));v.play().catch(()=>{});live.set(p,v)})};
+      want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:""});v.muted=true;v._pt=p._r.pt;sync(v);v.src=p._r.video;
+        v.style.cssText="position:absolute;inset:0;opacity:0;transition:opacity .35s";p.insertBefore(v,p.querySelector(".pl"));v.play().catch(()=>{});live.set(p,v)})};
     // זוהר מאחורי הגלגל בצבע של הסרטון שבמרכז
     const tints=new Map(), cv=document.createElement("canvas"); cv.width=cv.height=12;
     function tint(p){const im=p.querySelector("img"); if(!im)return;
@@ -595,11 +595,17 @@ footer a{color:var(--ink-soft)}
     const io=new IntersectionObserver(es=>{es.filter(e=>e.isIntersecting).forEach((e,j)=>{e.target.style.setProperty("--rd",Math.min(j,8)*80+"ms");e.target.classList.add("in");io.unobserve(e.target)})},{rootMargin:"0px 0px -6% 0px",threshold:.08});
     document.querySelectorAll(sels.join(",")).forEach(n=>{n.classList.add("rv");io.observe(n)});
   }
+  // הפוסטר הוא פריים מתוך הסרטון: מתחילים לנגן בדיוק ממנו, ומחליפים רק כשהפריים הראשון כבר מוצג, כדי שלא תהיה קפיצה
+  function sync(v){const t=v._pt||1.2;let shown=false;
+    const show=()=>{if(shown)return;shown=true;v.style.opacity=1};
+    v.addEventListener("loadedmetadata",()=>{try{v.currentTime=Math.min(t,(v.duration||8)-.2)}catch(e){}},{once:true});
+    v.addEventListener("seeked",()=>{const go=()=>v.requestVideoFrameCallback?v.requestVideoFrameCallback(show):setTimeout(show,60);v.paused?v.addEventListener("playing",go,{once:true}):go()},{once:true});
+  }
   function observe(){
     if(!autoOK||!("IntersectionObserver" in window))return;
     const cap=()=>innerWidth<768?2:4;
     const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
-      if(e.isIntersecting){if(!v.src)v.src=v._src;if(playing.size<cap()||playing.has(v)){playing.add(v);v.play().then(()=>v.style.opacity=1).catch(()=>playing.delete(v))}}
+      if(e.isIntersecting){if(!v.src){sync(v);v.src=v._src}if(playing.size<cap()||playing.has(v)){playing.add(v);v.play().catch(()=>playing.delete(v))}}
       else{playing.delete(v);v.pause()}}),{threshold:.5});
     document.querySelectorAll("[data-auto] video").forEach(v=>{v.style.opacity=0;v.style.transition="opacity .4s";io.observe(v)});
   }
