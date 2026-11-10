@@ -207,7 +207,8 @@ section{padding-block:64px}
 .about{display:grid;grid-template-columns:minmax(0,360px) minmax(0,1fr);gap:clamp(24px,6vw,64px);align-items:center}
 .about img{width:100%;height:auto;border-radius:var(--r);aspect-ratio:720/910;object-fit:cover;box-shadow:0 0 0 2px var(--line),0 24px 60px -20px color-mix(in srgb,var(--accent) 45%,transparent)}
 .about .lead{font:600 clamp(24px,3.2vw,34px)/1.25 var(--f-display);margin:12px 0 24px;max-width:28ch;text-wrap:pretty}
-.about .lead .ln{display:block;text-wrap:balance}.about .lead .ln+.ln{margin-top:.35em}
+.about .lead .ln{display:block;text-wrap:balance}
+#h-about,#h-work,#h-how{color:var(--accent)}.about .lead .ln+.ln{margin-top:.35em}
 .principles{list-style:none;margin:0;padding:0;display:grid;gap:12px}
 .principles li{background:var(--paper);border-radius:18px;padding:14px 18px;display:grid;grid-template-columns:auto 1fr;column-gap:14px;align-items:start}
 .principles i{width:12px;height:12px;border-radius:4px;transform:rotate(45deg);margin-top:9px;grid-row:span 2}
@@ -273,6 +274,7 @@ footer a{color:var(--ink-soft)}
   .about{grid-template-columns:1fr}
   .incl ul{grid-template-columns:1fr;gap:10px}
   .about img{width:min(280px,100%);justify-self:center;margin-inline:auto}
+  #h-about,.about .lead{text-align:center}.about .lead{margin-inline:auto}
   .cta{grid-template-columns:1fr}
 }
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w{opacity:1;transform:none}}
