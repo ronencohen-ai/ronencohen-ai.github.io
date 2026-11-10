@@ -505,12 +505,15 @@ footer a{color:var(--ink-soft)}
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
   // הכותרת "נגללת" כמו פיד ונבלמת על "שעוצרים את הגלילה."
   (()=>{const r=document.getElementById("reel");if(!r)return;const fin=r.querySelector(".fin");
-    // המיקומים בפיקסלים: השורות של המשפטים נמוכות משורת הסיום, אז לא מחשבים באחוזים
-    const first=r.firstElementChild,end=-(fin.offsetTop-first.offsetTop),slot=first.offsetHeight,start=(r.parentElement.clientHeight-slot)/2;
-    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}px)`;fin.classList.add("go");return}
-    const Y=v=>({transform:`translateY(${v}px)`});
+    // המיקומים ב-em ולא נמדדים מהמסך: אם הדף נטען מוסתר (תצוגה מקדימה, טאב ברקע) המדידה מחזירה 0 והכותרת נתקעת.
+    // שורת משפט = 0.8em, שורת הסיום = 1.12em (כמו ב-CSS)
+    const slot=.8,start=(1.12-slot)/2,end=-(r.children.length-1)*slot;
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");return}
+    const Y=v=>({transform:`translateY(${v}em)`});
     setTimeout(()=>{r.parentElement.classList.add("rolling");const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+.35*slot),offset:.74},{...Y(end-.14*slot),offset:.86},{...Y(end+.04*slot),offset:.94},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
-      r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end/parseFloat(getComputedStyle(r).fontSize)}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go")}},450)})();
+      r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go")};
+      // רשת ביטחון: אם הדפדפן השהה את האנימציה (תצוגה מקדימה, טאב ברקע), קופצים לסוף
+      setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450)})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
