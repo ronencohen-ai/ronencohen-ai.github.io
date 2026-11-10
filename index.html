@@ -118,9 +118,10 @@ p{margin:0}
 .wheel-nav button,.burger{-webkit-tap-highlight-color:transparent}.wheel-nav button{position:relative}
 @media (hover:hover){.wheel-nav button:hover{box-shadow:inset 0 0 0 2px var(--accent),0 12px 30px -8px var(--accent)}#wh-prev:hover svg{transform:translateX(3px)}#wh-next:hover svg{transform:translateX(-3px)}}
 .wheel-nav button:active{transform:scale(.88);background:color-mix(in srgb,var(--accent) 30%,var(--paper))}
-.wheel-nav button::after{content:"";position:absolute;inset:0;border-radius:50%;box-shadow:0 0 0 2px var(--accent);opacity:0;pointer-events:none}
+.wheel-nav button{overflow:hidden}
+.wheel-nav button::after{content:"";position:absolute;inset:0;border-radius:50%;background:var(--accent);opacity:0;pointer-events:none}
 .wheel-nav button.tap::after{animation:ring .45s ease-out}
-@keyframes ring{from{opacity:.9;transform:scale(1)}to{opacity:0;transform:scale(1.45)}}.wheel-nav button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+@keyframes ring{from{opacity:.45;transform:scale(.2)}to{opacity:0;transform:scale(1)}}.wheel-nav button:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
 
 section{padding-block:64px}
 .sec-head{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:end;gap:12px;margin-bottom:28px}
