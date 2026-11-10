@@ -293,7 +293,11 @@ footer a{color:var(--ink-soft)}
 .wheel{--amb:#3DB9FF;transition:--amb 1s ease}
 .wheel::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(58% 62% at 50% 50%,color-mix(in srgb,var(--amb) 62%,transparent),color-mix(in srgb,var(--amb) 18%,transparent) 55%,transparent 78%)}
 .wheel .ring{z-index:1}
-.hero h1 .hl{background:linear-gradient(100deg,var(--sun) 0 40%,#fff 50%,var(--sun) 60% 100%);background-size:280% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5.5s ease-in-out infinite;animation-delay:calc(1.8s + (var(--i) - 2) * 120ms)}
+.hero h1 .win{display:block;height:1.12em;overflow:hidden;position:relative}
+.hero h1 .reel{display:flex;flex-direction:column;transform:translateY(-80%)}
+.hero h1 .reel span{display:block;height:1.12em;line-height:1.12em;white-space:nowrap;color:var(--ink-soft)}
+.hero h1 .reel .fin{color:var(--sun)}
+.hero h1 .reel .fin.go{background:linear-gradient(100deg,var(--sun) 0 40%,#fff 50%,var(--sun) 60% 100%);background-size:280% 100%;background-position:0 0;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 5.5s ease-in-out infinite}
 @keyframes shine{0%{background-position:0 0}26%{background-position:100% 0}100%{background-position:100% 0}}
 .btn-wa.big{position:relative;overflow:hidden;isolation:isolate}
 .btn-wa.big::after{content:"";position:absolute;top:0;bottom:0;left:0;width:38%;z-index:-1;pointer-events:none;background:linear-gradient(100deg,transparent,rgba(255,255,255,.38),transparent);transform:translateX(300%) skewX(-20deg);animation:btnshine 5.5s ease-in-out 2.6s infinite}
@@ -325,7 +329,7 @@ footer a{color:var(--ink-soft)}
 <main id="main">
   <section class="hero" aria-labelledby="h-hero">
     <div class="wrap">
-      <h1 id="h-hero"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><br><span class="w hl" style="--i:2">שעוצרים</span> <span class="w hl" style="--i:3">את</span> <span class="w hl" style="--i:4">הגלילה.</span></h1>
+      <h1 id="h-hero"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><span class="win"><span class="sr">שעוצרים את הגלילה.</span><span class="reel" id="reel" aria-hidden="true"><span>שאף אחד לא רואה</span><span>שגוללים הלאה</span><span>שנשכחים בשנייה</span><span>שמדלגים עליהם</span><span class="fin">שעוצרים את הגלילה.</span></span></span></h1>
       <p class="sub">פרסומות, רילס וקליפים לעסקים, שנראים כמו צילום אמיתי.</p>
       <div style="width:100%">
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
@@ -471,6 +475,14 @@ footer a{color:var(--ink-soft)}
 (() => {
   const root = document.documentElement; root.classList.add("js");
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
+  // הכותרת "נגללת" כמו פיד ונבלמת על "שעוצרים את הגלילה."
+  (()=>{const r=document.getElementById("reel");if(!r)return;const fin=r.querySelector(".fin");
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){fin.classList.add("go");return}
+    const n=r.children.length,end=-(n-1)*100/n;
+    setTimeout(()=>{const a=r.animate([{transform:"translateY(0)",filter:"blur(0)"},{transform:"translateY(0)",filter:"blur(0)",offset:.1},
+      {transform:`translateY(${end+0.35*100/n}%)`,filter:"blur(2.5px)",offset:.74},{transform:`translateY(${end-0.14*100/n}%)`,filter:"blur(0)",offset:.86},
+      {transform:`translateY(${end+0.04*100/n}%)`,offset:.94},{transform:`translateY(${end}%)`,filter:"blur(0)"}],{duration:1700,easing:"linear"});
+      a.onfinish=()=>fin.classList.add("go")},450)})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
