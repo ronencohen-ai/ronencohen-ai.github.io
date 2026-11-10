@@ -468,6 +468,25 @@
    "title_en": "My Wife · Ben Tzur",
    "short_en": "Ben Tzur · My Wife",
    "pitch_en": "An animated music video for Ben Tzur's song."
+  },
+  {
+   "id": "ligat",
+   "cat": "ads",
+   "cats": [
+    "ads"
+   ],
+   "date": "2026-08-21",
+   "title": "צבעים שונים, משחק אחד",
+   "short": "ליגת העל",
+   "pitch": "שופט אחד, כל צבעי הליגה. קדימון לליגת העל בכדורגל.",
+   "goal": "ספורט: כל הקבוצות נכנסות לשחקן אחד.",
+   "video": "media/ligat.mp4",
+   "full": "media/ligat.full.mp4",
+   "poster": "media/ligat.webp",
+   "title_en": "Different colors, one game",
+   "short_en": "Israeli Premier League",
+   "pitch_en": "One referee, every color of the league. A teaser for Israel's Premier League.",
+   "goal_en": "Sports: every team in one player."
   }
  ],
  "sync_since": "2026-11-09"
