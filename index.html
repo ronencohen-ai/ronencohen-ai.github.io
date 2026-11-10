@@ -616,7 +616,8 @@ footer a{color:var(--ink-soft)}
       if(first){const t=++tok;(window.heroDone||Promise.resolve()).then(()=>{if(t===tok&&first)timer=setTimeout(()=>{go(1);auto()},2500)});return}
       timer=setInterval(()=>go(1),2500)};
     const tap=e=>{const b=e.currentTarget;b.classList.remove("tap");void b.offsetWidth;b.classList.add("tap")};
-    document.getElementById("wh-next").onclick=e=>{tap(e);go(1);auto()}; document.getElementById("wh-prev").onclick=e=>{tap(e);go(-1);auto()};
+    // כל חץ מזיז את הכרטיסים לכיוון שהוא מצביע: → ימינה, ← שמאלה
+    document.getElementById("wh-next").onclick=e=>{tap(e);go(-1);auto()}; document.getElementById("wh-prev").onclick=e=>{tap(e);go(1);auto()};
     // לחיצה על הכרטיס שבמרכז פותחת את הנגן; על כרטיס בצד מסובבת אליו
     cards.forEach(p=>p.addEventListener("click",()=>{if(p._d===0)openPlayer(p._r.id,p);else{go(-p._d);auto()}}));
     wrap.addEventListener("mouseenter",()=>clearInterval(timer)); wrap.addEventListener("mouseleave",auto);
