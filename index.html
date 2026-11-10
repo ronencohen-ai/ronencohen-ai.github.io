@@ -175,7 +175,7 @@ section{padding-block:64px}
 .spot .line{color:var(--ink-soft);max-width:36ch;margin-bottom:22px}
 
 /* נבחרות */
-.featured{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.featured{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
 .feat{all:unset;cursor:pointer;position:relative;border-radius:var(--r);overflow:hidden;aspect-ratio:9/16;background:var(--paper);min-width:0;color:#fff;display:block}
 .feat:focus-visible,.card:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
 .feat .media{position:absolute;inset:0}
@@ -550,10 +550,10 @@ footer a{color:var(--ink-soft)}
     sm.setAttribute("aria-label",(L(s,"short")||L(s,"title"))+(isEN?". Watch with sound":". צפו עם סאונד"));
 
     const fl=document.getElementById("featured-list");
-    pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,3).sort((a,b)=>(b.views||0)-(a.views||0)).forEach((r,ri)=>{
+    pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,4).forEach((r,ri)=>{
       const b=el("button",{type:"button",class:"feat","data-open":r.id,"data-auto":""},
         el("div",{class:"media"},...media(r)),el("span",{class:"rank","aria-hidden":"true"},String(ri+1)),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
-        el("div",{class:"meta"},el("h3",{},L(r,"short")||L(r,"title")),L(r,"goal")?el("span",{class:"goal"},L(r,"goal")):"",r.views?el("span",{class:"views"},fmt(r.views)+(isEN?" views":" צפיות")):"",el("span",{class:"sr"},isEN?". Watch with sound":". צפו עם סאונד")));
+        el("div",{class:"meta"},el("h3",{},L(r,"short")||L(r,"title")),L(r,"goal")?el("span",{class:"goal"},L(r,"goal")):"",el("span",{class:"sr"},isEN?". Watch with sound":". צפו עם סאונד")));
       b.querySelector(".sound").innerHTML=SPK; fl.append(b)});
 
     const g=document.getElementById("grid"), fbox=document.getElementById("filters");
