@@ -19,7 +19,7 @@ for i,(t,y) in enumerate([("abufrahi",70),("einav",160)]):
 d=ImageDraw.Draw(og)
 big=ImageFont.truetype(os.path.join(F,"Fredoka-Bold.ttf"),104)
 line(d,big,[("סרטוני",INK),("AI",INK)],1150,120,26)
-line(d,big,[("שעוצרים",INK),("את",INK)],1150,250,26)
+line(d,big,[("שעוצרים",SUN),("את",SUN)],1150,250,26)
 line(d,big,[("הגלילה.",SUN)],1150,380,26)
 d.text((40,560),"רונן כהן"[::-1]+"  ·  ronencohen.ai",font=ImageFont.truetype(os.path.join(F,"Fredoka-SemiBold.ttf"),30),fill=SOFT)
 og.save(os.path.join(ROOT,"img","og.jpg"),quality=86)
