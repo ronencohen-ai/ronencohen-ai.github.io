@@ -564,8 +564,9 @@ footer a{color:var(--ink-soft)}
     const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
     setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
     setN("pr-max",Math.max(0,...(data.reels||[]).map(r=>r.views||0)));
-    const P=pinned.filter(r=>r.id!=="tv"),rest=reels.filter(r=>!r.pinned&&r.id!=="tv").sort((a,b)=>(b.views||0)-(a.views||0)).slice(0,Math.max(0,12-P.length));
-    wheel(document.getElementById("fan"),[...P.slice(0,4),...rest,...P.slice(4).reverse()]);
+    const P=pinned.filter(r=>r.id!=="tv"),LAST=reels.filter(r=>r.wheel_last),rest=reels.filter(r=>!r.pinned&&r.id!=="tv"&&!r.wheel_last).sort((a,b)=>(b.views||0)-(a.views||0)).slice(0,Math.max(0,12-P.length-LAST.length));
+    // בסוף הקרוסלה: מה שמסומן wheel_last (בן צור), אחרי הסיבוב המלא ולפני שחוזרים לפרסומות
+    wheel(document.getElementById("fan"),[...P.slice(0,4),...rest,...LAST,...P.slice(4).reverse()]);
 
     const s=reels.find(r=>r.spotlight)||pinned[0];
     const sm=document.getElementById("spot-media"); sm.dataset.open=s.id; sm.dataset.auto="";

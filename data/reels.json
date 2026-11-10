@@ -450,6 +450,24 @@
    "title_en": "You've never been to a wedding like this",
    "short_en": "The babies' wedding",
    "pitch_en": "A wedding where every guest is a baby, and the DJ is in shock."
+  },
+  {
+   "id": "bentzur",
+   "cat": "clips",
+   "cats": [
+    "clips"
+   ],
+   "date": "2026-07-28",
+   "title": "אישתי · בן צור",
+   "short": "בן צור · אישתי",
+   "pitch": "קליפ מצויר לשיר של בן צור.",
+   "video": "media/bentzur.mp4",
+   "full": "media/bentzur.full.mp4",
+   "poster": "media/bentzur.webp",
+   "wheel_last": true,
+   "title_en": "My Wife · Ben Tzur",
+   "short_en": "Ben Tzur · My Wife",
+   "pitch_en": "An animated music video for Ben Tzur's song."
   }
  ],
  "sync_since": "2026-11-09"
