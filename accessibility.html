@@ -1,15 +1,29 @@
 <!doctype html><html lang="he" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>הצהרת נגישות · רונן כהן</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fredoka:wght@600;700&family=Assistant:wght@400;600&display=swap">
-<style>:root{--bg:#fff;--ink:#151826;--soft:#4B5068;--line:#DDE3EE;color-scheme:light}
-body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.7 "Assistant","Arial Hebrew",sans-serif}main{max-width:760px;margin:auto;padding:32px 20px 60px}h1,h2{font-family:"Fredoka","Assistant",sans-serif;line-height:1.15}h1{font-size:38px}h2{font-size:24px;margin-top:32px}p,li{color:var(--soft)}a{color:inherit}:focus-visible{outline:3px solid #2F7BFF;outline-offset:3px}.back{display:inline-block;margin-bottom:18px}</style></head>
-<body><main><a class="back" href="index.html">→ חזרה לאתר</a><h1>הצהרת נגישות</h1><p><small>עודכן לאחרונה: אוקטובר 2026 · טיוטה, לבדיקת עורך דין לפני פרסום</small></p>
-<p>אני רואה חשיבות רבה בכך שכל אחד ואחת יוכלו לגלוש באתר בנוחות. האתר נבנה בהתאם להנחיות התקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.</p>
+<meta name="robots" content="noindex"><link rel="icon" href="img/favicon-32.png">
+<style>
+@font-face{font-family:'Assistant';font-weight:100 900;font-display:swap;src:url(fonts/assistant-he.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Assistant';font-weight:100 900;font-display:swap;src:url(fonts/assistant-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fredoka';font-weight:100 900;font-display:swap;src:url(fonts/fredoka-he.woff2) format('woff2');unicode-range:U+0307-0308,U+0590-05FF,U+200C-2010,U+20AA,U+25CC,U+FB1D-FB4F}
+@font-face{font-family:'Fredoka';font-weight:100 900;font-display:swap;src:url(fonts/fredoka-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+:root{--bg:#08080B;--ink:#F5F6FA;--soft:#B9BDCB;--accent:#3DB9FF;--line:#262A36;color-scheme:dark}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 18px/1.7 "Assistant","Arial Hebrew",sans-serif}
+main{max-width:760px;margin:auto;padding:32px max(20px,env(safe-area-inset-right,0px)) 64px max(20px,env(safe-area-inset-left,0px))}
+h1,h2{font-family:"Fredoka","Assistant",sans-serif;line-height:1.15}h1{font-size:clamp(30px,6vw,40px);color:var(--accent);margin:8px 0 6px}h2{font-size:23px;margin-top:34px}
+p,li{color:var(--soft)}b{color:var(--ink)}a{color:var(--accent)}a[dir=ltr]{white-space:nowrap}small{color:var(--soft)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.back{display:inline-block;margin-bottom:10px;text-decoration:none;font-weight:600}
+.brand{font:700 20px/1 "Fredoka",sans-serif;color:var(--ink);text-decoration:none}.brand i{font-style:normal;color:var(--accent)}
+</style></head>
+<body><main><a class="back" href="index.html">→ חזרה לאתר <span class="brand" dir="ltr">RonenCohen<i>.Ai</i></span></a><h1>הצהרת נגישות</h1><p><small>עודכן לאחרונה: נובמבר 2026</small></p>
+<p>אני רואה חשיבות רבה בכך שכל אחד ואחת יוכלו לגלוש באתר בנוחות. האתר נבנה בהתאם לתקן הישראלי ת"י 5568, המבוסס על הנחיות WCAG 2.0 ברמה AA.</p>
 <h2>מה נעשה באתר</h2><ul>
 <li>ניווט מלא במקלדת, עם סימון ברור של הרכיב שבפוקוס, וקישור "דלגו לתוכן" בראש העמוד.</li>
 <li>מבנה כותרות היררכי ותגיות סמנטיות, כך שקוראי מסך מבינים את סדר העמוד.</li>
-<li>ניגודיות צבעים מספקת בין טקסט לרקע, ותמיכה במצב כהה של המכשיר.</li>
-<li>הסרטונים מתנגנים ללא סאונד, נעצרים כשאינם על המסך, ולכל סרטון כפתור סאונד עם תיאור טקסטואלי.</li>
-<li>כיבוד הגדרת "הפחתת תנועה": מי שביקש זאת במכשיר, הסרטונים לא יתנגנו אוטומטית והאנימציות כבויות.</li>
+<li>ניגודיות גבוהה בין טקסט לרקע.</li>
+<li>הסרטונים מתנגנים בלי סאונד, נעצרים כשהם לא על המסך, ולכל סרטון יש כפתור עם תיאור טקסטואלי לצפייה עם סאונד.</li>
+<li>כיבוד הגדרת "הפחתת תנועה" ו"חיסכון בנתונים" של המכשיר: הסרטונים לא מתנגנים לבד והאנימציות כבויות.</li>
 <li>האתר מותאם לנייד ולהגדלת טקסט עד 200%.</li></ul>
-<h2>מגבלות ידועות</h2><p>חלק מהסרטונים כוללים דיבור בעברית ללא כתוביות מוטמעות. אני עובד על הוספתן.</p>
-<h2>נתקלתם בבעיה?</h2><p>אם משהו באתר לא נגיש לכם, אשמח שתכתבו לי ואטפל בהקדם. רכז הנגישות: רונן כהן. פנייה דרך כפתור הוואטסאפ באתר או בהודעה באינסטגרם @ronencohen.ai.</p></main></body></html>
+<h2>מגבלות ידועות</h2><p>חלק מהסרטונים כוללים דיבור בעברית בלי כתוביות מוטמעות. אני עובד על הוספתן.</p>
+<h2>נתקלתם בבעיה?</h2><p>אם משהו באתר לא נגיש לכם, אשמח שתכתבו לי ואטפל בהקדם.</p>
+<p><b>רכז הנגישות:</b> רונן כהן. טלפון ווטסאפ: <a href="https://wa.me/972523479482" dir="ltr">052-347-9482</a>, או בהודעה באינסטגרם <a href="https://www.instagram.com/ronencohen.ai/" dir="ltr">@ronencohen.ai</a>.</p>
+</main></body></html>

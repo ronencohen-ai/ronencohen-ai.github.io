@@ -83,7 +83,8 @@ p{margin:0}
 @media (min-width:800px){.top nav{display:flex}}
 .btn{display:inline-flex;align-items:center;gap:10px;border:0;border-radius:999px;padding:12px 20px;font:600 17px/1 var(--f-display);text-decoration:none;cursor:pointer;transition:transform .15s ease}
 .btn:hover{transform:translateY(-2px)}
-.btn-wa{background:var(--wa);color:var(--on-accent)}
+.btn-wa{background:var(--wa);color:#08080B}
+.sr{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 .btn-ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 2px var(--line)}
 .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--ink-soft)}
 .wa-ico{width:20px;height:20px;flex:none}
@@ -229,7 +230,10 @@ section{padding-block:64px}
 .cta h2{font-size:clamp(32px,4.6vw,52px)}
 .cta p{margin-top:10px;opacity:.92;font-size:19px}
 .cta .btn-wa{font-size:20px;padding:16px 26px}
-.cta .ig{display:block;margin-top:14px;font-size:16px;color:var(--ink-soft)}
+.cta .ig{display:inline-grid;place-items:center;width:56px;height:56px;border-radius:16px;vertical-align:middle;margin-inline-start:12px;background:radial-gradient(circle at 30% 107%,#fdf497 0%,#fdf497 5%,#fd5949 45%,#d6249f 60%,#285AEB 90%);transition:transform .2s var(--ease)}
+.cta-row{display:flex;align-items:center;gap:12px;flex-wrap:nowrap}.cta-row .btn{flex:0 1 auto;min-width:0;white-space:nowrap}.cta .ig{flex:none;margin:0}
+.cta .ig:hover{transform:translateY(-2px)}.cta .ig:focus-visible{outline:3px solid var(--sky);outline-offset:3px}
+.cta .ig svg{width:30px;height:30px}
 
 footer{border-top:1px solid var(--line);padding-block:28px 96px;color:var(--ink-soft);font-size:15px}
 footer .wrap{display:flex;flex-wrap:wrap;gap:12px 26px;justify-content:space-between}
@@ -285,7 +289,7 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="#" aria-label="RonenCohen.Ai, סרטוני AI ריאליסטיים, לראש העמוד"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
+    <a class="brand" href="#"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
     <button class="burger" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
     <nav id="mainnav" aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
     <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
@@ -301,7 +305,7 @@ footer a{color:var(--ink-soft)}
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
       </div>
-      <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv" aria-label="שודר בהצינור עם גיא לרר, רשת 13. צפו בקטע מהשידור"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="513" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>הקליפ ששיגע את האולפן 🔥</small><span class="go">צפו בקטע מהשידור ←</span></span></button></p>
+      <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="513" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b>שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small>הקליפ ששיגע את האולפן 🔥</small><span class="go">צפו בקטע מהשידור ←</span></span></button></p>
     </div>
   </section>
 
@@ -399,10 +403,10 @@ footer a{color:var(--ink-soft)}
   <section id="contact" aria-labelledby="h-cta" style="padding-top:0">
     <div class="wrap">
       <div class="cta">
-        <div><h2 id="h-cta">יש לכם מוצר, אירוע או רעיון? בואו נהפוך אותו <span class="hl">לסרטון.</span></h2></div>
+        <div><h2 id="h-cta">יש לכם מוצר, אירוע או רעיון? <span class="hl">בואו נהפוך אותו לסרטון.</span></h2></div>
         <div>
-          <a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
-          <a class="ig" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener">או בהודעה באינסטגרם <span dir="ltr">@ronencohen.ai</span></a>
+          <div class="cta-row"><a class="btn btn-wa js-wa big" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>שלחו לי וואטסאפ</a>
+          <a class="ig" href="https://www.instagram.com/ronencohen.ai/" target="_blank" rel="noopener" aria-label="אינסטגרם @ronencohen.ai" title="@ronencohen.ai"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5.2"/><circle cx="12" cy="12" r="4.1"/><circle cx="17.4" cy="6.6" r="1.1" fill="#fff" stroke="none"/></svg></a></div>
         </div>
       </div>
     </div>
@@ -479,18 +483,18 @@ footer a{color:var(--ink-soft)}
 
     const fl=document.getElementById("featured-list");
     pinned.filter(r=>r.id!=="tv"&&r.id!==s.id).slice(0,3).forEach(r=>{
-      const b=el("button",{type:"button",class:"feat","data-open":r.id,"data-auto":"","aria-label":r.title+". צפו עם סאונד"},
+      const b=el("button",{type:"button",class:"feat","data-open":r.id,"data-auto":""},
         el("div",{class:"media"},...media(r)),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
-        el("div",{class:"meta"},el("h3",{},r.short||r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):""));
+        el("div",{class:"meta"},el("h3",{},r.short||r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):"",el("span",{class:"sr"},". צפו עם סאונד")));
       b.querySelector(".sound").innerHTML=SPK; fl.append(b)});
 
     const g=document.getElementById("grid"), fbox=document.getElementById("filters");
     const cats=["all",...ORDER.filter(c=>all.some(r=>(r.cats||[r.cat]).includes(c)))];
     cats.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c==="all")},c==="all"?"הכל":CAT[c]);b.addEventListener("click",()=>{fbox.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));g.querySelectorAll("[data-cats]").forEach(n=>{n.hidden=!(c==="all"||n.dataset.cats.split(" ").includes(c))})});fbox.append(b)});
     [...reels.slice().sort(byDate),...dj.slice().sort(byDate)].forEach(r=>{
-      const b=el("button",{type:"button",class:"card","data-open":r.id,"data-auto":"","data-cats":(r.cats||[r.cat]).join(" "),"aria-label":r.title+". צפו עם סאונד"},
+      const b=el("button",{type:"button",class:"card","data-open":r.id,"data-auto":"","data-cats":(r.cats||[r.cat]).join(" ")},
         ...media(r),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
-        el("div",{class:"meta"},el("strong",{},r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):""));
+        el("div",{class:"meta"},el("strong",{},r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):"",el("span",{class:"sr"},". צפו עם סאונד")));
       b.querySelector(".sound").innerHTML=SPK; g.append(b)});
 
     const wa=data.whatsapp?"https://wa.me/"+data.whatsapp+"?text="+encodeURIComponent("היי רונן, ראיתי את האתר ואני רוצה סרטון AI ל"):null;
