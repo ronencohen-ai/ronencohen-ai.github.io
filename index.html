@@ -504,14 +504,16 @@ footer a{color:var(--ink-soft)}
   const root = document.documentElement; root.classList.add("js");
   requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
   // הכותרת "נגללת" כמו פיד ונבלמת על "שעוצרים את הגלילה."
-  (()=>{const r=document.getElementById("reel");if(!r)return;const fin=r.querySelector(".fin");
+  // הקרוסלה מחכה לסוף הכותרת, כדי שאביבית לא תעבור לפני שמישהו ראה אותה
+  let heroDoneRes; window.heroDone=new Promise(res=>heroDoneRes=res); setTimeout(()=>heroDoneRes(),6000);
+  (()=>{const r=document.getElementById("reel");if(!r){heroDoneRes();return}const fin=r.querySelector(".fin");
     // המיקומים ב-em ולא נמדדים מהמסך: אם הדף נטען מוסתר (תצוגה מקדימה, טאב ברקע) המדידה מחזירה 0 והכותרת נתקעת.
     // שורת משפט = 0.8em, שורת הסיום = 1.12em (כמו ב-CSS)
     const slot=.8,start=(1.12-slot)/2,end=-(r.children.length-1)*slot;
-    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");return}
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");heroDoneRes();return}
     const Y=v=>({transform:`translateY(${v}em)`});
     setTimeout(()=>{r.parentElement.classList.add("rolling");const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+.35*slot),offset:.74},{...Y(end-.14*slot),offset:.86},{...Y(end+.04*slot),offset:.94},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
-      r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go")};
+      r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go");heroDoneRes()};
       // רשת ביטחון: אם הדפדפן השהה את האנימציה (תצוגה מקדימה, טאב ברקע), קופצים לסוף
       setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450)})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
@@ -609,7 +611,10 @@ footer a{color:var(--ink-soft)}
         if(dd){h=mx===r?((g-b)/dd)%6:mx===g?(b-r)/dd+2:(r-g)/dd+4;h=Math.round(h*60);if(h<0)h+=360}
         const sat=dd<18?35:85, c=`hsl(${h} ${sat}% 58%)`; tints.set(im.src,c); apply(c)}catch(e){}};
       if(im.complete&&im.naturalWidth)run(); else {im.loading="eager";im.addEventListener("load",run,{once:true})}}
-    let first=true; const go=d=>{first=false;k+=d;spin()}; const auto=()=>{clearInterval(timer);if(reduce)return; timer=first?setTimeout(()=>{go(1);auto()},6000):setInterval(()=>go(1),2500)};
+    let first=true; const go=d=>{first=false;k+=d;spin()}; let tok=0; const auto=()=>{clearInterval(timer);clearTimeout(timer);if(reduce)return;
+      // הסיבוב הראשון: רק אחרי שהכותרת נחתה על "שעוצרים את הגלילה", ועוד 2.5 שניות לאביבית במרכז
+      if(first){const t=++tok;(window.heroDone||Promise.resolve()).then(()=>{if(t===tok&&first)timer=setTimeout(()=>{go(1);auto()},2500)});return}
+      timer=setInterval(()=>go(1),2500)};
     const tap=e=>{const b=e.currentTarget;b.classList.remove("tap");void b.offsetWidth;b.classList.add("tap")};
     document.getElementById("wh-next").onclick=e=>{tap(e);go(1);auto()}; document.getElementById("wh-prev").onclick=e=>{tap(e);go(-1);auto()};
     // לחיצה על הכרטיס שבמרכז פותחת את הנגן; על כרטיס בצד מסובבת אליו
