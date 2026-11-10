@@ -310,6 +310,70 @@
    "full": "media/sukkot.full.mp4",
    "pitch": "את מי הייתם מזמינים לסוכה?",
    "views": 2679
+  },
+  {
+   "id": "vaknin",
+   "date": "2026-08-15",
+   "title": "גברת וקנין",
+   "short": "גברת וקנין",
+   "pitch": "הכלה שעוד לא מבינה שהיא מתחתנת, עד שהדי-ג'יי עולים לבמה.",
+   "views": 1187,
+   "ig": "https://www.instagram.com/reel/DcEZvdrMfJv/",
+   "cat": "dj",
+   "cats": [
+    "dj"
+   ],
+   "video": "media/vaknin.mp4",
+   "full": "media/vaknin.full.mp4",
+   "poster": "media/vaknin.webp"
+  },
+  {
+   "id": "drop",
+   "date": "2026-08-01",
+   "title": "רגע לפני הדרופ",
+   "short": "רגע לפני הדרופ",
+   "pitch": "קאלופה על הבמה, והאולם מתפוצץ. נעשה יחד עם רן נוריאני.",
+   "views": 1258,
+   "ig": "https://www.instagram.com/reel/DbgXijOMWlf/",
+   "cat": "dj",
+   "cats": [
+    "dj"
+   ],
+   "video": "media/drop.mp4",
+   "full": "media/drop.full.mp4",
+   "poster": "media/drop.webp"
+  },
+  {
+   "id": "frisbee",
+   "date": "2026-07-25",
+   "title": "טוב שיש שניים",
+   "short": "טוב שיש שניים",
+   "pitch": "פריסבי של קאלופה, מהחופה ועד הצוק.",
+   "views": 1180,
+   "ig": "https://www.instagram.com/reel/DbOVubcM0sj/",
+   "cat": "dj",
+   "cats": [
+    "dj"
+   ],
+   "video": "media/frisbee.mp4",
+   "full": "media/frisbee.full.mp4",
+   "poster": "media/frisbee.webp"
+  },
+  {
+   "id": "babies",
+   "date": "2026-07-15",
+   "title": "עוד לא הייתם בחתונה כזו",
+   "short": "חתונת התינוקות",
+   "pitch": "חתונה שכל האורחים בה תינוקות, והדי-ג'יי בהלם.",
+   "views": 1380,
+   "ig": "https://www.instagram.com/reel/Daz4BxQukFG/",
+   "cat": "dj",
+   "cats": [
+    "dj"
+   ],
+   "video": "media/babies.mp4",
+   "full": "media/babies.full.mp4",
+   "poster": "media/babies.webp"
   }
  ],
  "sync_since": "2026-11-09"

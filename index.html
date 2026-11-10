@@ -66,7 +66,16 @@ p{margin:0}
 .brand b{font:700 22px/1 var(--f-display);letter-spacing:.01em}
 .brand b i{font-style:normal;color:var(--accent)}
 .brand small{font:600 12px/1 var(--f-body);color:var(--ink-soft)}
-.top-l{display:flex;align-items:center;gap:16px;flex:1;justify-content:space-between}
+.top-l{display:flex;align-items:center;gap:10px;flex:1;justify-content:flex-start}
+.top-l .brand{margin-inline-end:auto}
+.burger{display:inline-grid;place-items:center;width:44px;height:44px;border:0;border-radius:12px;background:transparent;color:var(--ink);cursor:pointer;padding:0}
+.burger svg{width:26px;height:26px}.burger .x{display:none}.burger[aria-expanded="true"] .x{display:block}.burger[aria-expanded="true"] .l{display:none}
+@media (max-width:799px){.top nav.open{display:flex;position:absolute;inset-inline:0;top:100%;flex-direction:column;align-items:stretch;gap:0;background:var(--bg);border-bottom:1px solid var(--line);padding-block:4px 12px;padding-inline:max(16px,env(safe-area-inset-left,0px)) max(16px,env(safe-area-inset-right,0px));box-shadow:0 24px 40px -20px rgba(0,0,0,.8)}
+  .top nav.open a{padding:16px 2px;font-size:20px;color:var(--ink);display:flex;align-items:center;gap:12px}.top nav.open a+a{border-top:1px solid var(--line)}
+  .top nav.open a::before{content:"";display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent);margin:0;transform:none}}
+@media (min-width:800px){.burger{display:none}}
+.top .btn-wa{white-space:nowrap}
+@media (max-width:420px){.top .btn-wa{padding:10px 14px;font-size:15px;gap:7px}.top-l{gap:6px}.brand b{font-size:20px}}
 .top nav{display:none;gap:14px;align-items:center}
 .top nav a+a::before{content:"";display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--accent);vertical-align:middle;margin-inline-end:14px;transform:translateY(-2px)}
 @media (min-width:800px){.top-l{flex:none;margin-inline-start:auto}}
@@ -264,10 +273,11 @@ footer a{color:var(--ink-soft)}
 
 <header class="top">
   <div class="wrap">
-    <nav aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
+    <nav id="mainnav" aria-label="ניווט ראשי"><a href="#about">קצת עליי</a><a href="#work">תיק עבודות</a><a href="#how">התהליך</a></nav>
     <div class="top-l">
       <a class="brand" href="#" aria-label="RonenCohen.Ai, סרטוני AI ריאליסטיים, לראש העמוד"><b dir="ltr">RonenCohen<i>.Ai</i></b><small>סרטוני <span dir="ltr">AI</span> ריאליסטיים</small></a>
       <a class="btn btn-wa js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener"><svg class="wa-ico" viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>דברו איתי</a>
+      <button class="burger" type="button" aria-label="תפריט" aria-expanded="false" aria-controls="mainnav"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path class="l" d="M4 7h16M4 12h16M4 17h16"/><path class="x" d="M6 6l12 12M18 6L6 18"/></svg></button>
     </div>
   </div>
 </header>
@@ -276,7 +286,7 @@ footer a{color:var(--ink-soft)}
   <section class="hero" aria-labelledby="h-hero">
     <div class="wrap">
       <h1 id="h-hero"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><br><span class="w" style="--i:2">שאנשים</span> <span class="w" style="--i:3">שולחים</span> <span class="w hl" style="--i:4">הלאה.</span></h1>
-      <p class="sub">פרסומות, ריילס וקליפים לעסקים, שנראים כמו צילום אמיתי.</p>
+      <p class="sub">פרסומות, רילס וקליפים לעסקים, שנראים כמו צילום אמיתי.</p>
       <div style="width:100%">
         <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-next" aria-label="הסרטון הבא">›</button><button type="button" id="wh-prev" aria-label="הסרטון הקודם">‹</button></div>
@@ -302,8 +312,8 @@ footer a{color:var(--ink-soft)}
 
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
-      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>סרטוני תדמית</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
-      <span>פרסומות לעסקים</span><i></i><span>ריילס ויראליים</span><i></i><span>קליפים</span><i></i><span>סרטוני תדמית</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+      <span>פרסומות לעסקים</span><i></i><span>רילס ויראליים</span><i></i><span>קליפים</span><i></i><span>סרטוני תדמית</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
+      <span>פרסומות לעסקים</span><i></i><span>רילס ויראליים</span><i></i><span>קליפים</span><i></i><span>סרטוני תדמית</span><i></i><span>מותגי אופנה וקוסמטיקה</span><i></i>
     </div>
   </div>
 
@@ -422,8 +432,8 @@ footer a{color:var(--ink-soft)}
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
-  const CAT = {ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",clips:"קליפים",new:"חדש"};
-  const ORDER = ["new","ads","viral","clips","funny","tv","holiday"];
+  const CAT = {ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",clips:"קליפים",new:"חדש",dj:"די-ג'יי"};
+  const ORDER = ["new","ads","viral","clips","funny","tv","holiday","dj"];
   const fmt = n => n>=1e6 ? (Math.floor(n/1e4)/100).toString()+"M" : n>=1e4 ? Math.round(n/1e3)+"K" : n>=1e3 ? (Math.round(n/100)/10)+"K" : String(n);
   const el = (t,a={},...k) => {const e=document.createElement(t);for(const[x,v] of Object.entries(a)){if(x==="class")e.className=v;else e.setAttribute(x,v)}k.flat().forEach(c=>e.append(c));return e};
   const eye='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" aria-hidden="true"><path d="M2 12s3.6-7 10-7 10 7 10 7-3.6 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></svg>';
@@ -433,8 +443,18 @@ footer a{color:var(--ink-soft)}
     Object.assign(el("video",{muted:"",loop:"",playsinline:"",preload:"none","aria-hidden":"true"}),{muted:true,_src:r.video})];
   const BY = {};
 
+  // תפריט שלושה קווים בנייד
+  (()=>{const b=document.querySelector(".burger"),n=document.getElementById("mainnav");if(!b||!n)return;
+    const set=o=>{n.classList.toggle("open",o);b.setAttribute("aria-expanded",String(o));b.setAttribute("aria-label",o?"סגירת התפריט":"תפריט")};
+    b.addEventListener("click",e=>{e.stopPropagation();set(!n.classList.contains("open"))});
+    n.addEventListener("click",e=>{if(e.target.closest("a"))set(false)});
+    document.addEventListener("click",e=>{if(n.classList.contains("open")&&!n.contains(e.target))set(false)});
+    document.addEventListener("keydown",e=>{if(e.key==="Escape"&&n.classList.contains("open")){set(false);b.focus()}});
+    matchMedia("(min-width:800px)").addEventListener("change",()=>set(false));})();
+
   function render(data){
-    const reels=(data.reels||[]).filter(r=>r.cat!=="dj"); reels.forEach(r=>BY[r.id]=r);
+    const all=data.reels||[], reels=all.filter(r=>r.cat!=="dj"), dj=all.filter(r=>r.cat==="dj"); all.forEach(r=>BY[r.id]=r);
+    const byDate=(a,b)=>(b.date||"").localeCompare(a.date||"");
     const pinned=reels.filter(r=>r.pinned).sort((a,b)=>a.pinned-b.pinned);
     const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
     setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
@@ -456,9 +476,9 @@ footer a{color:var(--ink-soft)}
       b.querySelector(".sound").innerHTML=SPK; fl.append(b)});
 
     const g=document.getElementById("grid"), fbox=document.getElementById("filters");
-    const cats=["all",...ORDER.filter(c=>reels.some(r=>(r.cats||[r.cat]).includes(c)))];
+    const cats=["all",...ORDER.filter(c=>all.some(r=>(r.cats||[r.cat]).includes(c)))];
     cats.forEach(c=>{const b=el("button",{type:"button","aria-pressed":String(c==="all")},c==="all"?"הכל":CAT[c]);b.addEventListener("click",()=>{fbox.querySelectorAll("button").forEach(x=>x.setAttribute("aria-pressed",String(x===b)));g.querySelectorAll("[data-cats]").forEach(n=>{n.hidden=!(c==="all"||n.dataset.cats.split(" ").includes(c))})});fbox.append(b)});
-    reels.slice().sort((a,b)=>(b.date||"").localeCompare(a.date||"")).forEach(r=>{
+    [...reels.slice().sort(byDate),...dj.slice().sort(byDate)].forEach(r=>{
       const b=el("button",{type:"button",class:"card","data-open":r.id,"data-auto":"","data-cats":(r.cats||[r.cat]).join(" "),"aria-label":r.title+". צפו עם סאונד"},
         ...media(r),el("span",{class:"tag c-"+r.cat},CAT[r.cat]||""),el("span",{class:"sound"}),
         el("div",{class:"meta"},el("strong",{},r.title),r.views?el("span",{class:"views"},fmt(r.views)+" צפיות"):""));
