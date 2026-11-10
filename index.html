@@ -22,6 +22,9 @@
 <link rel="apple-touch-icon" href="img/apple-touch-icon.png">
 <link rel="preload" href="fonts/fredoka-he.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/assistant-he.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/assistant-latin.woff2" as="font" type="font/woff2" crossorigin>
+<script>document.documentElement.classList.add("js")</script>
 <style>
 @font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-he.woff2) format('woff2');unicode-range:U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F}
 @font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -98,6 +101,9 @@ p{margin:0}
 .hero h1 .hl{color:var(--sun)}
 .hero h1 .w{display:inline-block}
 .js .hero h1 .w{opacity:0;transform:translateY(.35em)}
+/* הכותרת מוסתרת עד שהפונטים נטענו, כדי שלא תתחלף בין פונטים מול העיניים */
+.js .hero h1 .win,.js .hero .sub{opacity:0}
+.js.ready .hero h1 .win,.js.ready .hero .sub{opacity:1;transition:opacity .5s ease .3s}
 .js.ready .hero h1 .w{opacity:1;transform:none;transition:opacity .6s ease,transform .8s var(--ease);transition-delay:calc(var(--i) * 90ms + 80ms)}
 .actions{display:flex;flex-wrap:wrap;justify-content:center;align-items:center;gap:10px 16px}
 .live-note{font-size:13px;justify-content:center;text-align:center;color:var(--ink-soft);display:flex;align-items:center;gap:8px}
@@ -327,7 +333,7 @@ footer a{color:var(--ink-soft)}
 @media (max-width:400px){.lang{width:34px;height:34px;font-size:12px}.top-end{gap:6px}.brand b{font-size:18px}.brand small{font-size:11px}}
 [dir=ltr] .wheel-nav{flex-direction:row-reverse}
 [dir=ltr] .hero h1 .reel span{letter-spacing:-.01em}
-@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.js .hero h1 .w,.js .hero h1 .win,.js .hero .sub{opacity:1;transform:none}}
 </style>
 </head>
 <body>
@@ -504,7 +510,9 @@ footer a{color:var(--ink-soft)}
   const L=(r,k)=>isEN&&r[k+"_en"]?r[k+"_en"]:r[k];
 (() => {
   const root = document.documentElement; root.classList.add("js");
-  requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready")));
+  // מחכים לפונטים של הכותרת (עברית ולטינית) לפני שחושפים אותה. לכל היותר 1.5 שניות
+  const fontsReady = (document.fonts && document.fonts.load) ? Promise.race([Promise.all(["700 1em Fredoka","500 1em Assistant"].map(f=>document.fonts.load(f,"סרטוני AI"))).catch(()=>{}), new Promise(r=>setTimeout(r,1500))]) : Promise.resolve();
+  fontsReady.then(() => requestAnimationFrame(() => requestAnimationFrame(() => root.classList.add("ready"))));
   // הכותרת "נגללת" כמו פיד ונבלמת על "שעוצרים את הגלילה."
   // הקרוסלה מחכה לסוף הכותרת, כדי שאביבית לא תעבור לפני שמישהו ראה אותה
   let heroDoneRes; window.heroDone=new Promise(res=>heroDoneRes=res); setTimeout(()=>heroDoneRes(),6000);
@@ -514,12 +522,12 @@ footer a{color:var(--ink-soft)}
     const slot=.8,start=(1.12-slot)/2,end=-(r.children.length-1)*slot;
     if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");heroDoneRes();return}
     const Y=v=>({transform:`translateY(${v}em)`});
-    setTimeout(()=>{r.parentElement.classList.add("rolling");// גלגול אחיד דרך המשפטים, ואז האטה רכה עד שהשורה הכחולה נוחתת. בלי קפיצה מעבר לסוף, כדי שהשורה לא תיחתך
+    fontsReady.then(()=>setTimeout(()=>{r.parentElement.classList.add("rolling");// גלגול אחיד דרך המשפטים, ואז האטה רכה עד שהשורה הכחולה נוחתת. בלי קפיצה מעבר לסוף, כדי שהשורה לא תיחתך
       const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+slot),offset:.7,easing:"cubic-bezier(.3,.33,.2,1)"},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
       setTimeout(()=>r.parentElement.classList.remove("rolling"),2900*.82);
       r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go");heroDoneRes()};
       // רשת ביטחון: אם הדפדפן השהה את האנימציה (תצוגה מקדימה, טאב ברקע), קופצים לסוף
-      setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450)})();
+      setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450))})();
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const saveData = !!(navigator.connection && navigator.connection.saveData);
   const autoOK = !reduce && !saveData;
