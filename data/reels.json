@@ -25,7 +25,8 @@
    "poster": "media/miel.webp",
    "title_en": "Miel by Daniel",
    "short_en": "Miel by Daniel",
-   "pitch_en": "A fashion film for the Miel by Daniel collection."
+   "pitch_en": "A fashion film for the Miel by Daniel collection.",
+   "pinned": 6
   },
   {
    "id": "dance",
@@ -83,7 +84,8 @@
    "poster": "media/inspire.webp",
    "title_en": "Recruitment video for InspireMD",
    "short_en": "InspireMD recruiting",
-   "pitch_en": "A recruitment video for a place you're not allowed into: a medical-device cleanroom."
+   "pitch_en": "A recruitment video for a place you're not allowed into: a medical-device cleanroom.",
+   "pinned": 7
   },
   {
    "id": "velvet",
@@ -99,12 +101,12 @@
    "poster": "media/velvet.webp",
    "ig": "https://www.instagram.com/reel/DeykfUeO7IN/",
    "short": "VELVET FREEDOM",
-   "pinned": 6,
    "full": "media/velvet.full.mp4",
    "pitch": "VELVET FREEDOM. פרסומת בושם לאביבית בר זוהר.",
    "title_en": "VELVET FREEDOM",
    "short_en": "VELVET FREEDOM",
-   "pitch_en": "VELVET FREEDOM. A perfume ad for Avivit Bar Zohar."
+   "pitch_en": "VELVET FREEDOM. A perfume ad for Avivit Bar Zohar.",
+   "pinned": 2
   },
   {
    "id": "yes",
@@ -121,10 +123,8 @@
    "poster": "media/yes.webp",
    "ig": "https://www.instagram.com/reel/DerAY11OaNE/",
    "short": "היא אמרה לו כן",
-   "pinned": 2,
    "full": "media/yes.full.mp4",
    "pitch": "שני תינוקות, הצעת נישואין אחת. 7,000 שיתופים בשבוע הראשון.",
-   "spotlight": true,
    "title_en": "She said yes",
    "short_en": "She said yes",
    "pitch_en": "Two babies, one proposal. 7,000 shares in the first week."
@@ -143,12 +143,12 @@
     "tv"
    ],
    "short": "שודר ברשת 13",
-   "pinned": 1,
    "full": "media/tv.full.mp4",
    "pitch": "גיא לרר שידר את הסרטון ב'הצינור' וקרא לי \"הגאון שהיה אחראי על הסרטון הזה\".",
    "title_en": "My clip aired on Channel 13",
    "short_en": "Aired on Channel 13",
-   "pitch_en": "Guy Lerer aired the video on “HaTzinor” and called me “the genius behind this video”."
+   "pitch_en": "Guy Lerer aired the video on “HaTzinor” and called me “the genius behind this video”.",
+   "pinned": 1
   },
   {
    "id": "kevin",
@@ -185,7 +185,8 @@
    "full": "media/plasto.full.mp4",
    "pitch": "לכל חלון ראווה יש את הפרזנטור שלו. המותג העלה עם קרדיט.",
    "title_en": "Every shop window has its own spokesperson",
-   "pitch_en": "Every shop window has its own spokesperson. The brand posted it with credit."
+   "pitch_en": "Every shop window has its own spokesperson. The brand posted it with credit.",
+   "pinned": 5
   },
   {
    "id": "einav",
@@ -201,12 +202,15 @@
     "ads"
    ],
    "short": "הוורוד לא בבקבוק",
-   "pinned": 5,
    "full": "media/einav.full.mp4",
    "pitch": "הוורוד לא בבקבוק. הוא בך. עינב בובליל שיתפה.",
    "title_en": "The pink isn't in the bottle. It's in you.",
    "short_en": "The pink isn't in the bottle",
-   "pitch_en": "The pink isn't in the bottle. It's in you. Einav Bublil shared it."
+   "pitch_en": "The pink isn't in the bottle. It's in you. Einav Bublil shared it.",
+   "pinned": 3,
+   "spotlight": true,
+   "spotline": "פרסומת מחווה לגלוס של EB Cosmetics. עינב בובליל שיתפה אותה.",
+   "spotline_en": "A tribute ad for EB Cosmetics' lip gloss. Einav Bublil shared it."
   },
   {
    "id": "tzinor",
@@ -244,7 +248,6 @@
     "funny"
    ],
    "short": "כרטיס אדום",
-   "pinned": 4,
    "full": "media/abufrahi.full.mp4",
    "pitch": "כרטיס אדום על נענוע. יותר מחצי מיליון צפיות בסוף שבוע אחד.",
    "title_en": "A red card for the lulav shake",
@@ -264,7 +267,6 @@
     "viral"
    ],
    "short": "הנס בטיסה",
-   "pinned": 3,
    "full": "media/fz1073.full.mp4",
    "pitch": "תודה לקדוש ברוך הוא על הנס.",
    "title_en": "Thank God for the miracle",
@@ -304,7 +306,8 @@
    "full": "media/rotem.full.mp4",
    "pitch": "מיקרובליידינג, פרסומת קולנועית.",
    "title_en": "Microblading, a cinematic ad",
-   "pitch_en": "Microblading, a cinematic ad."
+   "pitch_en": "Microblading, a cinematic ad.",
+   "pinned": 4
   },
   {
    "id": "kippur",
