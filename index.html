@@ -310,7 +310,7 @@ footer a{color:var(--ink-soft)}
       <h2 id="h-proof" hidden>במספרים</h2>
       <dl>
         <div><dt>צפיות בסך הכול</dt><dd><span dir="ltr" data-count="1624591" id="pr-total">1.62M</span></dd></div>
-        <div><dt>צפיות בממוצע לכל ריל</dt><dd><span dir="ltr" data-count="56020" id="pr-avg">56K</span></dd></div>
+        <div><dt>שיא צפיות בריל אחד</dt><dd><span dir="ltr" data-count="388000" id="pr-max">388K</span></dd></div>
         <div><dt>צפיות בחודש האחרון</dt><dd><span dir="ltr" data-count="557866" id="pr-month">558K</span></dd></div>
       </dl>
       <p class="proof-ask">רוצים סרטון כזה לעסק שלכם?</p>
@@ -468,7 +468,7 @@ footer a{color:var(--ink-soft)}
     const pinned=reels.filter(r=>r.pinned).sort((a,b)=>a.pinned-b.pinned);
     const setN=(id,n)=>{const e=document.getElementById(id);if(e&&n){e.dataset.count=n;e.textContent=fmt(n)}};
     setN("pr-total",data.stats?.views); setN("pr-month",data.stats?.month_views);
-    setN("pr-avg",data.stats?.views&&data.stats?.reels?Math.round(data.stats.views/data.stats.reels):0);
+    setN("pr-max",Math.max(0,...(data.reels||[]).map(r=>r.views||0)));
     wheel(document.getElementById("fan"),[...pinned,...reels.filter(r=>!r.pinned).sort((a,b)=>(b.views||0)-(a.views||0))].slice(0,12));
 
     const s=reels.find(r=>r.spotlight)||pinned[0];
