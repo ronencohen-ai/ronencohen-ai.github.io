@@ -1,10 +1,10 @@
 {
- "updated": "2026-11-09",
+ "updated": "2026-11-11",
  "whatsapp": "972523479482",
  "stats": {
-  "views": 1624591,
+  "views": 1632196,
   "reels": 29,
-  "followers": 2122,
+  "followers": 2220,
   "month_views": 557866
  },
  "reels": [
@@ -18,7 +18,7 @@
    "title": "Miel by Daniel",
    "short": "Miel by Daniel",
    "pitch": "סרט אופנה לקולקציה של דניאל גרינברג לאופנת מיאל.",
-   "views": 1120,
+   "views": 1286,
    "ig": "https://www.instagram.com/reel/Dfeidi5OlwL/",
    "video": "media/miel.mp4",
    "full": "media/miel.full.mp4",
@@ -41,7 +41,7 @@
    "title": "היא אמרה כן. עכשיו מתאמנים.",
    "short": "עכשיו מתאמנים",
    "pitch": "ההמשך של \"היא אמרה לו כן\": אותם תינוקות, הריקוד הראשון.",
-   "views": 68100,
+   "views": 71800,
    "ig": "https://www.instagram.com/reel/DfPGh9iORMG/",
    "video": "media/dance.mp4",
    "full": "media/dance.full.mp4",
@@ -60,7 +60,7 @@
    "title": "אמרתם תודה לאבא?",
    "short": "מזמור לתודה",
    "pitch": "מזמור לתודה, על הרגעים שבהם אומרים תודה.",
-   "views": 6939,
+   "views": 6974,
    "ig": "https://www.instagram.com/reel/DfEbZI4OoEP/",
    "video": "media/mizmor.mp4",
    "full": "media/mizmor.full.mp4",
@@ -79,7 +79,7 @@
    "title": "סרטון גיוס עובדים ל-InspireMD",
    "short": "גיוס עובדים ל-InspireMD",
    "pitch": "סרטון גיוס עובדים למקום שאסור להיכנס אליו: חדר נקי של מכשור רפואי.",
-   "views": 1382,
+   "views": 1395,
    "ig": "https://www.instagram.com/reel/De8viqGOtCI/",
    "video": "media/inspire.mp4",
    "full": "media/inspire.full.mp4",
@@ -100,7 +100,7 @@
    "date": "2026-10-21",
    "title": "VELVET FREEDOM",
    "why": "פרסומת בושם לאביבית בר זוהר. 62 אלף צפיות.",
-   "views": 64500,
+   "views": 64600,
    "video": "media/velvet.mp4",
    "poster": "media/velvet.webp",
    "ig": "https://www.instagram.com/reel/DeykfUeO7IN/",
@@ -124,7 +124,7 @@
    "date": "2026-10-19",
    "title": "היא אמרה לו כן",
    "why": "הצעת נישואין של שני תינוקות. 300 אלף צפיות ו-7,000 שיתופים בשבוע הראשון.",
-   "views": 352000,
+   "views": 355000,
    "video": "media/yes.mp4",
    "poster": "media/yes.webp",
    "ig": "https://www.instagram.com/reel/DerAY11OaNE/",
@@ -136,12 +136,33 @@
    "pitch_en": "Two babies, one proposal. 7,000 shares in the first week."
   },
   {
+   "id": "plasto",
+   "cat": "ads",
+   "cats": [
+    "ads"
+   ],
+   "date": "2026-10-15",
+   "title": "לכל חלון ראווה יש את הפרזנטור שלו",
+   "why": "פרסומת למארז פרימיום של פלסטו-ווק.",
+   "views": 3445,
+   "video": "media/plasto.mp4",
+   "poster": "media/plasto.webp",
+   "ig": "https://www.instagram.com/reel/DegRM5xOsqB/",
+   "full": "media/plasto.full.mp4",
+   "pitch": "פרסומת למארז פרימיום של פלסטו-ווק.",
+   "title_en": "Every shop window has its own spokesperson",
+   "pitch_en": "An ad for Plasto-Wok's premium box.",
+   "pinned": 6,
+   "goal": "מוצר: פרזנטור שמציג את המארז כמו בחלון ראווה.",
+   "goal_en": "Product: a presenter showing the box like a shop window."
+  },
+  {
    "id": "tv",
    "cat": "tv",
    "date": "2026-10-13",
    "title": "הקליפ שלי שודר ברשת 13",
    "why": "גיא לרר שידר את הסרטון ב'הצינור' וקרא לי 'הגאון שהיה אחראי על הסרטון הזה'.",
-   "views": 7363,
+   "views": 7379,
    "video": "media/tv.mp4",
    "poster": "media/tv.webp",
    "ig": "https://www.instagram.com/reel/DebJRnnOrHf/",
@@ -162,7 +183,7 @@
    "date": "2026-10-13",
    "title": "קווין כץ. שרוף על הפועל פתח תקווה.",
    "why": "דמות שנולדה ביציע. 27 אלף צפיות ו-800 שיתופים ביום הראשון, רובם מאוהדים שהעבירו הלאה.",
-   "views": 49100,
+   "views": 49600,
    "video": "media/kevin.mp4",
    "poster": "media/kevin.webp",
    "ig": "https://www.instagram.com/reel/DecGxIoIsS3/",
@@ -174,27 +195,6 @@
    "pitch": "קווין כץ, שרוף על הפועל פתח תקווה. 800 שיתופים ביום הראשון.",
    "title_en": "Kevin Katz. Hapoel Petah Tikva till the end.",
    "pitch_en": "Kevin Katz, die-hard Hapoel Petah Tikva fan. 800 shares on day one."
-  },
-  {
-   "id": "plasto",
-   "cat": "ads",
-   "cats": [
-    "ads"
-   ],
-   "date": "2026-10-15",
-   "title": "לכל חלון ראווה יש את הפרזנטור שלו",
-   "why": "פרסומת למארז פרימיום של פלסטו-ווק.",
-   "views": 3422,
-   "video": "media/plasto.mp4",
-   "poster": "media/plasto.webp",
-   "ig": "https://www.instagram.com/reel/DegRM5xOsqB/",
-   "full": "media/plasto.full.mp4",
-   "pitch": "פרסומת למארז פרימיום של פלסטו-ווק.",
-   "title_en": "Every shop window has its own spokesperson",
-   "pitch_en": "An ad for Plasto-Wok's premium box.",
-   "pinned": 6,
-   "goal": "מוצר: פרזנטור שמציג את המארז כמו בחלון ראווה.",
-   "goal_en": "Product: a presenter showing the box like a shop window."
   },
   {
    "id": "einav",
@@ -244,6 +244,63 @@
    "pitch_en": "A one-shot through the pipes, all the way to the studio. Guy Lerer asked to air it."
   },
   {
+   "id": "fz1073",
+   "cat": "viral",
+   "date": "2026-09-30",
+   "title": "תודה לקדוש ברוך הוא על הנס",
+   "views": 334000,
+   "video": "media/fz1073.mp4",
+   "poster": "media/fz1073.webp",
+   "ig": "https://www.instagram.com/reel/Dd6pXBQuxao/",
+   "cats": [
+    "viral"
+   ],
+   "short": "הנס בטיסה",
+   "full": "media/fz1073.full.mp4",
+   "pitch": "תודה לקדוש ברוך הוא על הנס.",
+   "title_en": "Thank God for the miracle",
+   "short_en": "The in-flight miracle",
+   "pitch_en": "Thank God for the miracle."
+  },
+  {
+   "id": "gvir",
+   "cat": "funny",
+   "cats": [
+    "funny"
+   ],
+   "date": "2026-09-29",
+   "title": "אהבה עיוורת",
+   "short": "אהבה עיוורת",
+   "pitch": "סאטירה: בן גביר וטלי גוטליב רוקדים בלט.",
+   "ig": "https://www.instagram.com/reel/Dd3GfCGuYrS/",
+   "video": "media/gvir.mp4",
+   "full": "media/gvir.full.mp4",
+   "poster": "media/gvir.webp",
+   "title_en": "Blind love",
+   "short_en": "Blind love",
+   "pitch_en": "Satire: Ben Gvir and Tali Gottlieb dance ballet.",
+   "views": 4764
+  },
+  {
+   "id": "halfmil",
+   "cat": "viral",
+   "cats": [
+    "viral"
+   ],
+   "date": "2026-09-27",
+   "title": "איך הגעתי לחצי מיליון צפיות בסופ״ש אחד",
+   "short": "חצי מיליון בסופ״ש",
+   "pitch": "מה הפך את \"כרטיס אדום על נענוע\" לוויראלי.",
+   "ig": "https://www.instagram.com/reel/DdyfwAMuoCf/",
+   "video": "media/halfmil.mp4",
+   "full": "media/halfmil.full.mp4",
+   "poster": "media/halfmil.webp",
+   "title_en": "How I hit half a million views in one weekend",
+   "short_en": "Half a million in a weekend",
+   "pitch_en": "What made the red-card lulav reel go viral.",
+   "views": 3892
+  },
+  {
    "id": "abufrahi",
    "cat": "viral",
    "date": "2026-09-25",
@@ -265,23 +322,56 @@
    "pitch_en": "A red card for the lulav shake. Over half a million views in one weekend."
   },
   {
-   "id": "fz1073",
-   "cat": "viral",
-   "date": "2026-09-30",
-   "title": "תודה לקדוש ברוך הוא על הנס",
-   "views": 334000,
-   "video": "media/fz1073.mp4",
-   "poster": "media/fz1073.webp",
-   "ig": "https://www.instagram.com/reel/Dd6pXBQuxao/",
+   "id": "sukkot",
+   "cat": "holiday",
+   "date": "2026-09-24",
+   "title": "את מי הייתם מזמינים לסוכה?",
+   "video": "media/sukkot.mp4",
+   "poster": "media/sukkot.webp",
+   "ig": "https://www.instagram.com/reel/DdrqakZOT_4/",
    "cats": [
-    "viral"
+    "holiday",
+    "funny"
    ],
-   "short": "הנס בטיסה",
-   "full": "media/fz1073.full.mp4",
-   "pitch": "תודה לקדוש ברוך הוא על הנס.",
-   "title_en": "Thank God for the miracle",
-   "short_en": "The in-flight miracle",
-   "pitch_en": "Thank God for the miracle."
+   "full": "media/sukkot.full.mp4",
+   "pitch": "את מי הייתם מזמינים לסוכה?",
+   "views": 2682,
+   "title_en": "Who would you invite to your sukkah?",
+   "pitch_en": "Who would you invite to your sukkah?"
+  },
+  {
+   "id": "kippur",
+   "cat": "holiday",
+   "date": "2026-09-16",
+   "title": "בין אדם לחברו",
+   "video": "media/kippur.mp4",
+   "poster": "media/kippur.webp",
+   "ig": "https://www.instagram.com/reel/DdWryBMIDFY/",
+   "cats": [
+    "holiday"
+   ],
+   "views": 3314,
+   "full": "media/kippur.full.mp4",
+   "pitch": "בין אדם לחברו.",
+   "title_en": "Between one person and another",
+   "pitch_en": "Between one person and another."
+  },
+  {
+   "id": "rosh",
+   "cat": "holiday",
+   "date": "2026-09-11",
+   "title": "שנה טובה, בדבש ובזריחה",
+   "video": "media/rosh.mp4",
+   "poster": "media/rosh.webp",
+   "ig": "https://www.instagram.com/reel/DdHe-MbuoAz/",
+   "cats": [
+    "holiday"
+   ],
+   "full": "media/rosh.full.mp4",
+   "pitch": "שנה טובה, בדבש ובזריחה.",
+   "views": 1539,
+   "title_en": "Happy New Year, in honey and sunrise",
+   "pitch_en": "Happy New Year, in honey and sunrise."
   },
   {
    "id": "menny",
@@ -312,7 +402,7 @@
    "cats": [
     "ads"
    ],
-   "views": 6289,
+   "views": 6294,
    "full": "media/rotem.full.mp4",
    "pitch": "מיקרובליידינג, פרסומת קולנועית.",
    "title_en": "Microblading, a cinematic ad",
@@ -322,56 +412,46 @@
    "goal_en": "Brow studio: the treatment shown like a film."
   },
   {
-   "id": "kippur",
-   "cat": "holiday",
-   "date": "2026-09-16",
-   "title": "בין אדם לחברו",
-   "video": "media/kippur.mp4",
-   "poster": "media/kippur.webp",
-   "ig": "https://www.instagram.com/reel/DdWryBMIDFY/",
+   "id": "tesla",
+   "cat": "ads",
    "cats": [
-    "holiday"
+    "ads"
    ],
-   "views": 3311,
-   "full": "media/kippur.full.mp4",
-   "pitch": "בין אדם לחברו.",
-   "title_en": "Between one person and another",
-   "pitch_en": "Between one person and another."
+   "date": "2026-08-26",
+   "title": "Save The Date על השמשה",
+   "short": "Save The Date",
+   "pitch": "נראה כמו דוח חניה על הטסלה. בפנים: מאיה ודניאל מתחתנים.",
+   "goal": "אירועים: הזמנה שאי אפשר לפספס.",
+   "ig": "https://www.instagram.com/reel/DcgJqrIMjYL/",
+   "video": "media/tesla.mp4",
+   "full": "media/tesla.full.mp4",
+   "poster": "media/tesla.webp",
+   "title_en": "Save The Date on the windshield",
+   "short_en": "Save The Date",
+   "pitch_en": "It looks like a parking ticket on the Tesla. Inside: Maya and Daniel are getting married.",
+   "goal_en": "Events: an invitation nobody can miss.",
+   "views": 1473
   },
   {
-   "id": "rosh",
-   "cat": "holiday",
-   "date": "2026-09-11",
-   "title": "שנה טובה, בדבש ובזריחה",
-   "video": "media/rosh.mp4",
-   "poster": "media/rosh.webp",
-   "ig": "https://www.instagram.com/reel/DdHe-MbuoAz/",
+   "id": "ligat",
+   "cat": "ads",
    "cats": [
-    "holiday"
+    "ads"
    ],
-   "full": "media/rosh.full.mp4",
-   "pitch": "שנה טובה, בדבש ובזריחה.",
-   "views": 1536,
-   "title_en": "Happy New Year, in honey and sunrise",
-   "pitch_en": "Happy New Year, in honey and sunrise."
-  },
-  {
-   "id": "sukkot",
-   "cat": "holiday",
-   "date": "2026-09-24",
-   "title": "את מי הייתם מזמינים לסוכה?",
-   "video": "media/sukkot.mp4",
-   "poster": "media/sukkot.webp",
-   "ig": "https://www.instagram.com/reel/DdrqakZOT_4/",
-   "cats": [
-    "holiday",
-    "funny"
-   ],
-   "full": "media/sukkot.full.mp4",
-   "pitch": "את מי הייתם מזמינים לסוכה?",
-   "views": 2679,
-   "title_en": "Who would you invite to your sukkah?",
-   "pitch_en": "Who would you invite to your sukkah?"
+   "date": "2026-08-21",
+   "title": "צבעים שונים, משחק אחד",
+   "short": "ליגת העל",
+   "pitch": "שופט אחד, כל צבעי הליגה. קדימון לליגת העל בכדורגל.",
+   "goal": "ספורט: כל הקבוצות נכנסות לשחקן אחד.",
+   "video": "media/ligat.mp4",
+   "full": "media/ligat.full.mp4",
+   "poster": "media/ligat.webp",
+   "title_en": "Different colors, one game",
+   "short_en": "Israeli Premier League",
+   "pitch_en": "One referee, every color of the league. A teaser for Israel's Premier League.",
+   "goal_en": "Sports: every team in one player.",
+   "ig": "https://www.instagram.com/reel/DcSvlPvOUJp/",
+   "views": 2724
   },
   {
    "id": "vaknin",
@@ -379,7 +459,7 @@
    "title": "גברת וקנין",
    "short": "גברת וקנין",
    "pitch": "הכלה שעוד לא מבינה שהיא מתחתנת, עד שהדי-ג'יי עולים לבמה.",
-   "views": 1187,
+   "views": 1190,
    "ig": "https://www.instagram.com/reel/DcEZvdrMfJv/",
    "cat": "dj",
    "cats": [
@@ -399,7 +479,7 @@
    "title": "רגע לפני הדרופ",
    "short": "רגע לפני הדרופ",
    "pitch": "קאלופה על הבמה, והאולם מתפוצץ. נעשה יחד עם רן נוריאני.",
-   "views": 1258,
+   "views": 1260,
    "ig": "https://www.instagram.com/reel/DbgXijOMWlf/",
    "cat": "dj",
    "cats": [
@@ -414,12 +494,32 @@
    "pitch_en": "Kalopa on stage, and the hall explodes. Made with Ran Nuriani."
   },
   {
+   "id": "bentzur",
+   "cat": "clips",
+   "cats": [
+    "clips"
+   ],
+   "date": "2026-07-28",
+   "title": "אישתי · בן צור",
+   "short": "בן צור · אישתי",
+   "pitch": "קליפ מצויר לשיר של בן צור.",
+   "video": "media/bentzur.mp4",
+   "full": "media/bentzur.full.mp4",
+   "poster": "media/bentzur.webp",
+   "wheel_last": true,
+   "title_en": "My Wife · Ben Tzur",
+   "short_en": "Ben Tzur · My Wife",
+   "pitch_en": "An animated music video for Ben Tzur's song.",
+   "ig": "https://www.instagram.com/reel/DbVba4XsjOA/",
+   "views": 541
+  },
+  {
    "id": "frisbee",
    "date": "2026-07-25",
    "title": "טוב שיש שניים",
    "short": "טוב שיש שניים",
    "pitch": "פריסבי של קאלופה, מהחופה ועד הצוק.",
-   "views": 1180,
+   "views": 1181,
    "ig": "https://www.instagram.com/reel/DbOVubcM0sj/",
    "cat": "dj",
    "cats": [
@@ -438,7 +538,7 @@
    "title": "עוד לא הייתם בחתונה כזו",
    "short": "חתונת התינוקות",
    "pitch": "חתונה שכל האורחים בה תינוקות, והדי-ג'יי בהלם.",
-   "views": 1380,
+   "views": 1381,
    "ig": "https://www.instagram.com/reel/Daz4BxQukFG/",
    "cat": "dj",
    "cats": [
@@ -450,43 +550,6 @@
    "title_en": "You've never been to a wedding like this",
    "short_en": "The babies' wedding",
    "pitch_en": "A wedding where every guest is a baby, and the DJ is in shock."
-  },
-  {
-   "id": "bentzur",
-   "cat": "clips",
-   "cats": [
-    "clips"
-   ],
-   "date": "2026-07-28",
-   "title": "אישתי · בן צור",
-   "short": "בן צור · אישתי",
-   "pitch": "קליפ מצויר לשיר של בן צור.",
-   "video": "media/bentzur.mp4",
-   "full": "media/bentzur.full.mp4",
-   "poster": "media/bentzur.webp",
-   "wheel_last": true,
-   "title_en": "My Wife · Ben Tzur",
-   "short_en": "Ben Tzur · My Wife",
-   "pitch_en": "An animated music video for Ben Tzur's song."
-  },
-  {
-   "id": "ligat",
-   "cat": "ads",
-   "cats": [
-    "ads"
-   ],
-   "date": "2026-08-21",
-   "title": "צבעים שונים, משחק אחד",
-   "short": "ליגת העל",
-   "pitch": "שופט אחד, כל צבעי הליגה. קדימון לליגת העל בכדורגל.",
-   "goal": "ספורט: כל הקבוצות נכנסות לשחקן אחד.",
-   "video": "media/ligat.mp4",
-   "full": "media/ligat.full.mp4",
-   "poster": "media/ligat.webp",
-   "title_en": "Different colors, one game",
-   "short_en": "Israeli Premier League",
-   "pitch_en": "One referee, every color of the league. A teaser for Israel's Premier League.",
-   "goal_en": "Sports: every team in one player."
   }
  ],
  "sync_since": "2026-11-09"
