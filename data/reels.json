@@ -27,8 +27,8 @@
    "short_en": "Miel by Daniel",
    "pitch_en": "A fashion film for Daniel Greenberg's collection for Miel fashion.",
    "pinned": 4,
-   "goal": "אופנה: הקולקציה מוצגת כמו תצוגה באולם יוקרתי.",
-   "goal_en": "Fashion: the collection shown like a luxury runway."
+   "goal": "אופנה: הקולקציה של דניאל גרינברג, כמו תצוגה באולם יוקרתי.",
+   "goal_en": "Fashion: Daniel Greenberg's collection, shown like a luxury runway."
   },
   {
    "id": "dance",
@@ -111,8 +111,8 @@
    "short_en": "VELVET FREEDOM",
    "pitch_en": "VELVET FREEDOM. A perfume ad for Avivit Bar Zohar.",
    "pinned": 2,
-   "goal": "בושם: עולם יוקרתי שנבנה סביב הבקבוק.",
-   "goal_en": "Perfume: a luxury world built around the bottle."
+   "goal": "בושם של אביבית בר זוהר: עולם יוקרתי שנבנה סביב הבקבוק.",
+   "goal_en": "Avivit Bar Zohar's perfume: a luxury world built around the bottle."
   },
   {
    "id": "yes",
