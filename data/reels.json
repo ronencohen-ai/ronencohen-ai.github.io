@@ -1,13 +1,34 @@
 {
- "updated": "2026-11-11",
+ "updated": "2026-11-12",
  "whatsapp": "972523479482",
  "stats": {
   "views": 1632196,
-  "reels": 29,
+  "reels": 30,
   "followers": 2220,
   "month_views": 557866
  },
  "reels": [
+  {
+   "id": "patricks",
+   "cat": "ads",
+   "cats": [
+    "ads"
+   ],
+   "date": "2026-11-12",
+   "title": "הפתעה לצחי מפטריקס",
+   "short": "פטריקס",
+   "pitch": "ישבנו בפטריקס, והחלטנו להפתיע את צחי: ההמבורגר שלו, מהגריל ועד הצלחת.",
+   "goal": "מסעדות: מנה שמריחים דרך המסך.",
+   "ig": "https://www.instagram.com/reel/Dfo0F1VuPDP/",
+   "video": "media/patricks.mp4",
+   "full": "media/patricks.full.mp4",
+   "poster": "media/patricks.webp",
+   "title_en": "A surprise for Tzachi from Patrick's",
+   "short_en": "Patrick's",
+   "pitch_en": "We sat at Patrick's and decided to surprise Tzachi: his burger, from the grill to the plate.",
+   "goal_en": "Restaurants: a dish you can smell through the screen.",
+   "views": 879
+  },
   {
    "id": "miel",
    "cat": "ads",
