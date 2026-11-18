@@ -25,6 +25,7 @@
 <link rel="preload" href="fonts/fredoka-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="fonts/assistant-latin.woff2" as="font" type="font/woff2" crossorigin>
 <script>document.documentElement.classList.add("js")</script>
+<script src="a11y.js"></script>
 <style>
 @font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-he.woff2) format('woff2');unicode-range:U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F}
 @font-face{font-family:'Assistant';font-style:normal;font-weight:100 900;font-display:swap;src:url(fonts/assistant-latin.woff2) format('woff2');unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
@@ -529,7 +530,7 @@ footer a{color:var(--ink-soft)}
     // המיקומים ב-em ולא נמדדים מהמסך: אם הדף נטען מוסתר (תצוגה מקדימה, טאב ברקע) המדידה מחזירה 0 והכותרת נתקעת.
     // שורת משפט = 0.8em, שורת הסיום = 1.12em (כמו ב-CSS)
     const slot=.8,start=(1.12-slot)/2,end=-(r.children.length-1)*slot;
-    if(matchMedia("(prefers-reduced-motion: reduce)").matches||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");heroDoneRes();return}
+    if(matchMedia("(prefers-reduced-motion: reduce)").matches||root.classList.contains("a11y-still")||!r.animate){r.classList.remove("wait");r.style.transform=`translateY(${end}em)`;fin.classList.add("go");heroDoneRes();return}
     const Y=v=>({transform:`translateY(${v}em)`});
     fontsReady.then(()=>setTimeout(()=>{r.parentElement.classList.add("rolling");// גלגול אחיד דרך המשפטים, ואז האטה רכה עד שהשורה הכחולה נוחתת. בלי קפיצה מעבר לסוף, כדי שהשורה לא תיחתך
       const a=r.animate([Y(start),{...Y(start),offset:.1},{...Y(end+slot),offset:.7,easing:"cubic-bezier(.3,.33,.2,1)"},Y(end)],{duration:2900,easing:"linear",fill:"forwards"});
@@ -537,9 +538,10 @@ footer a{color:var(--ink-soft)}
       r.classList.remove("wait");a.onfinish=()=>{r.style.transform=`translateY(${end}em)`;a.cancel();r.parentElement.classList.remove("rolling");fin.classList.add("go");heroDoneRes()};
       // רשת ביטחון: אם הדפדפן השהה את האנימציה (תצוגה מקדימה, טאב ברקע), קופצים לסוף
       setTimeout(()=>{if(a.playState!=="finished"&&a.playState!=="idle")a.finish()},3700)},450))})();
-  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // "עצירת אנימציות וסרטונים" בתפריט הנגישות פועל כמו הגדרת הפחתת תנועה של המכשיר
+  let reduce = matchMedia("(prefers-reduced-motion: reduce)").matches || root.classList.contains("a11y-still");
   const saveData = !!(navigator.connection && navigator.connection.saveData);
-  const autoOK = !reduce && !saveData;
+  let autoOK = !reduce && !saveData;
   const CAT = isEN?{ads:"Business ads",viral:"Viral",funny:"Funny",tv:"TV",holiday:"Holidays",sport:"Sport",clips:"Music videos",new:"New",dj:"DJ"}:{ads:"פרסומות לעסקים",viral:"ויראלי",funny:"מצחיק",tv:"טלוויזיה",holiday:"חגים",sport:"ספורט",clips:"קליפים",new:"חדש",dj:"די-ג'יי"};
   const ORDER = ["new","ads","viral","clips","funny","tv","holiday","dj"];
   const fmt = n => n>=1e6 ? (Math.floor(n/1e4)/100).toString()+"M" : n>=1e4 ? Math.round(n/1e3)+"K" : n>=1e3 ? (Math.round(n/100)/10)+"K" : String(n);
@@ -646,6 +648,7 @@ footer a{color:var(--ink-soft)}
     let x0=null; wrap.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
     wrap.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>30){go(dx<0?-1:1);auto()}x0=null});
     addEventListener("resize",layout); layout(); spin(); auto();
+    addEventListener("a11y-still",()=>{clearInterval(timer);clearTimeout(timer);tok++;spin(false)});
     // כשהגלגל יוצא מהמסך: עוצרים את הסרטונים שלו ואת הסיבוב
     if("IntersectionObserver" in window)new IntersectionObserver(es=>{const vis=es[0].isIntersecting;
       live.forEach(v=>vis?v.play().catch(()=>{}):v.pause()); vis?auto():clearInterval(timer)}).observe(wrap);
@@ -668,7 +671,7 @@ footer a{color:var(--ink-soft)}
     if(!autoOK||!("IntersectionObserver" in window))return;
     const cap=()=>innerWidth<768?2:4;
     const io=new IntersectionObserver(es=>es.forEach(e=>{const v=e.target;
-      if(e.isIntersecting){if(!v.src){sync(v);v.src=v._src}if(playing.size<cap()||playing.has(v)){playing.add(v);v.play().catch(()=>playing.delete(v))}}
+      if(e.isIntersecting){if(!autoOK){v.pause();return}if(!v.src){sync(v);v.src=v._src}if(playing.size<cap()||playing.has(v)){playing.add(v);v.play().catch(()=>playing.delete(v))}}
       else{playing.delete(v);v.pause()}}),{threshold:.5});
     document.querySelectorAll("[data-auto] video").forEach(v=>{v.style.opacity=0;v.style.transition="opacity .4s";io.observe(v)});
   }
@@ -717,6 +720,7 @@ footer a{color:var(--ink-soft)}
   dlg.addEventListener("close",()=>{pv.pause();pv.removeAttribute("src");pv.load();if(pushed){pushed=false;history.back()}playing.forEach(v=>v.play().catch(()=>{}));if(opener&&opener.focus)opener.focus()});
   addEventListener("popstate",()=>{if(dlg.open){pushed=false;dlg.close()}});
 
+  addEventListener("a11y-still",()=>{reduce=true;autoOK=false;playing.forEach(v=>v.pause());playing.clear()});
   document.getElementById("yr").textContent=new Date().getFullYear();
   fetch("data/reels.json",{cache:"no-store"}).then(r=>r.json()).then(render).catch(e=>console.warn("reels.json",e));
 })();
