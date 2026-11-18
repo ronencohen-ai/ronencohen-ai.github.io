@@ -59,6 +59,7 @@ a{color:inherit}
 :focus-visible{outline:3px solid var(--sky);outline-offset:3px;border-radius:8px}
 .skip{position:absolute;inset-inline-start:16px;top:-60px;background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:12px;z-index:50;text-decoration:none}
 .skip:focus{top:12px}
+main:focus{outline:none}
 .wrap{width:min(1120px,100%);margin-inline:auto;padding-inline:max(20px,env(safe-area-inset-left,0px))}
 h1,h2,h3{font-family:var(--f-display);font-weight:700;line-height:1.08;text-wrap:balance;margin:0}
 p{margin:0}
@@ -359,13 +360,13 @@ footer a{color:var(--ink-soft)}
   </div>
 </header>
 
-<main id="main">
+<main id="main" tabindex="-1">
   <section class="hero" aria-labelledby="h-hero">
     <div class="wrap">
       <h1 id="h-hero" data-i="h1"><span class="w" style="--i:0">סרטוני</span> <span class="w" style="--i:1" dir="ltr">AI</span><span class="win"><span class="sr">שעוצרים את הגלילה.</span><span class="reel wait" id="reel" aria-hidden="true"><span>שזוכרים גם מחר</span><span>שאנשים משתפים</span><span>שמוכרים את המוצר</span><span class="fin">שעוצרים את הגלילה.</span></span></span></h1>
       <p class="sub" data-i="sub">פרסומות לעסקים שנראות כמו צילום אמיתי,<br>בלי יום צילום אחד.</p>
       <div style="width:100%">
-        <div class="wheel" id="wheel" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית" data-ia="wheel"><div class="ring" id="fan"></div></div>
+        <div class="wheel" id="wheel" role="region" aria-roledescription="גלגל" aria-label="עבודות נבחרות, מתחלפות אוטומטית" data-ia="wheel"><div class="ring" id="fan"></div></div>
         <div class="wheel-nav"><button type="button" id="wh-prev" aria-label="הסרטון הקודם" data-ia="prev"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button><button type="button" id="wh-next" aria-label="הסרטון הבא" data-ia="next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 12H5M11 6l-6 6 6 6"/></svg></button></div>
       </div>
       <p class="tv-row tv-hero"><button type="button" class="tv-card" data-open="tv"><span class="tv-shot"><img src="img/tv-hazinor.webp" width="1200" height="513" loading="lazy" decoding="async" alt="המגיש באולפן הצינור ברשת 13, והכיתוב: מפרגנים לרונן כהן האדיר שיצר לנו סרטון פרומו הכי חמוד בעולם" data-ialt="tvalt"><span class="tv-play" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#play"/></svg></span></span><span class="tv-txt"><b data-i="tv1">הקליפ שלי שודר ב"הצינור" עם גיא לרר, רשת <span dir="ltr">13</span></b><small data-i="tv2">הקליפ ששיגע את האולפן 🔥</small><span class="go" data-i="tv3">צפו בקטע מהשידור ←</span></span></button></p>
@@ -487,9 +488,10 @@ footer a{color:var(--ink-soft)}
       <a href="terms.html" data-i="l3">תנאי שימוש</a>
     </nav>
   </div>
+  <a class="wa-float js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener" aria-label="שלחו לי וואטסאפ" data-ia="waf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
 </footer>
 
-<a class="wa-float js-wa" href="https://wa.me/972523479482" target="_blank" rel="noopener" aria-label="שלחו לי וואטסאפ" data-ia="waf"><svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg></a>
+
 
 <dialog class="player" aria-labelledby="pl-title">
   <div class="player-in">
@@ -622,7 +624,7 @@ footer a{color:var(--ink-soft)}
       // הכרטיס שבמרכז ושני השכנים שלו מתנגנים: הצבע בא מהסרטונים עצמם
       const want=new Set(play&&autoOK?[-1,0,1].map(d=>cards[((f+d)%N+N)%N]):[]);
       live.forEach((v,p)=>{if(!want.has(p)){v.pause();v.remove();live.delete(p)}});
-      want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:""});v.muted=true;v._pt=p._r.pt;sync(v);v.src=p._r.video;
+      want.forEach(p=>{if(live.has(p))return;const v=el("video",{muted:"",loop:"",playsinline:"","aria-hidden":"true"});v.muted=true;v._pt=p._r.pt;sync(v);v.src=p._r.video;
         v.style.cssText="position:absolute;inset:0;opacity:0;transition:opacity .35s";p.insertBefore(v,p.querySelector(".pl"));v.play().catch(()=>{});live.set(p,v)})};
     // זוהר מאחורי הגלגל בצבע של הסרטון שבמרכז
     const tints=new Map(), cv=document.createElement("canvas"); cv.width=cv.height=12;
@@ -635,7 +637,8 @@ footer a{color:var(--ink-soft)}
         if(dd){h=mx===r?((g-b)/dd)%6:mx===g?(b-r)/dd+2:(r-g)/dd+4;h=Math.round(h*60);if(h<0)h+=360}
         const sat=dd<18?35:85, c=`hsl(${h} ${sat}% 58%)`; tints.set(im.src,c); apply(c)}catch(e){}};
       if(im.complete&&im.naturalWidth)run(); else {im.loading="eager";im.addEventListener("load",run,{once:true})}}
-    let first=true; const go=d=>{first=false;k+=d;spin()}; let tok=0; const auto=()=>{clearInterval(timer);clearTimeout(timer);if(reduce)return;
+    let first=true; const go=d=>{first=false;k+=d;spin()}; let tok=0; const nav=document.querySelector(".wheel-nav"), kbd=()=>{const a=document.activeElement;return !!(nav&&a&&nav.contains(a)&&a.matches(":focus-visible"))};
+    const auto=()=>{clearInterval(timer);clearTimeout(timer);if(reduce||kbd())return;
       // הסיבוב הראשון: רק אחרי שהכותרת נחתה על "שעוצרים את הגלילה", ועוד 2.5 שניות לאביבית במרכז
       if(first){const t=++tok;(window.heroDone||Promise.resolve()).then(()=>{if(t===tok&&first)timer=setTimeout(()=>{go(1);auto()},2500)});return}
       timer=setInterval(()=>go(1),2500)};
@@ -645,6 +648,7 @@ footer a{color:var(--ink-soft)}
     // לחיצה על הכרטיס שבמרכז פותחת את הנגן; על כרטיס בצד מסובבת אליו
     cards.forEach(p=>p.addEventListener("click",()=>{if(p._d===0)openPlayer(p._r.id,p);else{go(-p._d);auto()}}));
     wrap.addEventListener("mouseenter",()=>clearInterval(timer)); wrap.addEventListener("mouseleave",auto);
+    if(nav){nav.addEventListener("focusin",()=>{if(kbd())clearInterval(timer)});nav.addEventListener("focusout",()=>setTimeout(auto,0))}
     let x0=null; wrap.addEventListener("touchstart",e=>{x0=e.touches[0].clientX},{passive:true});
     wrap.addEventListener("touchend",e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>30){go(dx<0?-1:1);auto()}x0=null});
     addEventListener("resize",layout); layout(); spin(); auto();
